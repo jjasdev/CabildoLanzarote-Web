@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabildo de Lanzarote | Información</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/desktop.css" media="(max-width: 1199px)">
     <link rel="stylesheet" href="css/tablet.css" media="(max-width: 991px)">
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)">
@@ -46,8 +44,8 @@
                     <li class="item-principal first-link"><a aria-label="Ir a Mapa de incidencias" title="Ir a Mapa de incidencias" href="#"><img class="icon-main-nav" src="images/icono-mapa-incidencias.png" alt="Icono mapa de incidencias" title="Icono mapa de incidencias"><span>Mapa incidencias</span></a></li>
                     <li class="item-principal last-link"><a aria-label="Ir a El Cabildo responde" title="Ir a El Cabildo responde" href="#"><img class="icon-main-nav" src="images/icono-cabildo-responde.png" alt="Icono El Cabildo responde" title="Icono El Cabildo responde"><span>El Cabildo responde</span></a>
                         <ul class="submenu">
-                            <li class="llamamos"><a href="#"><i class="fas fa-phone icon-item"></i><span>Le llamamos</span></a></li>
-                            <li><a href="#"><i class="far fa-envelope icon-item"></i><span>Buzón ciudadano</span></a></li>
+                            <li><a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="#"><i class="fas fa-phone icon-item"></i><span>Le llamamos</span></a></li>
+                            <li><a aria-label="Ir a El buzón del ciudadano" title="Ir a El buzón del ciudadano" href="#"><i class="far fa-envelope icon-item"></i><span>Buzón ciudadano</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -77,7 +75,107 @@
             <h1>Alta de incidencias</h1>
         </section>
         <section class="main-wrapper">
-            <span>CONTENIDO</span>
+            <h2>Incidencia</h2>
+            <form  method="post" action="incidencia.php" class="formulario-incidencia">        
+                <fieldset>       
+                    <div class="label-formulario l-tipo">
+                        <label for="tipo-incidencia"><span>Tipo </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-tipo">
+                        <select id="tipo-incidencia" name="tipo-incidencia" aria-label="Seleccionar el tipo de incidencia" title="Seleccionar el tipo de incidencia">
+                            <option value="15">Aparcamientos Públicos.</option>
+                            <option value="22">Agua Potable.</option>
+                            <option value="23">Alcantarillado.</option>
+                            <option value="26">Limpiezas.</option>
+                            <option value="28">Mobiliario Público.</option>
+                            <option value="30">Parques y Jardines.</option>
+                            <option value="25">Plagas.</option>
+                            <option value="27">Tráfico.</option>
+                            <option value="29">Vías Públicas.</option>
+                            <option value="24">Alumbrado.</option>
+                            <option value="31">Solares.</option>
+                            <option value="32">Urbanismo.</option>
+                        </select>
+                    </div>
+                    <div class="label-formulario l-nif">
+                        <label for="nif"><span>NIF/DNI </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-nif">
+                        <input aria-label="Introducir NIF" title="Introducir NIF" class="text" type="text" id="nif" name="nif" maxlength="9" required>
+                    </div>
+                    <div class="label-formulario l-nombre">
+                        <label for="nombre"><span>Nombre </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-nombre">
+                        <input aria-label="Introducir nombre" title="Introducir nombre" class="text" type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="label-formulario l-prmapellido">
+                        <label for="primer-apellido"><span>Primer apellido </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-prmapellido">
+                        <input aria-label="Introducir Primer apellido" title="Introducir Primer apellido" class="text" type="text" id="primer-apellido" name="primer-apellido" maxlength="9" required>
+                    </div>
+                    <div class="label-formulario l-segapellido">
+                        <label for="segundo-apellido"><span>Segundo apellido </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-segapellido">
+                        <input aria-label="Introducir Segundo apellido" title="Introducir Segundo apellido" class="text" type="text" id="segundo-apellido" name="segundo-apellido" required>
+                    </div>
+                    <div class="label-formulario l-email">
+                        <label for="email"><span>Email </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-email">
+                        <input aria-label="Introducir Email" title="Introducir Email" class="text" type="email" id="email" name="email" maxlength="30" required>
+                    </div>
+                    <div class="label-formulario l-fijo">
+                        <label for="tel-fijo"><span>Teléfono fijo </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-fijo">
+                        <input aria-label="Introducir Prefijo del Teléfono fijo" title="Introducir Prefijo del teléfono fijo" class="prefijo" type="text" name="prefijo-tel-fijo" autocomplete="off" id="prefijo-tel-fijo" maxlength="3" value="+34" required/>
+                        <input aria-label="Introducir Teléfono fijo" title="Introducir Teléfono fijo" type="text" pattern="^[0-9,$]*$" name="tel-fijo" autocomplete="off" id="tel-fijo" maxlength="9" placeholder="9XXXXXXXX" value="" required/>
+                    </div>
+                    <div class="label-formulario l-movil">
+                        <label for="tel-movil"><span>Teléfono móvil </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-movil">
+                        <input aria-label="Introducir Prefijo del Teléfono móvil" title="Introducir Prefijo del teléfono móvil" class="prefijo" type="text" name="prefijo-tel-movil" autocomplete="off" id="prefijo-tel-movil" maxlength="3" value="+34" required/>
+                        <input aria-label="Introducir Teléfono móvil" title="Introducir Teléfono móvil" type="text" pattern="^[0-9,$]*$" autocomplete="off" id="tel-movil" maxlength="9" placeholder="6XXXXXXXX" value="" required/>
+                    </div>
+                    <div class="label-formulario l-observaciones">
+                        <label for="observaciones"><span>Observaciones </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-observaciones">
+                        <textarea aria-label="Introducir Observaciones" title="Introducir Observaciones" id="observaciones" name="observaciones" maxlength="255" required></textarea>
+                    </div>
+                    <div class="label-formulario l-direccion">
+                        <label for="direccion"><span>Dirección </span><a class="geolocalizacion" title="Obtener posicionamiento en mapa a partir de la dirección"><i class="fas fa-map-marker-alt icon-item marker"></i></a></label>
+                    </div>
+                    <div class="campo-formulario c-direccion">
+                        <input aria-label="Introducir Dirección" title="Introducir Dirección" class="text" type="text" id="direccion" name="direccion" value="Avenida Fred Olsen, s/n 35500 Arrecife-Lanzarote" required>
+                    </div>
+                    <div class="label-formulario l-coordenadas">
+                        <label for="coordenadas"><span>Coordenadas </span></label>
+                    </div>
+                    <div class="campo-formulario c-coordenadas">
+                        <textarea aria-label="Introducir Coordenadas" title="Introducir Coordenadas" id="coordenadas" name="coordenadas" maxlength="255" required></textarea>
+                    </div>
+                    <div class="label-formulario l-foto">
+                        <label for="file"><span>Foto </span></label>
+                    </div>
+                    <div class="campo-formulario c-foto">
+                        <label for="file" class="subir-foto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                            <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> 
+                            <span>Seleccione una imagen</span>
+                        </label>
+                        <input class="hide" aria-label="Seleccionar imagen" title="Seleccionar imagen" type="file" id="file" name="file" />
+                    </div>
+                    <div class="label-formulario l-verificacion">
+                        <label for="verificacion"><span>Verificación </span></label>
+                    </div>
+                </fieldset>
+                <input class="boton-enviar-incidencia" id="submit" name="submit" type="submit" value="Enviar">
+            </form>
         </section>
     </div>
     <!-- FOOTER -->
