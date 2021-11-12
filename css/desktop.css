@@ -1,0 +1,27 @@
+  /* CABECERA */
+  /*******************************/
+header{
+    grid-template-columns: 25% 45% 10% auto;
+}
+.logo img{
+    padding: 1.25rem;
+}
+.main-nav{
+    grid-area: 2/2/3/5;
+    border-right: none;
+}
+.main-nav ul > li {
+    padding: 0rem 1rem;
+}
+.search{
+    display: none;
+}
+
+  /* FOOTER */
+  /*******************************/
+.footer-main-links{
+    flex-direction: column;
+}
+.footer-logo img{
+    width: 90%;
+}
