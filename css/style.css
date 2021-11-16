@@ -12,6 +12,7 @@
     --background-hover-color: #F8F8F8;
     --background-overlay-color: #000000;
     --background-menu-responsive: #ededed;
+    --background-cards: #F6F6F6;
     --error-color: #721c24;
     --success-color: #155724;
     --info-color: #004085;
@@ -421,13 +422,27 @@
   .main-wrapper{
     padding: 5rem 8rem; 
   }
-  .main-wrapper::before{
+  .index::before{
     content: '';
     width: 100%;
     height: 16.25rem;
     position: absolute;
     right: 8rem;
-    top: 30rem;
+    top: 28rem;
+    background-image: url(../images/informacion-b.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size:contain;
+    opacity: .05;
+    z-index: -3;
+  }
+  .incidencia::before{
+    content: '';
+    width: 100%;
+    height: 16.25rem;
+    position: absolute;
+    right: 8rem;
+    top: 28rem;
     background-image: url(../images/alta-incidencias-b.png);
     background-position: right;
     background-repeat: no-repeat;
@@ -435,9 +450,45 @@
     opacity: .05;
     z-index: -3;
   }
+  .mapa::before{
+    content: '';
+    width: 100%;
+    height: 16.25rem;
+    position: absolute;
+    right: 8rem;
+    top: 28rem;
+    background-image: url(../images/mapa-incidencias-b.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size:contain;
+    opacity: .05;
+    z-index: -3;
+  }
+  .cabildo::before{
+    content: '';
+    width: 100%;
+    height: 16.25rem;
+    position: absolute;
+    right: 8rem;
+    top: 28rem;
+    background-image: url(../images/cabildo-responde-b.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size:contain;
+    opacity: .05;
+    z-index: -3;
+  }
   .main-wrapper h2{
-    margin-bottom: 4rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-bottom: .5em;
     font-size: 2rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .main-wrapper p{
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+    color: var(--text-color);
   }
   fieldset{
     display: grid;
@@ -457,6 +508,138 @@
     align-items: center;
     margin-left: .75rem;
   }
+
+
+
+ /* INDEX */
+  /*******************************/
+    .procedimientos{
+      margin: 3rem 0 7rem 0;
+    }
+    .listado-procedimientos{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .item-procedimiento{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 12rem;
+      height: 13rem;
+      background: linear-gradient(135.63deg, #FFFFFF -1.13%, #FEFEFE 48.17%, #F6F6F6 100%);
+      box-shadow: -2px -2px 2px rgba(26, 46, 53, 0.04), 2px 2px 2px #FFFFFF, 4px 4px 16px rgba(255, 255, 255, 0.72), -4px -4px 16px rgba(26, 46, 53, 0.04);
+      border-radius: 8px;
+    }
+    .listado-procedimientos a{
+      font-family: 'Open Sans',sans-serif;
+      font-weight: 500;
+      color: var(--text-color);
+      font-size: .875rem;
+    }
+    .listado-procedimientos img{
+      max-width: 8rem;
+      width: 5rem;
+      height: auto;
+    }
+    .listado-procedimientos:hover .item-procedimiento{
+      filter:blur(3px);
+      opacity:.5;
+      transform: scale(.98);
+      box-shadow:none;
+    }
+    .listado-procedimientos:hover .item-procedimiento:hover{
+      transform:scale(1.1);
+      filter:blur(0px);
+      opacity:1;
+      box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+    }
+    .procedimientos::before{
+      content: '';
+      width: 100%;
+      height: 13rem;
+      margin-top: 3rem;
+      position: absolute;
+      left: 0;
+      background-color: var(--background-cards);
+      z-index: -1;
+    }
+    .item-indent{
+      padding-top: .7em;
+      padding-left: 2.5rem;
+    }
+    .app-justificacion{
+      padding-right: 2.125rem;
+    }
+    .aplicaciones-moviles{
+      display: grid;
+      grid-template-columns: 65% 35%;
+      grid-template-rows: 100%;
+      align-items: center;
+    }
+    .aplicaciones-moviles a{
+      color: var(--title-color);
+    }
+    .aplicaciones-moviles a:hover{
+      color: var(--primary-color);
+    }
+    .aplicaciones-moviles .fas{
+      font-size: .8rem;
+      padding-right: .5em;
+    }
+    .app-descargas{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: auto;
+    }
+    .content-app-descargas{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      height: 6rem;
+      background: linear-gradient(135.63deg, #FFFFFF -1.13%, #FEFEFE 48.17%, #F6F6F6 100%);
+      box-shadow: -2px -2px 2px rgba(26, 46, 53, 0.04), 2px 2px 2px #FFFFFF, 4px 4px 16px rgba(255, 255, 255, 0.72), -4px -4px 16px rgba(26, 46, 53, 0.04);
+      border-radius: 8px;
+    }
+    .header-app-descargas{
+      width: 100%;
+      height: 2rem;
+      background-color: var(--background-overlay-color);
+      color: var(--text-banner-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: .875rem;
+      box-shadow: 2px 2px 4px rgba(26, 46, 53, 0.04), -2px -2px 1px #FFFFFF, -4px -4px 34px rgba(255, 255, 255, 0.88), 4px 4px 34px rgba(26, 46, 53, 0.24);
+      border-radius: 8px 8px 0px 0px;
+    }
+    .content-app-descargas img{
+      max-height: 4.375rem;
+    }
+    .content-app-descargas span{
+      padding: 0.5em 4em;
+      background-color: var(--primary-color);
+      text-transform: uppercase;
+      color: var(--text-banner-color);
+      font-size: .875rem;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .content-app-descargas span:hover{
+      opacity: .8;
+    }
+
+
+  /* ALTA INCIDENCIA OLD */
   /*******************************/
   .l-tipo{
     grid-area: 1/1/2/2;
@@ -538,6 +721,9 @@
   }
   /*******************************/
   
+
+    /* ALTA INCIDENCIA  */
+  /*******************************/
   .formulario-incidencia{
     display: flex;
     flex-direction: column;

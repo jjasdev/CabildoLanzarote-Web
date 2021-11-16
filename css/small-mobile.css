@@ -1,3 +1,15 @@
+/* WRAPPER */
+/*******************************/
+.procedimientos::before{
+    height: 41rem;
+}
+.content-app-descargas span{
+    padding: 0.5em 2em;
+}
+.content-app-descargas img{
+    display: none;
+}
+
 /* FOOTER */
 /*******************************/
 .recortar-links{

@@ -10,6 +10,9 @@
 h1{
     padding: 2rem 5rem;
 }
+.listado-procedimientos{
+    gap: 2.05rem;
+}
 
 /* FOOTER */
 /*******************************/

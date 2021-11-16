@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/desktop.css" media="(max-width: 1199px)">
     <link rel="stylesheet" href="css/tablet.css" media="(max-width: 991px)">
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)">
-    <link rel="stylesheet" href="css/small-mobile.css" media="(max-width: 576px)">
+    <link rel="stylesheet" href="css/small-mobile.css" media="(max-width: 441px)">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -106,42 +106,115 @@
             <div class="migas">
                 <a aria-label="Ir a Página web del Cabildo de Lanzarote" title="Ir a Página web del Cabildo de Lanzarote" href="https://www.cabildodelanzarote.com/" target="_blank"><span>Cabildo de Lanzarote </span></a>
                 <i class="fas fa-chevron-right"></i>
-                <span> Información</span>
+                <span> Alta de incidencias</span>
             </div>
-            <h1>Información</h1>
+            <h1>Alta de incidencias</h1>
         </section>
-        <section class="main-wrapper index">
-            <h2>Bienvenido</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nemo ipsa, laborum officia exercitationem quo incidunt. Doloribus voluptates in voluptate!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, excepturi minima nostrum dolore ipsum laboriosam incidunt dolorum rerum vitae aperiam sed tenetur obcaecati quas officiis repellendus ut ipsam reiciendis ratione quos, alias illo! Veritatis totam aliquam quidem accusantium, rem iusto officia soluta, inventore corporis sit quas quod maxime veniam doloremque assumenda delectus voluptatum sequi dolor similique iure dignissimos quia adipisci voluptatibus. Quam accusantium obcaecati et libero maiores minima nesciunt, facilis tenetur nisi esse. Dicta assumenda hic animi modi eos commodi harum consequatur expedita delectus placeat, inventore iure praesentium enim. Sed et repudiandae repellendus odit magnam odio unde ut, obcaecati voluptatibus!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum alias corporis, iure inventore explicabo atque ipsam nobis? Nesciunt, excepturi rerum.</p>
-            <div class="procedimientos">
-                <ul class="listado-procedimientos">
-                    <a aria-label="Dar alta incidencia" title="Dar alta incidencia" href="alta-incidencia.html"><li class="item-procedimiento"><img class="icon-index" src="images/alta-incidencias-byn.png" alt="Icono alta de incidencias" title="Icono alta de incidencias"><span>Alta de incidencias</span></li></a>
-                    <a aria-label="Ir a Mapa de incidencias" title="Ir a Mapa de incidencias" href="mapa-incidencias.html"><li class="item-procedimiento"><img class="icon-index" src="images/mapa-incidencias-byn.png" alt="Icono mapa de incidencias" title="Icono mapa de incidencias"><span>Mapa de incidencias</span></li></a>
-                    <a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="le-llamamos.html"><li class="item-procedimiento"><img class="icon-index" src="images/cabildo-responde-byn.png" alt="Icono Le llamamos" title="Icono Le llamamos"><span>Le llamamos</span></li></a>
-                    <a aria-label="Ir al Buzón del Ciudadano" title="Ir al Buzón del Ciudadano" href="buzon-ciudadano.html"><li class="item-procedimiento"><img class="icon-index" src="images/buzon-ciudadano-byn.png" alt="Icono buzón del ciudadano" title="Icono buzón del ciudadano"><span>Buzón del ciudadano</span></li></a>
-                </ul>
-            </div>
-            <h2>Aplicación móvil</h2>          
-            <div class="aplicaciones-moviles">
-                <div class="app-justificacion">
-                    <p>Esta aplicación engloba un conjunto de servicios de comunicación que el <a aria-label="Ir al Cabildo de Lanzarote" title="Ir al Cabildo de Lanzarote" href="https://www.cabildodelanzarote.com/" target="_blank">Cabildo de Lanzarote</a> pone a disposición de los ciudadanos para facilitar sus gestiones de forma telemática.</p>
-                    <p class="item-indent"><i class="fas fa-grip-lines"></i> <span> Se podrán notificar incidencias en la vía urbana, pudiendo geolocalizarla y adjuntar una fotografía de la misma.</span></p>
-                    <p class="item-indent"><i class="fas fa-grip-lines"></i> <span> Consultar las incidencias notificadas y el estado en el que se encuentran las mismas.</span></p>
-                    <p class="item-indent"><i class="fas fa-grip-lines"></i> <span> Recibir atención personalizada a través de las diferentes vías.</span></p>
-                    <p class="item-indent"><i class="fas fa-grip-lines"></i> <span> Acceder al buzón y calendario del contribuyente.</span></p>
-                </div>
-                <div class="app-descargas">
-                    <div class="header-app-descargas">
-                        <span>Aplicación móvil</span>
+        <section class="main-wrapper">
+            <h2>Incidencia</h2>
+            <form  method="post" action="incidencia.php" class="formulario-incidencia">        
+                <fieldset>       
+                    <div class="label-formulario l-tipo">
+                        <label for="tipo-incidencia"><span>Tipo </span><span class="obligatorio">*</span></label>
                     </div>
-                    <div class="content-app-descargas">
-                        <img src="images/favicon.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote">
-                        <a aria-label="Descargar la Aplicación móvil" title="Descargar la Aplicación móvil" href="#"><span>Descargar</span></a>
+                    <div class="campo-formulario c-tipo">
+                        <select id="tipo-incidencia" name="tipo-incidencia" aria-label="Seleccionar el tipo de incidencia" title="Seleccionar el tipo de incidencia">
+                            <option value="15">Aparcamientos Públicos.</option>
+                            <option value="22">Agua Potable.</option>
+                            <option value="23">Alcantarillado.</option>
+                            <option value="26">Limpiezas.</option>
+                            <option value="28">Mobiliario Público.</option>
+                            <option value="30">Parques y Jardines.</option>
+                            <option value="25">Plagas.</option>
+                            <option value="27">Tráfico.</option>
+                            <option value="29">Vías Públicas.</option>
+                            <option value="24">Alumbrado.</option>
+                            <option value="31">Solares.</option>
+                            <option value="32">Urbanismo.</option>
+                        </select>
                     </div>
-                </div>
-            </div>
+                    <div class="label-formulario l-nif">
+                        <label for="nif"><span>NIF/DNI </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-nif">
+                        <input aria-label="Introducir NIF" title="Introducir NIF" class="text" type="text" id="nif" name="nif" maxlength="9" required>
+                    </div>
+                    <div class="label-formulario l-nombre">
+                        <label for="nombre"><span>Nombre </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-nombre">
+                        <input aria-label="Introducir nombre" title="Introducir nombre" class="text" type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="label-formulario l-prmapellido">
+                        <label for="primer-apellido"><span>Primer apellido </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-prmapellido">
+                        <input aria-label="Introducir Primer apellido" title="Introducir Primer apellido" class="text" type="text" id="primer-apellido" name="primer-apellido" maxlength="9" required>
+                    </div>
+                    <div class="label-formulario l-segapellido">
+                        <label for="segundo-apellido"><span>Segundo apellido </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-segapellido">
+                        <input aria-label="Introducir Segundo apellido" title="Introducir Segundo apellido" class="text" type="text" id="segundo-apellido" name="segundo-apellido" required>
+                    </div>
+                    <div class="label-formulario l-email">
+                        <label for="email"><span>Email </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-email">
+                        <input aria-label="Introducir Email" title="Introducir Email" class="text" type="email" id="email" name="email" maxlength="30" required>
+                    </div>
+                    <div class="label-formulario l-fijo">
+                        <label for="tel-fijo"><span>Teléfono fijo </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-fijo">
+                        <input aria-label="Introducir Prefijo del Teléfono fijo" title="Introducir Prefijo del teléfono fijo" class="prefijo" type="text" name="prefijo-tel-fijo" autocomplete="off" id="prefijo-tel-fijo" maxlength="3" value="+34" required/>
+                        <input aria-label="Introducir Teléfono fijo" title="Introducir Teléfono fijo" type="text" pattern="^[0-9,$]*$" name="tel-fijo" autocomplete="off" id="tel-fijo" maxlength="9" placeholder="9XXXXXXXX" value="" required/>
+                    </div>
+                    <div class="label-formulario l-movil">
+                        <label for="tel-movil"><span>Teléfono móvil </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-movil">
+                        <input aria-label="Introducir Prefijo del Teléfono móvil" title="Introducir Prefijo del teléfono móvil" class="prefijo" type="text" name="prefijo-tel-movil" autocomplete="off" id="prefijo-tel-movil" maxlength="3" value="+34" required/>
+                        <input aria-label="Introducir Teléfono móvil" title="Introducir Teléfono móvil" type="text" pattern="^[0-9,$]*$" autocomplete="off" id="tel-movil" maxlength="9" placeholder="6XXXXXXXX" value="" required/>
+                    </div>
+                    <div class="label-formulario l-observaciones">
+                        <label for="observaciones"><span>Observaciones </span><span class="obligatorio">*</span></label>
+                    </div>
+                    <div class="campo-formulario c-observaciones">
+                        <textarea aria-label="Introducir Observaciones" title="Introducir Observaciones" id="observaciones" name="observaciones" maxlength="255" required></textarea>
+                    </div>
+                    <div class="label-formulario l-direccion">
+                        <label for="direccion"><span>Dirección </span><a class="geolocalizacion" title="Obtener posicionamiento en mapa a partir de la dirección"><i class="fas fa-map-marker-alt icon-item marker"></i></a></label>
+                    </div>
+                    <div class="campo-formulario c-direccion">
+                        <input aria-label="Introducir Dirección" title="Introducir Dirección" class="text" type="text" id="direccion" name="direccion" value="Avenida Fred Olsen, s/n 35500 Arrecife-Lanzarote" required>
+                    </div>
+                    <div class="label-formulario l-coordenadas">
+                        <label for="coordenadas"><span>Coordenadas </span></label>
+                    </div>
+                    <div class="campo-formulario c-coordenadas">
+                        
+                    </div>
+                    <div class="label-formulario l-foto">
+                        <label for="file"><span>Foto </span></label>
+                    </div>
+                    <div class="campo-formulario c-foto">
+                        <label for="file" class="subir-foto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                            <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> 
+                            <span>Seleccione una imagen</span>
+                        </label>
+                        <input class="hide" aria-label="Seleccionar imagen" title="Seleccionar imagen" type="file" id="file" name="file" />
+                    </div>
+                    <div class="label-formulario l-verificacion">
+                        <label for="verificacion"><span>Verificación </span></label>
+                    </div>
+                    <div class="campo-formulario c-verificacion">
+                        
+                    </div>
+                </fieldset>
+                <input class="boton-enviar-incidencia" id="submit" name="submit" type="submit" value="Enviar">
+            </form>
         </section>
     </div>
     <!-- FOOTER -->
@@ -158,7 +231,7 @@
             <div class="footer-main-links">
                 <ul class="recortar-links">
                     <li><a aria-label="Ir a Aviso legal" title="Ir a Aviso legal" href="https://www.cabildodelanzarote.com/aviso-legal" target="_blank"><span>Aviso legal</span></a></li>
-                    <li><a aria-label="Ir a Condiciones de uso" title="Ir a Condiciones de uso" href="https://www.cabildodelanzarote.com/condiciones-de-uso" target="_blank"><span>Condiciones de uso</span></a></li>
+                    <li><a aria-label="Ir a Condiciones de uso" title="Ir a Condiciones de uso" href="https://www.cabildodelanzarote.com/condiciones-de-uso"><span>Condiciones de uso</span></a></li>
                 </ul>
                 <ul class="recortar-links">
                     <li><a aria-label="Ir a Protección de datos" title="Ir a Protección de datos" href="https://www.cabildodelanzarote.com/protecci%C3%B3n-de-datos" target="_blank"><span>Protección de datos</span></a></li>
@@ -168,7 +241,7 @@
             <div class="footer-w3c-links">
                 <ul>
                     <li><a aria-label="Ir a HTML5" title="Ir a HTML5" href="http://validator.w3.org/check?uri=referer" target="_blank"><span>HTML5</span></a></li> 
-                    <li><a aria-label="Ir a CSS3" title="Ir a CSS3" href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3 target="_blank""><span>CSS3</span></a></li> 
+                    <li><a aria-label="Ir a CSS3" title="Ir a CSS3" href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" target="_blank"><span>CSS3</span></a></li> 
                     <li><a aria-label="Ir a WAI AA" title="Ir a WAI AA" href="https://www.w3.org/WAI/WCAG1AAA-Conformance" target="_blank"><span>WAI 'AA'</span></a></li> 
                 </ul>
             </div>
