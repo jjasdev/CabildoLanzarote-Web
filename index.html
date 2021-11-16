@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="css/small-mobile.css" media="(max-width: 441px)">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body >
     <!-- CABECERA -->
-    <div class="overlay"></div>
     <header>
         <div class="logo">
-            <a href="#"><img src="images/logo-cabildo-lanzarote.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote"></a>
+            <a href="https://www.cabildodelanzarote.com/"><img src="images/logo-cabildo-lanzarote.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote"></a>
         </div>        
         <div class="portal-nav">
             <ul>
@@ -40,24 +40,28 @@
         </div>
         <nav class="main-nav">
             <ul class="nav-menu">
-                <button class="close-btn"><a aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a></button>
-                <li class="item-principal first-link"><a aria-label="Ir a Información" title="Ir a Información" href="#"><img class="icon-main-nav" src="images/icono-informacion.png" alt="Icono información general" title="Icono información general"><span>Información</span></a></li>
-                <li class="item-principal first-link"><a aria-label="Dar alta incidencia" title="Dar alta incidencia" href="#"><img class="icon-main-nav" src="images/icono-alta-incidencias.png" alt="Icono alta de incidencias" title="Icono alta de incidencias"><span class="active">Alta de incidencias</span></a></li>
-                <li class="item-principal first-link"><a aria-label="Ir a Mapa de incidencias" title="Ir a Mapa de incidencias" href="#"><img class="icon-main-nav" src="images/icono-mapa-incidencias.png" alt="Icono mapa de incidencias" title="Icono mapa de incidencias"><span>Mapa de incidencias</span></a></li>
-                <li class="item-principal last-link"><a aria-label="Ir a El Cabildo responde" title="Ir a El Cabildo responde" href="#"><img class="icon-main-nav" src="images/icono-cabildo-responde.png" alt="Icono El Cabildo responde" title="Icono El Cabildo responde"><span>El Cabildo responde</span></a>
+                <div class="cabecera-menu-responsive">
+                    <img src="images/favicon.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote">
+                    <span>Menú</span>
+                    <button class="close-btn"><a aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a></button>
+                </div>                
+                <li class="item-principal first-link"><a aria-label="Ir a Información" title="Ir a Información" href="#"><img class="icon-main-nav" src="images/icono-informacion.png" alt="Icono información general" title="Icono información general"><span>Información</span><i class="fas fa-chevron-right btn-responsive"></i></a></li>
+                <li class="item-principal"><a aria-label="Dar alta incidencia" title="Dar alta incidencia" href="#"><img class="icon-main-nav" src="images/icono-alta-incidencias.png" alt="Icono alta de incidencias" title="Icono alta de incidencias"><span class="active">Alta de incidencias</span><i class="fas fa-chevron-right btn-responsive"></i></a></li>
+                <li class="item-principal"><a aria-label="Ir a Mapa de incidencias" title="Ir a Mapa de incidencias" href="#"><img class="icon-main-nav" src="images/icono-mapa-incidencias.png" alt="Icono mapa de incidencias" title="Icono mapa de incidencias"><span>Mapa de incidencias</span><i class="fas fa-chevron-right btn-responsive"></i></a></li>
+                <li class="item-principal last-link"><a aria-label="Ir a El Cabildo responde" title="Ir a El Cabildo responde" href="#"><img class="icon-main-nav" src="images/icono-cabildo-responde.png" alt="Icono El Cabildo responde" title="Icono El Cabildo responde"><span>El Cabildo responde</span><i class="fas fa-chevron-down btn-responsive"></i></a>
                     <ul class="submenu">
-                        <li><a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="#"><i class="fas fa-phone icon-item"></i><span>Le llamamos</span></a></li>
-                        <li><a aria-label="Ir a El buzón del ciudadano" title="Ir a El buzón del ciudadano" href="#"><i class="far fa-envelope icon-item"></i><span>Buzón ciudadano</span></a></li>
+                        <li><a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="#"><i class="fas fa-phone icon-item"></i><i class="icon-item-submenu"></i><span>Le llamamos</span></a></li>
+                        <li><a aria-label="Ir a El buzón del ciudadano" title="Ir a El buzón del ciudadano" href="#"><i class="far fa-envelope icon-item"></i><i class="icon-item-submenu"></i><span>Buzón ciudadano</span></a></li>
                     </ul>
                 </li>
             </ul>
         </nav>    
         <div class="contact-nav">
-            <ul>
+            <ul class="contact-links">
                 <li><a aria-label="Ir a Teléfonos" title="Ir a Teléfonos" href="https://www.cabildodelanzarote.com/tel%C3%A9fonos"><i class="fas fa-phone icon-item"></i></a></li>
                 <li><a aria-label="Ir a Localización" title="Ir a Localización" href="https://www.cabildodelanzarote.com/localizaci%C3%B3n"><i class="fas fa-map-marker-alt icon-item"></i></a></li>
                 <li><a aria-label="Ir a Contacto" title="Ir a Contacto" href="https://www.cabildodelanzarote.com/contacto"><i class="far fa-envelope icon-item"></i></a></li>
-                <li><a aria-label="Buscar" title="Buscar" href="#"><i class="fas fa-search icon-item"></i></a></li>
+                <li><a aria-label="Buscar" title="Buscar" href="#" class="buscar"><i class="fas fa-search icon-item"></i></a></li>
             </ul>
         </div>
         <div class="search">
@@ -66,6 +70,38 @@
     </header>
     <!-- CONTENIDO -->
     <div class="wrapper">
+        <section class="wrapper-menu hide">
+            <div class="wrapper-logo">
+                <a href="https://www.cabildodelanzarote.com/"><img src="images/logo-cabildo-lanzarote.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote"></a>
+            </div> 
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="item-principal first-link"><a aria-label="Ir a Información" title="Ir a Información" href="#"><img class="icon-main-nav" src="images/icono-informacion.png" alt="Icono información general" title="Icono información general"><span>Información</span><i class="fas fa-chevron-right btn-responsive"></i></a></li>
+                    <li class="item-principal"><a aria-label="Dar alta incidencia" title="Dar alta incidencia" href="#"><img class="icon-main-nav" src="images/icono-alta-incidencias.png" alt="Icono alta de incidencias" title="Icono alta de incidencias"><span class="active">Alta de incidencias</span><i class="fas fa-chevron-right btn-responsive"></i></a></li>
+                    <li class="item-principal"><a aria-label="Ir a Mapa de incidencias" title="Ir a Mapa de incidencias" href="#"><img class="icon-main-nav" src="images/icono-mapa-incidencias.png" alt="Icono mapa de incidencias" title="Icono mapa de incidencias"><span>Mapa de incidencias</span><i class="fas fa-chevron-right btn-responsive"></i></a></li>
+                    <li class="item-principal last-link"><a aria-label="Ir a El Cabildo responde" title="Ir a El Cabildo responde" href="#"><img class="icon-main-nav" src="images/icono-cabildo-responde.png" alt="Icono El Cabildo responde" title="Icono El Cabildo responde"><span>El Cabildo responde</span><i class="fas fa-chevron-down btn-responsive"></i></a>
+                        <ul class="submenu">
+                            <li><a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="#"><i class="fas fa-phone icon-item"></i><i class="icon-item-submenu"></i><span>Le llamamos</span></a></li>
+                            <li><a aria-label="Ir a El buzón del ciudadano" title="Ir a El buzón del ciudadano" href="#"><i class="far fa-envelope icon-item"></i><i class="icon-item-submenu"></i><span>Buzón ciudadano</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav> 
+            <div class="wrapper-search">
+                <button class="buscar"><a aria-label="Buscar" title="Buscar" href="#"><i class="fas fa-search icon-item"></i></a></button>                    
+            </div>
+        </section>
+        <section class="search-page">
+            <div class="header-search">
+                <img src="images/favicon.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote">
+                <span>Búsqueda</span>
+                <button class="close-btn-search"><a aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a></button>
+            </div>
+            <div class="main-search">
+                <label for="busqueda-general">Buscar en la web</label>
+                <input type="search" aria-label="Buscar" title="Buscar" class="input" placeholder="Buscar en la web" id="busqueda-general" name="busqueda-general">   
+            </div>
+            </section>
         <section class="banner">
             <div class="migas">
                 <a aria-label="Ir a Página web del Cabildo de Lanzarote" title="Ir a Página web del Cabildo de Lanzarote" href="https://www.cabildodelanzarote.com/"><span>Cabildo de Lanzarote </span></a>
@@ -157,7 +193,7 @@
                         <label for="coordenadas"><span>Coordenadas </span></label>
                     </div>
                     <div class="campo-formulario c-coordenadas">
-                        <textarea aria-label="Introducir Coordenadas" title="Introducir Coordenadas" id="coordenadas" name="coordenadas" maxlength="255" required></textarea>
+                        
                     </div>
                     <div class="label-formulario l-foto">
                         <label for="file"><span>Foto </span></label>
@@ -172,6 +208,9 @@
                     </div>
                     <div class="label-formulario l-verificacion">
                         <label for="verificacion"><span>Verificación </span></label>
+                    </div>
+                    <div class="campo-formulario c-verificacion">
+                        
                     </div>
                 </fieldset>
                 <input class="boton-enviar-incidencia" id="submit" name="submit" type="submit" value="Enviar">
@@ -211,5 +250,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/main.js"></script>
+
 </body>
 </html>

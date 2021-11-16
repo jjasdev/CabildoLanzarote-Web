@@ -16,6 +16,9 @@ header{
 .search{
     display: none;
 }
+.contact-links li:last-child{
+    display:block;
+}
 
   /* FOOTER */
   /*******************************/
