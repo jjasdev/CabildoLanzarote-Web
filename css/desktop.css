@@ -19,6 +19,12 @@ header{
 .contact-links li:last-child{
     display:block;
 }
+.content-app-descargas span{
+    padding: 0.5em 2em;
+}
+.en-construccion img{
+    width: 70%;
+}
 
   /* FOOTER */
   /*******************************/

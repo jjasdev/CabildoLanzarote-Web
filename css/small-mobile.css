@@ -1,13 +1,53 @@
 /* WRAPPER */
 /*******************************/
+.migas {
+    padding: 2rem 3rem;
+}
+.main-wrapper{
+    padding: 3rem; 
+}
+h1{
+    padding: 2rem 3rem;
+}
+.procedimientos {
+    margin: 3rem 0 ;
+}
+.listado-procedimientos{
+    gap: 2.05rem;    
+}
+.index::before,
+.incidencia::before,
+.cabildo::before,
+.mapa::before{
+    right: 3rem;
+}
 .procedimientos::before{
-    height: 41rem;
+    height: 32rem;
+    margin-top: 5rem;
 }
 .content-app-descargas span{
-    padding: 0.5em 2em;
+    padding: 0.5em 1em;
 }
 .content-app-descargas img{
-    display: none;
+    max-height: 3rem;
+}
+.listado-procedimientos a{
+    width: 100%; 
+    font-size: 1rem;   
+}
+.listado-procedimientos img {
+    padding-right: 1.5em;
+}
+.item-procedimiento{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 9rem;
+    padding: 0 2em;
+}
+.item-indent {
+    padding-left: 1.5rem;
 }
 
 /* FOOTER */

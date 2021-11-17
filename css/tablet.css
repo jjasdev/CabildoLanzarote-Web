@@ -190,6 +190,9 @@ fieldset{
     margin-left: 0;
     width: 100%;
 }
+.procedimientos {
+    margin: 3rem 0 5rem 0;
+}
 .procedimientos::before{
     margin-top: 9.2rem;
   }
@@ -205,6 +208,20 @@ fieldset{
 .app-justificacion{
     padding-right: 0;
     padding-bottom: 2.125rem;
+}
+.content-app-descargas span{
+    padding: 0.5em 2.5em;
+}
+.informacion-personal,
+.informacion-incidencia,
+.informacion-adicional,
+.informacion-adjunta{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+fieldset h3{
+    padding-bottom: .75rem;
 }
 
 /* FOOTER */

@@ -55,7 +55,16 @@ function validarInput() {
       return false;
     }
     return true;
-  }
+}
+function posicionarMenu() {
+    var altura_del_header = $('header').outerHeight(true);
+    if (($(window).scrollTop() >= altura_del_header) && (!responsive)){
+        $('.wrapper-menu').removeClass('hide', 5000, 'swing');
+    }
+    else{
+        $('.wrapper-menu').addClass('hide', 5000, 'swing');
+    }
+}
 
 //CÓDIGO
 //*********************************/
@@ -86,23 +95,12 @@ mediaQuery991.addEventListener('change', function() {
     }
   }); 
 
-//Menú Responsive
+//Menú Fijo
 //*********************************/
-posicionarMenu();
- 
+posicionarMenu(); 
 $(window).scroll(function() {    
     posicionarMenu();
 });
- 
-function posicionarMenu() {
-    var altura_del_header = $('header').outerHeight(true);
-    if (($(window).scrollTop() >= altura_del_header) && (!responsive)){
-        $('.wrapper-menu').removeClass('hide', 5000, 'swing');
-    }
-    else{
-        $('.wrapper-menu').addClass('hide', 5000, 'swing');
-    }
-}
  
 //Menú Responsive
 //*********************************/

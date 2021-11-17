@@ -490,25 +490,6 @@
     font-weight: 400;
     color: var(--text-color);
   }
-  fieldset{
-    display: grid;
-    grid-template-columns: 20% 30% auto 30%;
-    grid-template-rows: repeat(9, auto);
-    grid-row-gap: 1rem;
-    border: none;
-  }
-  .label-formulario{
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-  }
-  .campo-formulario{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: .75rem;
-  }
-
 
 
  /* INDEX */
@@ -637,158 +618,201 @@
     .content-app-descargas span:hover{
       opacity: .8;
     }
+       
 
-
-  /* ALTA INCIDENCIA OLD */
-  /*******************************/
-  .l-tipo{
-    grid-area: 1/1/2/2;
+      /* PÁGINAS FORMULARIOS  */
+    /*******************************/
+    .formulario-incidencia{
+      display: flex;
+      flex-direction: column;
+    }  
+    fieldset{
+      border: none;
+    }
+    .campo-formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    fieldset input,
+    fieldset textarea,
+    fieldset select{
+      border-radius: 3px;    
+      line-height: 1.5;
+      padding: 0rem .625rem;
+      margin-bottom: .625rem;
+      border: 1px solid var(--form-border-color);
+      background-color: var(--form-background);
+      display: block;
+      width: 100%;
+    }
+    fieldset input,
+    fieldset select{    
+      height: 1.75rem;
+    }
+    fieldset textarea{
+      height: 5rem;
+    }
+    fieldset select{    
+      cursor: pointer;
+    }
+    fieldset input:focus,
+    fieldset textarea:focus,
+    fieldset select:focus {
+      border-color: var(--title-color);
+      box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.6);
+      outline: 0 none;
+    }
+    fieldset input:focus:required:invalid{
+      border-color: var(--primary-color);
+      box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(202, 9, 40, 0.6);;
+      outline: 0 none;
   }
-  .c-tipo{
-    grid-area: 1/2/2/3;
+  fieldset input::placeholder{
+      color: var(--text-secondary-color);
+  } 
+  fieldset span {
+      font-family: 'Open Sans',sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--title-color);
   }
-  .l-nif{
-    grid-area: 2/1/3/2;
+  fieldset label{
+    padding-bottom: .5rem;
   }
-  .c-nif{
-    grid-area: 2/2/3/3;
-  }
-  .l-nombre{
-    grid-area: 2/3/3/4;
-  }
-  .c-nombre{
-    grid-area: 2/4/3/5;
-  }
-  .l-prmapellido{
-    grid-area: 3/1/4/2;
-  }
-  .c-prmapellido{
-    grid-area: 3/2/4/3;
-  }
-  .l-segapellido{
-    grid-area: 3/3/4/4;
-  }
-  .c-segapellido{
-    grid-area: 3/4/4/5;
-  }
-  .l-email{
-    grid-area: 4/1/5/2;
-  }
-  .c-email{
-    grid-area: 4/2/5/3;
-  }
-  .l-fijo{
-    grid-area: 5/1/6/2;
-  }
-  .c-fijo{
-    grid-area: 5/2/6/3;
-  }
-  .l-movil{
-    grid-area: 5/3/6/4;
-  }
-  .c-movil{
-    grid-area: 5/4/6/5;
-  }
-  .l-observaciones{
-    grid-area: 6/1/7/2;
-  }
-  .c-observaciones{
-    grid-area: 6/2/7/3;
-  }
-  .l-direccion{
-    grid-area: 7/1/8/2;
-  }
-  .c-direccion{
-    grid-area: 7/2/8/3;
-  }
-  .l-coordenadas{
-    grid-area: 8/1/9/2;
-  }
-  .c-coordenadas{
-    grid-area: 8/2/9/3;
-  }
-  .l-foto{
-    grid-area: 8/3/9/4;
-  }
-  .c-foto{
-    grid-area: 8/4/9/5;
-  }
-  .l-verificacion{
-    grid-area: 9/1/10/2;
-  }
-  .c-verificacion{
-    grid-area: 9/2/10/3;
-  }
-  /*******************************/
-  
-
-    /* ALTA INCIDENCIA  */
-  /*******************************/
-  .formulario-incidencia{
-    display: flex;
-    flex-direction: column;
-  }
-  fieldset input,
-  fieldset textarea,
-  fieldset select{
+  .boton-enviar-formulario{
+    background-color: var(--primary-color);
+    color: var(--text-banner-color);
+    padding: .5em 1em;
     border-radius: 3px;
-    color: var(--text-color);
-    font-size: 1rem;
-    line-height: 1.5;
-    padding: 0rem .625rem;
-    margin-bottom: .625rem;
-    border: 1px solid var(--form-border-color);
-    background-color: var(--form-background);
-    display: block;
-    width: 100%;
+    width: max-content;
+    margin-top: 3rem;
+    cursor: pointer;
+    align-self: center;
   }
-  fieldset input,
-  fieldset select{    
-    height: 1.75rem;
+  .boton-enviar-formulario:hover{
+    opacity: .8;
   }
-  fieldset select{    
+  .prefijo{
+    width: 30%;
+    margin-right: 1em;
+  }
+  .marker{
+    cursor:pointer;
+    font-size: 1.5em;
+    padding-left: .5em;
+  }
+  .subir-foto{
     cursor: pointer;
   }
-  fieldset input:focus,
-  fieldset textarea:focus,
-  fieldset select:focus {
-    border-color: var(--title-color);
-    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.6);
-    outline: 0 none;
+  .informacion-personal{
+    display: grid;
+    grid-template-columns: auto 35% 35%;
+    grid-template-rows: repeat(3,auto);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.25rem;
+    gap: 1rem;
   }
-  fieldset input:focus:required:invalid{
-    border-color: var(--primary-color);
-    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(202, 9, 40, 0.6);;
-    outline: 0 none;
- }
- fieldset input::placeholder{
-   color: var(--text-secondary-color);
- }
- .boton-enviar-incidencia{
-   background-color: var(--primary-color);
-   color: var(--text-banner-color);
-   padding: .5em 1em;
-   border-radius: 3px;
-   width: max-content;
-   margin-top: 3rem;
-   cursor: pointer;
-   align-self: center;
- }
- .boton-enviar-incidencia:hover{
-  opacity: .8;
-}
-.prefijo{
-  width: 30%;
-  margin-right: 1em;
-}
-.marker{
-  cursor:pointer;
-  font-size: 1.5em;
-  padding-left: .5em;
-}
-.subir-foto{
-  cursor: pointer;
-}
+  .informacion-incidencia{
+    display: grid;
+    grid-template-columns: auto calc(70% + 1rem);
+    grid-template-rows: repeat(6,auto);
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 2rem;
+    padding-bottom: 1.25rem;
+    gap: 1rem;
+  }
+  .informacion-adicional{
+    display: grid;
+    grid-template-columns: auto calc(70% + 1rem);
+    grid-template-rows: repeat(2,auto);
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 2rem;
+    padding-bottom: 1.25rem;
+    gap: 1rem;
+  }
+  .informacion-adjunta{
+    display: grid;
+    grid-template-columns: auto calc(70% + 1rem);
+    grid-template-rows: repeat(3,auto);
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 2rem;
+    padding-bottom: 1.25rem;
+    gap: 1rem;
+  }
+  .campos-telefono{
+    display: flex;
+    width: 100%;
+  }
+  .cf-nif{
+    grid-area: 1/2/2/3;
+  }
+  .cf-nombre{
+    grid-area: 1/3/2/4;
+  }
+  .cf-apellidos{
+    grid-area: 2/2/3/3;
+  }
+  .cf-email{
+    grid-area: 2/3/3/4;
+  }
+  .cf-fijo{
+    grid-area: 3/2/4/3;
+  }
+  .cf-movil{
+    grid-area: 3/3/4/4;
+  }
+  .cf-tipo{
+    grid-area: 1/2/2/3;
+  }
+  .cf-direccion{
+    grid-area: 2/2/3/3;
+  }
+  .cf-coordenadas{
+    grid-area: 3/2/4/3;
+  }
+  .cf-observaciones{
+    grid-area: 4/2/5/3;
+  }
+  .cf-foto{
+    grid-area: 5/2/6/3;
+  }
+  .cf-verificacion{
+    grid-area: 6/2/7/3;
+  }
+  .cf-asunto{
+    grid-area: 1/2/2/3;
+  }  
+  .cf-adjunto{
+    grid-area: 2/2/3/3;
+  } 
+  .cf-comentario{
+    grid-area: 2/2/3/3;
+  } 
+  .cf-adjunto-2{
+    grid-area: 3/2/4/3;
+  }
+  iframe{
+    width: 100%;
+    height: 15rem;
+    border-radius: 3px;
+  }
+
+
+  /* MAPA INCIDENCIAS */
+  /*******************************/
+  .en-construccion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+  }
+  .en-construccion img{
+    opacity: .05;
+    width: 50%;
+  }
+
 
   /* FOOTER */
   /*******************************/
