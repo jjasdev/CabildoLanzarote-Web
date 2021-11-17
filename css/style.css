@@ -637,7 +637,8 @@
     }
     fieldset input,
     fieldset textarea,
-    fieldset select{
+    fieldset select,
+    .subir-foto{
       border-radius: 3px;    
       line-height: 1.5;
       padding: 0rem .625rem;
@@ -653,6 +654,7 @@
     }
     fieldset textarea{
       height: 5rem;
+      font-family: 'Open Sans',sans-serif;
     }
     fieldset select{    
       cursor: pointer;
@@ -683,6 +685,7 @@
   }
   .boton-enviar-formulario{
     background-color: var(--primary-color);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.2);
     color: var(--text-banner-color);
     padding: .5em 1em;
     border-radius: 3px;
@@ -705,6 +708,23 @@
   }
   .subir-foto{
     cursor: pointer;
+    padding: .2em 1em;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.2);    
+  }
+  .subir-foto:hover{
+    border-color: var(--title-color);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.6);    
+  }
+  .subir-foto:hover span{
+    color: var(--text-color);
+  }
+  .subir-foto span{
+    font-size: .8rem;
+    color: var(--text-secondary-color);
+  }
+  .subir-foto svg{
+    height: .75em;
+    color: var(--text-secondary-color);
   }
   .informacion-personal{
     display: grid;
