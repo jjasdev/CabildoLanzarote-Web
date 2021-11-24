@@ -1,30 +1,25 @@
-/* WRAPPER */
-/*******************************/
 .migas {
-    padding: 2rem 5rem;
     font-size: .625rem;
+    padding: 2rem 5rem
 }
 .main-wrapper{
-    padding: 5rem; 
+    padding: 5rem
 }
 h1{
-    padding: 2rem 5rem;
+    padding: 2rem 5rem
 }
 .listado-procedimientos{
-    gap: 2.05rem;    
+    gap: 2.05rem  
 }
 .index::before,
 .incidencia::before,
 .cabildo::before,
 .mapa::before{
-    right: 5rem;
+    right: 5rem
 }
 .en-construccion img{
-    width: 90%;
+    width: 90%
 }
-
-/* FOOTER */
-/*******************************/
 footer{
-    padding: 3rem 5rem;
+    padding: 3rem 5rem
 }

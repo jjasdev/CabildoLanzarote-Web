@@ -1,5 +1,11 @@
-//VARIABLES
-//*********************************/
+/**
+ * @fileoverview Interactividad Aplicación incidencias Cabildo de Lanzarote
+ * @version 0.1
+ * @author Juanjo Alonso Sánchez <jj.alonso@esla.com>
+ * @copyright cgb@esla.com
+ */
+
+//--Variables
 const body = document.querySelector("body");
 const mediaQuery991 = window.matchMedia('(max-width: 991px)');
 const menuResponsive = document.querySelector(".menu-responsive");
@@ -22,8 +28,12 @@ let responsive = false;
 let salir = false;
 let contadorBusqueda = 0;
 
-//FUNCIONES
-//*********************************/
+//--Funciones
+/**
+  * Comprueba si existe el nodo solicitado
+  * @param  {nodo}
+  * @return  {true/false}
+  */
 function exists(data){
     if (data !== null && data !== undefined){
       return true;    
@@ -31,6 +41,11 @@ function exists(data){
         return false;
     }
 }
+/**
+  * Comprueba si el texto solicitado es de tipo String
+  * @param  {texto}
+  * @return  {true/false}
+  */
 function isString(inputText){
     if(typeof inputText === 'string' || inputText instanceof String){
         return true;    
@@ -38,6 +53,11 @@ function isString(inputText){
         return false;
     }
 }
+/**
+  * Añade o elimina la clase solicitada a un nodo dado
+  * @param  {nodo, clase}
+  * @return  {}
+  */
 function añadirClase(nodo, clase){
     if (isString(clase) && exists(nodo)){
         nodo.classList.add(clase);
@@ -47,7 +67,13 @@ function eliminarClase(nodo, clase){
     if (isString(clase) && exists(nodo)){
         nodo.classList.remove(clase);
     }    
+    
 }
+/**
+  * Valida si hay texto dentro del input
+  * @param  {}
+  * @return  {true/false}
+  */
 function validarInput() {
     const inputSearchValue = document.querySelector("#busqueda-general").value;
     let inputLenght = String(inputSearchValue).length;
@@ -56,6 +82,11 @@ function validarInput() {
     }
     return true;
 }
+/**
+  * Posiciona el menú en la página
+  * @param  {}
+  * @return  {}
+  */
 function posicionarMenu() {
     var altura_del_header = $('header').outerHeight(true);
     if (($(window).scrollTop() >= altura_del_header) && (!responsive)){
@@ -66,11 +97,8 @@ function posicionarMenu() {
     }
 }
 
-//CÓDIGO
-//*********************************/
-
+//--Código
 //Controlar Responsive
-//*********************************/
 //Si es responsive hacemos menú acordeón footer
 if (window.innerWidth < 992){
     responsive = true;
@@ -96,14 +124,12 @@ mediaQuery991.addEventListener('change', function() {
   }); 
 
 //Menú Fijo
-//*********************************/
 posicionarMenu(); 
 $(window).scroll(function() {    
     posicionarMenu();
 });
  
 //Menú Responsive
-//*********************************/
 document.addEventListener("mouseleave", function(event){
     if(responsive && !salir){
         if((event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)) && (cabildoClick)){  
@@ -155,9 +181,7 @@ itemSubmenu.forEach(
     }
 );
 
-
 //Búsqueda
-//*********************************/
 menuBusqueda.forEach(
     function(item) {
         item.addEventListener("click", function(event){
@@ -178,7 +202,6 @@ btnSalirSearch.addEventListener("click", function(){
     document.querySelector("#busqueda-general").value = '';
     contadorBusqueda = 0;
 });
-
 inputSearch.addEventListener("keyup", function(event){
     if( (event.keyCode === 8) && (!validarInput()) ){
         eliminarClase(labelSearch, "active");  
@@ -188,7 +211,6 @@ inputSearch.addEventListener("keyup", function(event){
         contadorBusqueda += 1;     
     }
 });
-
 inputSearch.addEventListener("click", function(){
     eliminarClase(labelSearch, "desaparecer");    
     añadirClase(inputSearch, "borde-rojo");
@@ -205,4 +227,4 @@ document.addEventListener("click", function(event){
         document.querySelector("#busqueda-general").placeholder = 'Buscar en la web';
         contadorBusqueda = 0;
     }
-  }, false);
+}, false);
