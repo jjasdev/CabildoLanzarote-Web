@@ -682,7 +682,7 @@
     color: var(--text-banner-color);
     cursor: pointer;
     margin-top: 3rem;
-    padding: .5em 1em;
+    padding: .8em 1.3em;
     width: max-content
   }
   .boton-enviar-formulario:hover{
@@ -696,31 +696,47 @@
     cursor:pointer;
     font-size: 1.5em;
     padding-left: .5em
-  }
-  .subir-foto{
+  }   
+  .imageup input[type='file']{
+    display: none;
+  }  
+  .imageup-selector{
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.2);
+    color:white;
     cursor: pointer;
-    padding: .2em 1em;
-    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.2)  
+    float: right;
+    font-size: 1.2rem;
+    margin-top: -2rem;
+    padding: .8em
   }
-  .subir-foto:hover{
-    border-color: var(--title-color);
-    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.6)  
+  .imageup-selector:hover{
+    opacity: .8
   }
-  .subir-foto:hover span{
-    color: var(--text-color)
+  .imageup{
+    border-radius: 3px;  
+    border: 1px solid var(--form-border-color);
+    height: 100%;
+    width: 90%
   }
-  .subir-foto span{
-    color: var(--text-secondary-color);
-    font-size: .8rem
-  }
-  .subir-foto svg{
-    color: var(--text-secondary-color);
-    height: .75em
+  .cf-foto .img{
+    background-image: url(../images/imagen-no-disponible.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;    
+    height: 100%;
+    margin: 0 auto;
+    width: 100%
   }
   .informacion-personal{
     border-bottom: 1px solid var(--border-color);
     display: grid;
     gap: 1rem;
+    grid-template-areas:"titulo nif nombre"
+                        ". apellidos email"
+                        ". fijo movil";
     grid-template-columns: auto 35% 35%;
     grid-template-rows: repeat(3,auto);
     padding-bottom: 1.25rem
@@ -729,8 +745,13 @@
     border-bottom: 1px solid var(--border-color);
     display: grid;
     gap: 1rem;
+    grid-template-areas:"titulo tipo"
+                        "foto coordenadas"
+                        ". direccion"
+                        ". observaciones"
+                        ". verificacion";
     grid-template-columns: auto calc(70% + 1rem);
-    grid-template-rows: repeat(6,auto);
+    grid-template-rows: repeat(5,auto);
     margin-top: 2rem;
     padding-bottom: 1.25rem
   }
@@ -738,6 +759,8 @@
     border-bottom: 1px solid var(--border-color);
     display: grid;
     gap: 1rem;
+    grid-template-areas:"titulo asunto"
+                        ". documento-adjunto";
     grid-template-columns: auto calc(70% + 1rem);
     grid-template-rows: repeat(2,auto);
     margin-top: 2rem;
@@ -747,62 +770,71 @@
     border-bottom: 1px solid var(--border-color);
     display: grid;
     gap: 1rem;
+    grid-template-areas:"titulo asunto"
+                        ". comentario"
+                        ". documentos-adjuntos";
     grid-template-columns: auto calc(70% + 1rem);
     grid-template-rows: repeat(3,auto);
     margin-top: 2rem;
     padding-bottom: 1.25rem
+  }
+  .informacion-personal h3,
+  .informacion-incidencia h3,
+  .informacion-adicional h3,
+  .informacion-adjunta h3{
+    grid-area: titulo
   }
   .campos-telefono{
     display: flex;
     width: 100%
   }
   .cf-nif{
-    grid-area: 1/2/2/3
+    grid-area: nif
   }
   .cf-nombre{
-    grid-area: 1/3/2/4
+    grid-area: nombre
   }
   .cf-apellidos{
-    grid-area: 2/2/3/3
+    grid-area: apellidos
   }
   .cf-email{
-    grid-area: 2/3/3/4
+    grid-area: email
   }
   .cf-fijo{
-    grid-area: 3/2/4/3
+    grid-area: fijo
   }
   .cf-movil{
-    grid-area: 3/3/4/4
+    grid-area: movil
   }
   .cf-tipo{
-    grid-area: 1/2/2/3
+    grid-area: tipo
   }
   .cf-direccion{
-    grid-area: 2/2/3/3
+    grid-area: direccion
   }
   .cf-coordenadas{
-    grid-area: 3/2/4/3
+    grid-area: coordenadas
   }
   .cf-observaciones{
-    grid-area: 4/2/5/3
+    grid-area: observaciones
   }
   .cf-foto{
-    grid-area: 5/2/6/3
+    grid-area: foto
   }
   .cf-verificacion{
-    grid-area: 6/2/7/3
+    grid-area: verificacion
   }
   .cf-asunto{
-    grid-area: 1/2/2/3
+    grid-area: asunto
   }  
   .cf-adjunto{
-    grid-area: 2/2/3/3
+    grid-area: documento-adjunto
   } 
   .cf-comentario{
-    grid-area: 2/2/3/3
+    grid-area: comentario
   } 
   .cf-adjunto-2{
-    grid-area: 3/2/4/3
+    grid-area: documentos-adjuntos
   }
   iframe{
     border-radius: 3px;

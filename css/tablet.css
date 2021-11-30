@@ -220,6 +220,13 @@ fieldset{
 fieldset h3{
     padding-bottom: .75rem
 }
+.imageup {
+    height: 15rem;
+    width: 100%;
+}
+.cf-foto .img{
+    background-image: url(../images/app-imagen-no-disponible.jpg);
+  }
 /* FOOTER */
 footer{
     flex-direction: column;

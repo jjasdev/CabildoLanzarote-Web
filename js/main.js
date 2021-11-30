@@ -67,7 +67,6 @@ function eliminarClase(nodo, clase){
     if (isString(clase) && exists(nodo)){
         nodo.classList.remove(clase);
     }    
-    
 }
 /**
   * Valida si hay texto dentro del input
@@ -181,6 +180,15 @@ itemSubmenu.forEach(
     }
 );
 
+//Subida de imagen
+document.querySelector("#file-uploader").addEventListener("change",function(ev){
+      let files = ev.target.files;
+      let image = files[0];
+      let imageURL = URL.createObjectURL(image);
+
+      document.querySelector(".cf-foto .img").style.backgroundImage = "url('"+ imageURL +"')";
+});
+
 //Búsqueda
 menuBusqueda.forEach(
     function(item) {
@@ -198,7 +206,7 @@ btnSalirSearch.addEventListener("click", function(){
     eliminarClase(labelSearch, "desaparecer");
     eliminarClase(labelSearch, "active");
     eliminarClase(inputSearch, "borde-rojo");
-    document.querySelector("#busqueda-general").placeholder = 'Buscar en la web';
+    document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
     document.querySelector("#busqueda-general").value = '';
     contadorBusqueda = 0;
 });
@@ -224,7 +232,7 @@ document.addEventListener("click", function(event){
         añadirClase(labelSearch, "desaparecer");
         eliminarClase(labelSearch, "active");
         eliminarClase(inputSearch, "borde-rojo");
-        document.querySelector("#busqueda-general").placeholder = 'Buscar en la web';
+        document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
         contadorBusqueda = 0;
     }
 }, false);
