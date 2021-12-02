@@ -1,7 +1,7 @@
 /* CABECERA */
 header{
     border-bottom: 1px solid var(--border-color);
-    box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+    box-shadow:0 8px 20px 0 rgba(0,0,0,0.125);
     grid-template-columns: 5em auto 5em;
     grid-template-rows: 100% 0%;
     height: 5rem;
@@ -52,7 +52,7 @@ header .icon-item{
 .main-nav{
     background-color: var(--background-menu-responsive);
     background: #FFF;
-    box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
+    box-shadow: 0 15px 15px rgba(0,0,0,0.18);
     display: block;
     height: 100vh;
     left: -100%;
@@ -103,7 +103,7 @@ header .icon-item{
 .cabecera-menu-responsive{
     align-items: center;
     background-color: var(--background-color);
-    box-shadow:0 8px 20px 0px rgba(0,0,0,0.05);
+    box-shadow:0 8px 20px 0 rgba(0,0,0,0.05);
     display:flex;
     font-size: 1.5rem;
     height: 5rem;
@@ -152,7 +152,7 @@ header .icon-item{
     display: none
 }
 .submenu .icon-item{
-    padding: 0em 0.3em 0em 0.7em
+    padding: 0 0.3em 0 0.7em
 }
 .btn-responsive{
     color: var(--text-color);
@@ -224,24 +224,27 @@ fieldset h3{
     height: 15rem;
     width: 100%;
 }
-.cf-foto .img{
+.cf-foto .preview-image,
+.cf-adjunto .preview-image{
     background-image: url(../images/app-imagen-no-disponible.jpg);
-  }
+}
 /* FOOTER */
 footer{
-    flex-direction: column;
-    min-height: auto
+    display: flex;
+    flex-direction: column
+}
+.texto-europa{
+    font-size: 1rem;
+    padding-left: 0
 }
 .main-footer{
-    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: center;
-    padding-bottom: 1rem;
     text-align: center;
     width: 100%
 }
 .footer-links{
-    padding-top: 1rem;
+    padding-top:1.25rem;
     width: 100%
 }
 .footer-main-links ul,

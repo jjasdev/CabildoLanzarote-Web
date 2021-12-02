@@ -17,12 +17,13 @@ const submenu = document.querySelector(".submenu");
 const iconSubmenu = document.querySelectorAll(".submenu .icon-item-submenu");
 const itemSubmenu = document.querySelectorAll(".submenu li");
 const iconoDesplegable = document.querySelector(".fa-chevron-down");
-const lastItem = document.querySelector(".last-link")
+const lastItem = document.querySelector(".last-link");
 const wrapperMenu = document.querySelector(".wrapper-menu");
 const menuBusqueda = document.querySelectorAll(".buscar");
 const paginaBusqueda = document.querySelector(".search-page");
 const labelSearch = document.querySelector(".main-search label");
 const inputSearch = document.querySelector("#busqueda-general");
+const imageUpload = document.querySelector("#file-uploader");
 let cabildoClick = false;
 let responsive = false;
 let salir = false;
@@ -181,13 +182,27 @@ itemSubmenu.forEach(
 );
 
 //Subida de imagen
-document.querySelector("#file-uploader").addEventListener("change",function(ev){
-      let files = ev.target.files;
-      let image = files[0];
-      let imageURL = URL.createObjectURL(image);
-
-      document.querySelector(".cf-foto .img").style.backgroundImage = "url('"+ imageURL +"')";
-});
+if (exists(imageUpload)){
+    imageUpload.addEventListener("change",function(ev){
+        let files = ev.target.files;
+        let image = files[0];
+        let type = image.type.split("/")[1];
+        let imageURL = '';
+        let tamPantalla = window.innerWidth;
+        if (type==='jpeg' || type==='png' || type==='gif'){
+            imageURL = URL.createObjectURL(image);
+        }else{
+            if (tamPantalla<992){
+                imageURL = '../images/documento-seleccionado.jpg';
+            }else{
+                imageURL = '../images/app-documento-seleccionado.jpg';
+            }            
+        }        
+  
+        document.querySelector(".preview-image").style.backgroundImage = "url('"+ imageURL +"')";
+        document.querySelector(".documento-seleccionado").innerHTML = (`Documento: ${String(image.name)}`);
+  });
+}
 
 //Búsqueda
 menuBusqueda.forEach(
