@@ -177,6 +177,9 @@ header .icon-item{
 .mapa::before{
     top: 25rem
 }
+.banner{
+    background-image: url(../images/app-banner-cabildo-byn.jpg)
+  }
 fieldset{
     align-items: flex-start;
     display: flex;
