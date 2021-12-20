@@ -9,12 +9,15 @@
     grid-area: 2/2/3/5
 }
 .main-nav ul > li {
-    padding: 0rem 1rem
+    padding: 0rem .5rem
 }
+.submenu-desplegable{
+    right: 30%
+   }
 .search{
     display: none
 }
-.contact-links li:last-child{
+.contact-links li:nth-last-child(-n+2){
     display:block
 }
 .content-app-descargas span{

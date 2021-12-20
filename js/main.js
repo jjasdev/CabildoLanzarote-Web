@@ -13,10 +13,11 @@ const menuNavegacion = document.querySelector(".main-nav");
 const btnSalir = document.querySelector(".close-btn");
 const btnSalirSearch = document.querySelector(".close-btn-search");
 const itemCabildoResponde = document.querySelector(".last-link");
+const navMenu = document.querySelector(".nav-menu");
 const submenu = document.querySelector(".submenu");
 const iconSubmenu = document.querySelectorAll(".submenu .icon-item-submenu");
 const itemSubmenu = document.querySelectorAll(".submenu li");
-const iconoDesplegable = document.querySelector(".fa-chevron-down");
+const iconoDesplegable = document.querySelector(".responsive-desplegable-icon");
 const lastItem = document.querySelector(".last-link");
 const wrapperMenu = document.querySelector(".wrapper-menu");
 const menuBusqueda = document.querySelectorAll(".buscar");
@@ -130,14 +131,12 @@ $(window).scroll(function() {
 });
  
 //Menú Responsive
-document.addEventListener("mouseleave", function(event){
+navMenu.addEventListener("mouseleave", function(event){
     if(responsive && !salir){
-        if((event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)) && (cabildoClick)){  
-            if(submenu.className === 'submenu visible'){
-                submenu.classList.toggle("visible");
-                iconoDesplegable.classList.toggle("rotate-180");
-                cabildoClick = false;
-            }            
+        if(submenu.className === 'submenu visible'){
+            submenu.classList.toggle("visible");
+            iconoDesplegable.classList.toggle("rotate-180");
+            cabildoClick = false;            
         }
     }    
 });

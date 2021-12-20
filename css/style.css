@@ -114,13 +114,93 @@
   .portal-nav span:hover{
     color: var(--title-color)
   }
-  .portal-nav ul{
+  .portal-links,
+  .social-links,
+  .contact-links {
     display: flex
   }
-  .portal-nav ul > li,
-  .social-nav ul > li,
-  .contact-nav ul > li{
+  .portal-links > li,
+  .social-links > li,
+  .contact-links > li{
     padding: .75em
+  }
+  .portal-nav{
+    display: flex;
+    justify-content: flex-end;
+    column-gap: .75rem;  
+    
+  }
+  .detalles-usuario p{
+    font-size: .7rem;
+    text-transform: uppercase;
+  }
+  .avatar-usuario{
+    background-color: var(--background-cards);
+    background-image:url('../images/avatar_default.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid var(--border-color); 
+    height: 30px;
+    width: 30px;
+  }
+  .detalles-usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+  }
+  .desplegable-usuario i{
+    color: var(--text-color)
+  }
+  .desplegable-usuario{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1em;
+    font-size: 1rem;
+  }
+  .submenu-desplegable{
+    background-color: var(--background-color);
+    box-shadow:0 8px 20px 0 rgba(0,0,0,0.125);
+    display: none;
+    flex-direction: column;
+    font-size: 0.8em;
+    height: auto!important;
+    padding: 0!important;
+    position: absolute;
+    text-transform: uppercase;
+    top: 2.65rem;
+    right: 25%;
+    width: 25%!important;
+    text-align: right;
+  }  
+  .submenu-desplegable li{
+    border-right: 3px solid var(--border-color); 
+    justify-content: flex-start!important;    
+    padding: 1.07em 1.75em!important 
+  }
+  .submenu-desplegable li:hover{ 
+    background-color: var(--background-hover-color);
+    border-right: 3px solid var(--primary-color)   
+  }
+  .submenu-desplegable li:last-child,
+  .submenu-desplegable li:first-child{    
+    border-top: 1px solid var(--border-color);
+  }
+  .submenu-desplegable .icon-item{
+    font-size: .8rem;
+    padding: 0 0 0 .75em;
+    color: var(--primary-color);
+  }
+  .desplegable-usuario:hover > .submenu-desplegable {
+    display: block;
+    transition: all 1s ease
+  }
+  .desplegable-usuario:hover > a .icon-item {
+    color: var(--primary-color);
   }
   .main-nav, 
   .search{
@@ -169,8 +249,10 @@
   .nav-menu a{
     align-items: center;
     display: flex
-  }
-  .nav-menu span:hover{
+  }  
+  .nav-menu li:hover .nav-menu-item,
+  .submenu li:hover .nav-submenu-item,
+  .submenu-desplegable li:hover .desplegable-item{
     color: var(--primary-color);
     transition: all 0.5s ease
   }
@@ -229,13 +311,20 @@
     display: flex
   }
   .search{
+    grid-area: 2/4/3/5;
+    height: 100%;
+    width: 100%
+  }
+  .search-links{
     align-items: center;
     display: flex;
     grid-area: 2/4/3/5;
-    justify-content: flex-start;
-    padding-left: 1em
+    height: 100%
   }
-  .contact-links li:last-child{
+  .search-links li{
+    padding: 0 .75rem
+  }
+  .contact-links li:nth-last-child(-n+2){
     display: none
   }
   .aparecer-menu{
@@ -374,12 +463,12 @@
   .wrapper .submenu li:last-child{
     border-bottom: 1px solid var(--border-color)
   }
-  .wrapper-search{
-    align-self: center 
+  .wrapper-user{
+    align-self: center;
+    margin-right: 1rem
   }
-  .wrapper-search .icon-item{
-    font-size: 2rem;
-    padding: 0 2rem
+  .wrapper-user .icon-item{
+    font-size: 2rem
   }
   .banner{
     background-image: url(../images/banner-cabildo-byn.jpg);

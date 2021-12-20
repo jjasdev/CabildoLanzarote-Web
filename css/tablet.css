@@ -40,11 +40,17 @@ header{
     border: none;
     display: block;
     grid-area: 1/3/2/4;
-    position: absolute;
-    right: 1.25rem;
-    right: 1.5rem;
-    top: 1.5rem
+    position: absolute
 }
+.search-links{
+    justify-content: center
+}
+.search-links li:first-child{
+    display:none
+  }
+  .search-links li:last-child{
+    display:block!important
+  }
 header .icon-item{
     cursor:pointer;
     font-size: 2rem
@@ -125,7 +131,7 @@ header .icon-item{
 }
 .item-principal{
     align-self:flex-start
-}
+} 
 .submenu{
     background-color: var(--background-menu-responsive);
     box-shadow: none;
