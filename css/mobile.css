@@ -5,6 +5,15 @@
 .main-wrapper{
     padding: 5rem
 }
+.wrapper-table{
+    display: none;
+}
+.lista-anidada{
+    margin-left: 3.75rem
+}  
+.mailto{
+    word-break: break-all
+}
 h1{
     padding: 2rem 5rem
 }

@@ -12,9 +12,11 @@ const menuResponsive = document.querySelector(".menu-responsive");
 const menuNavegacion = document.querySelector(".main-nav");
 const btnSalir = document.querySelector(".close-btn");
 const btnSalirSearch = document.querySelector(".close-btn-search");
+const btnSalirLogin = document.querySelector(".close-btn-login");
 const itemCabildoResponde = document.querySelector(".last-link");
 const navMenu = document.querySelector(".nav-menu");
 const submenu = document.querySelector(".submenu");
+const avatar = document.querySelectorAll(".avatar-usuario");
 const iconSubmenu = document.querySelectorAll(".submenu .icon-item-submenu");
 const itemSubmenu = document.querySelectorAll(".submenu li");
 const iconoDesplegable = document.querySelector(".responsive-desplegable-icon");
@@ -25,10 +27,19 @@ const paginaBusqueda = document.querySelector(".search-page");
 const labelSearch = document.querySelector(".main-search label");
 const inputSearch = document.querySelector("#busqueda-general");
 const imageUpload = document.querySelector("#file-uploader");
+const menuLogin = document.querySelectorAll(".login");
+const paginaLogin = document.querySelector(".login-page");
+const labelLogin = document.querySelectorAll(".etiqueta-login");
+const inputLogin = document.querySelectorAll(".input-login");
+const mainLogin = document.querySelector(".main-login");
+const forgotLogin = document.querySelector(".forgot-login");
+const forgotPassword = document.querySelector(".forgot-password");
+const volverInicioSesion = document.querySelector(".volver-inicio-sesion");
 let cabildoClick = false;
 let responsive = false;
 let salir = false;
 let contadorBusqueda = 0;
+let contadorLogin = 0;
 
 //--Funciones
 /**
@@ -75,8 +86,8 @@ function eliminarClase(nodo, clase){
   * @param  {}
   * @return  {true/false}
   */
-function validarInput() {
-    const inputSearchValue = document.querySelector("#busqueda-general").value;
+function validarInput(nodo) {
+    const inputSearchValue = nodo.value;
     let inputLenght = String(inputSearchValue).length;
     if ( inputLenght === 0) {
       return false;
@@ -180,6 +191,16 @@ itemSubmenu.forEach(
     }
 );
 
+//Al hacer clic en el avatar ir al panel de administración
+avatar.forEach(
+    function(item) {
+        item.addEventListener("click",function(){
+            window.location.href = '/administacion.html';
+        });        
+    }
+);
+
+
 //Subida de imagen
 if (exists(imageUpload)){
     imageUpload.addEventListener("change",function(ev){
@@ -219,13 +240,13 @@ btnSalirSearch.addEventListener("click", function(){
     eliminarClase(body, "noscroll"); 
     eliminarClase(labelSearch, "desaparecer");
     eliminarClase(labelSearch, "active");
-    eliminarClase(inputSearch, "borde-rojo");
+    eliminarClase(inputSearch, "colorear-borde");
     document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
     document.querySelector("#busqueda-general").value = '';
     contadorBusqueda = 0;
 });
 inputSearch.addEventListener("keyup", function(event){
-    if( (event.keyCode === 8) && (!validarInput()) ){
+    if( (event.keyCode === 8) && (!validarInput(inputSearch)) ){
         eliminarClase(labelSearch, "active");  
         contadorBusqueda = 0;
     }else if (contadorBusqueda === 0){        
@@ -235,18 +256,139 @@ inputSearch.addEventListener("keyup", function(event){
 });
 inputSearch.addEventListener("click", function(){
     eliminarClase(labelSearch, "desaparecer");    
-    añadirClase(inputSearch, "borde-rojo");
+    añadirClase(inputSearch, "colorear-borde");
     document.querySelector("#busqueda-general").placeholder = '';
 });
 
 //Si hacemos clic fuera del input
 document.addEventListener("click", function(event){
-    let caracteresInput = String(document.querySelector("#busqueda-general").value).length;
+    let caracteresInput = String(inputSearch.value).length;
     if((event.target !== inputSearch) && (caracteresInput === 0)) {
         añadirClase(labelSearch, "desaparecer");
         eliminarClase(labelSearch, "active");
-        eliminarClase(inputSearch, "borde-rojo");
+        eliminarClase(inputSearch, "colorear-borde");
         document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
         contadorBusqueda = 0;
     }
 }, false);
+
+//Login
+if (exists(menuLogin)){
+    menuLogin.forEach(
+        function(item) {
+            item.addEventListener("click", function(event){
+                event.preventDefault();
+                añadirClase(paginaLogin, "aparecer-login");
+                añadirClase(body, "noscroll"); 
+                labelLogin.forEach(
+                    function(etiqueta) {
+                        añadirClase(etiqueta, "desaparecer");
+                    }
+                );            
+            });
+        }
+    );
+}
+if (exists(btnSalirLogin)){
+    btnSalirLogin.addEventListener("click", function(){
+        eliminarClase(paginaLogin, "aparecer-login");
+        eliminarClase(body, "noscroll"); 
+        labelLogin.forEach(
+            function(etiqueta) {
+                eliminarClase(etiqueta, "desaparecer");
+                eliminarClase(etiqueta, "active");
+            }
+        ); 
+        inputLogin.forEach(
+            function(input) {
+                eliminarClase(input, "colorear-borde");
+                input.value = '';
+            }
+        ); 
+        contadorLogin = 0;
+    });
+}
+if (exists(inputLogin)){
+    inputLogin.forEach(
+        function(input) {        
+            let idInput = input.getAttribute('id'); 
+            input.addEventListener("keyup", function(event){
+                if( (event.keyCode === 8) && (!validarInput(input)) ){
+                    labelLogin.forEach(
+                        function(etiqueta) {
+                            let forLabel = etiqueta.getAttribute('for');
+                            if (forLabel=== idInput){
+                                eliminarClase(etiqueta, "active");  
+                                contadorLogin = 0;
+                            }                    
+                        }
+                    );
+                }else if (contadorLogin === 0){   
+                    labelLogin.forEach(
+                        function(etiqueta) {
+                            let forLabel = etiqueta.getAttribute('for');
+                            if (forLabel=== idInput){
+                                añadirClase(etiqueta, "active");
+                                contadorLogin += 1; 
+                            }                    
+                        }
+                    );        
+                }
+            });
+    
+            input.addEventListener("click", function(){           
+                labelLogin.forEach(
+                    function(etiqueta) {
+                        let forLabel = etiqueta.getAttribute('for');
+                        if (forLabel=== idInput){
+                            eliminarClase(etiqueta, "desaparecer");
+                        }                    
+                    }
+                );     
+                añadirClase(input, "colorear-borde");
+                input.placeholder = '';
+            });
+        }
+    );
+}
+
+//Si hacemos clic fuera del input
+document.addEventListener("click", function(event){
+    if (exists(inputLogin)){
+        inputLogin.forEach(
+            function(input) {
+                let idInput = input.getAttribute('id');
+                let placeholderInput = input.getAttribute('aria-label');
+                let caracteresInput = String(input.value).length;
+                if((event.target !== input) && (caracteresInput === 0)) {
+                    labelLogin.forEach(
+                        function(etiqueta) {
+                            let forLabel = etiqueta.getAttribute('for');
+                            if (forLabel=== idInput){
+                                añadirClase(etiqueta, "desaparecer");
+                                eliminarClase(etiqueta, "active");
+                            }                    
+                        }
+                    );                 
+                    eliminarClase(input, "colorear-borde");
+                    input.placeholder = placeholderInput;
+                    contadorLogin = 0;
+                }
+            }
+        );
+    }        
+}, false);
+
+//Forgot Password
+if (exists(forgotPassword) && exists(volverInicioSesion)){
+    forgotPassword.addEventListener("click", function(event){
+        event.preventDefault();
+        eliminarClase(forgotLogin, "hide");
+        añadirClase(mainLogin, "hide");  
+    });
+    volverInicioSesion.addEventListener("click", function(event){
+        event.preventDefault();
+        eliminarClase(mainLogin, "hide");
+        añadirClase(forgotLogin, "hide");   
+    });
+}

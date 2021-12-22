@@ -48,9 +48,9 @@ header{
 .search-links li:first-child{
     display:none
   }
-  .search-links li:last-child{
+.search-links li:last-child{
     display:block!important
-  }
+}
 header .icon-item{
     cursor:pointer;
     font-size: 2rem
@@ -173,6 +173,9 @@ header .icon-item{
 .icon-item{
     display: none
 }
+.input-form {
+    width: 100%
+}
 /* WRAPPER */
 .wrapper{
     margin-top: 5rem
@@ -221,7 +224,11 @@ fieldset{
 .informacion-personal,
 .informacion-incidencia,
 .informacion-adicional,
-.informacion-adjunta{
+.informacion-adjunta,
+.no-movil,
+.informacion-contacto,
+.informacion-residencia,
+.informacion-mensaje{
     display: flex;
     flex-direction: column;
     width: 100%

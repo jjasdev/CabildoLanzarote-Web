@@ -6,7 +6,7 @@
     <meta name="description" lang="es" content="Web que facilita la comunicación entre los ciudadanos y el Cabildo de Lanzarote mediante la notificación e información de incidencias en la vía urbana." />
     <meta name="keywords" content="lanzarote, cabildo, incidencias, ciudadanos">
     <title>Cabildo de Lanzarote | Información</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/desktop.css" media="(max-width: 1199px)">
     <link rel="stylesheet" href="css/tablet.css" media="(max-width: 991px)">
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)">
@@ -69,9 +69,53 @@
         <div class="search">
             <ul class="search-links">
                 <li><a class="buscar" aria-label="Buscar" title="Buscar" href="#"><i class="fas fa-search icon-item"></i></a></li>               
-                <li><a class="inicio-sesion" aria-label="Iniciar sesión" title="Iniciar sesión" href="#"><i class="fas fa-user-circle icon-item"></i></a></li>              
+                <li><a class="login" aria-label="Iniciar sesión" title="Iniciar sesión" href="#"><i class="fas fa-user-circle icon-item"></i></a></li>              
             </ul>
         </div> 
+        <div class="search-page">
+            <div class="header-search">
+                <img src="images/favicon.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100">
+                <span>Búsqueda</span>
+                <a class="close-btn-search" aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a>
+            </div>
+            <div class="main-search">
+                <label for="busqueda-general">Buscar en la web</label>
+                <input type="search" aria-label="Buscar" title="Buscar" class="input" placeholder="Buscar en la web" id="busqueda-general" name="busqueda-general">   
+            </div>
+        </div>
+        <div class="login-page">
+            <div class="header-login">
+                <img src="images/favicon.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100">
+                <span>Iniciar sesión</span>
+                <a class="close-btn-login" aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a>
+            </div>
+            <div class="main-login">
+                <div class="input-form">                    
+                    <label for="username" class="etiqueta-login">Nombre de usuario</label>                 
+                    <input aria-label="Nombre de usuario" placeholder="Nombre de usuario" title="Nombre de usuario" class="input-login" type="text" name="username" id="username" autofocus required />
+                </div>
+                <div class="input-form">                    
+                    <label for="email" class="etiqueta-login">Correo electrónico</label>
+                    <input aria-label="Correo electrónico" placeholder="Correo electrónico" title="Correo electrónico" class="input-login" type="email" id="email" required autofocus>
+                </div>
+                <div class="input-form campo-enviar"> 
+                    <input class="btn-login" name="submit-login" type="submit" value="Acceder">
+                    <label><a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a></label>
+                </div>                
+            </div>
+            <div class="forgot-login hide">
+                <p>Introduce tu dirección de correo electrónico. Te enviaremos un enlace para restablecer tu contraseña.</p>
+                <div class="input-form">                    
+                    <label for="email-restablecer" class="etiqueta-login">Correo electrónico</label>
+                    <input aria-label="Correo electrónico" placeholder="Correo electrónico" title="Correo electrónico" class="input-login" type="email" id="email-restablecer" required autofocus>
+                </div>
+                <div class="input-form campo-enviar">
+                    <input class="btn-forgot" name="submit-password" type="submit" value="Restablecer contraseña">
+                    <label><a href="#" class="volver-inicio-sesion">Volver al inicio de sesión</a></label>
+                </div>                
+            </div>
+        </div>         
+    </header>
     <!-- CONTENIDO -->
     <div class="wrapper">
         <div class="wrapper-menu hide">
@@ -92,18 +136,7 @@
                 </ul>
             </nav> 
             <div class="wrapper-user">
-                <a class="inicio-sesion" aria-label="Iniciar sesión" title="Iniciar sesión" href="#"><i class="fas fa-user-circle icon-item"></i></a>           
-            </div>
-        </div>
-        <div class="search-page">
-            <div class="header-search">
-                <img src="images/favicon.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100">
-                <span>Búsqueda</span>
-                <a class="close-btn-search" aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a>
-            </div>
-            <div class="main-search">
-                <label for="busqueda-general">Buscar en la web</label>
-                <input type="search" aria-label="Buscar" title="Buscar" class="input" placeholder="Escriba aquí para buscar en la web" id="busqueda-general" name="busqueda-general">   
+                <a class="login" aria-label="Iniciar sesión" title="Iniciar sesión" href="#"><i class="fas fa-user-circle icon-item"></i></a>           
             </div>
         </div>
         <section class="banner">
@@ -174,19 +207,19 @@
         <div class="footer-links">
             <div class="footer-main-links">
                 <ul class="recortar-links">
-                    <li><a aria-label="Ir a Aviso legal" title="Ir a Aviso legal" href="https://www.cabildodelanzarote.com/aviso-legal" target="_blank" rel="noreferrer"><span>Aviso legal</span></a></li>
-                    <li><a aria-label="Ir a Condiciones de uso" title="Ir a Condiciones de uso" href="https://www.cabildodelanzarote.com/condiciones-de-uso" target="_blank" rel="noreferrer"><span>Condiciones de uso</span></a></li>
+                    <li><a aria-label="Ir a Aviso legal" title="Ir a Aviso legal" href="aviso-legal.html"><span>Aviso legal</span></a></li>
+                    <li><a aria-label="Ir a Política de privacidad" title="Ir a Política de privacidad" href="politica-privacidad.html"><span>Política de privacidad</span></a></li>
                 </ul>
                 <ul class="recortar-links">
-                    <li><a aria-label="Ir a Protección de datos" title="Ir a Protección de datos" href="https://www.cabildodelanzarote.com/protecci%C3%B3n-de-datos" target="_blank" rel="noreferrer"><span>Protección de datos</span></a></li>
-                    <li><a aria-label="Ir a Accesibilidad" title="Ir a Accesibilidad" href="https://www.cabildodelanzarote.com/accesibilidad-web" target="_blank" rel="noreferrer"><span>Accesibilidad</span></a></li>                    
-                    <li><a aria-label="Ir a Contacto" title="Ir a Contacto" href="https://www.cabildodelanzarote.com/contacto" target="_blank" rel="noreferrer"><span>Contacto</span></a></li>                    
+                    <li><a aria-label="Ir a Política de cookies" title="Ir a Política de cookies" href="politica-cookies.html"><span>Política de cookies</span></a></li>
+                    <li><a aria-label="Ir a Accesibilidad" title="Ir a Accesibilidad" href="accesibilidad.html"><span>Accesibilidad</span></a></li>                    
+                    <li><a aria-label="Ir a Contacto" title="Ir a Contacto" href="contacto.html"><span>Contacto</span></a></li>                    
                 </ul>
             </div>
             <div class="footer-w3c-links">
                 <ul>
-                    <li><a aria-label="Ir a HTML5" title="Ir a HTML5" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Favisaayuntamiento.com%2FcabildoLanzarote%2F" target="_blank" rel="noreferrer"><span>HTML5</span></a></li> 
-                    <li><a aria-label="Ir a CSS3" title="Ir a CSS3" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Favisaayuntamiento.com%2FcabildoLanzarote%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es" target="_blank" rel="noreferrer"><span>CSS3</span></a></li> 
+                    <li><a aria-label="Ir a HTML5" title="Ir a HTML5" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Favisa.cabildodelanzarote.com%2F" target="_blank" rel="noreferrer"><span>HTML5</span></a></li> 
+                    <li><a aria-label="Ir a CSS3" title="Ir a CSS3" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Favisa.cabildodelanzarote.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es" target="_blank" rel="noreferrer"><span>CSS3</span></a></li> 
                     <li><a aria-label="Ir a WAI AA" title="Ir a WAI AA" href="https://www.w3.org/WAI/WCAG1AAA-Conformance" target="_blank" rel="noreferrer"><span>WAI 'AA'</span></a></li> 
                 </ul>
             </div>
