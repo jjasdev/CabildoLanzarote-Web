@@ -106,6 +106,7 @@
   .portal-nav{
     align-items: center;
     border-right: 1px solid var(--border-color);
+    column-gap: .75rem; 
     display: flex;
     font-size: .8em;
     grid-area: 1/2/2/3;
@@ -124,12 +125,6 @@
   .social-links > li,
   .contact-links > li{
     padding: .75em
-  }
-  .portal-nav{
-    column-gap: .75rem;  
-    display: flex;
-    justify-content: flex-end
-    
   }
   .detalles-usuario p{
     font-size: .7rem;

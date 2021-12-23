@@ -8,6 +8,7 @@
 //--Variables
 const body = document.querySelector("body");
 const mediaQuery991 = window.matchMedia('(max-width: 991px)');
+const mediaQuery596 = window.matchMedia('(max-width: 596px)');
 const menuResponsive = document.querySelector(".menu-responsive");
 const menuNavegacion = document.querySelector(".main-nav");
 const btnSalir = document.querySelector(".close-btn");
@@ -35,8 +36,16 @@ const mainLogin = document.querySelector(".main-login");
 const forgotLogin = document.querySelector(".forgot-login");
 const forgotPassword = document.querySelector(".forgot-password");
 const volverInicioSesion = document.querySelector(".volver-inicio-sesion");
+const menu = document.querySelector(".menu-principal");
+const iconoMenu = document.querySelector(".menu-principal i");
+const sidebar = document.querySelector(".sidebar");
+const escritorio = document.querySelector(".escritorio");
+const year = document.querySelector(".year");
+const today = new Date();
+const yearText = today.getFullYear();
 let cabildoClick = false;
 let responsive = false;
+let responsiveAdmin = false;
 let salir = false;
 let contadorBusqueda = 0;
 let contadorLogin = 0;
@@ -114,7 +123,10 @@ function posicionarMenu() {
 //Si es responsive hacemos menú acordeón footer
 if (window.innerWidth < 992){
     responsive = true;
-  }
+    if (window.innerWidth < 596){
+        responsiveAdmin = true;
+    }
+}
 mediaQuery991.addEventListener('change', function() {
     let cambioPantalla = this.matches;  
     if(cambioPantalla){
@@ -133,7 +145,15 @@ mediaQuery991.addEventListener('change', function() {
         }
       );        
     }
-  }); 
+}); 
+mediaQuery596.addEventListener('change', function() {
+    let cambioPantalla = this.matches;  
+    if(cambioPantalla){
+      responsiveAdmin = true;
+    }else{
+      responsiveAdmin = false;        
+    }
+}); 
 
 //Menú Fijo
 posicionarMenu(); 
@@ -142,64 +162,76 @@ $(window).scroll(function() {
 });
  
 //Menú Responsive
-navMenu.addEventListener("mouseleave", function(event){
-    if(responsive && !salir){
-        if(submenu.className === 'submenu visible'){
+if (exists(navMenu)){
+    navMenu.addEventListener("mouseleave", function(event){
+        if(responsive && !salir){
+            if(submenu.className === 'submenu visible'){
+                submenu.classList.toggle("visible");
+                iconoDesplegable.classList.toggle("rotate-180");
+                cabildoClick = false;            
+            }
+        }    
+    });
+}
+
+if (exists(menuResponsive)){
+    menuResponsive.addEventListener("click", function(){
+        añadirClase(btnSalir, "visible");
+        añadirClase(menuNavegacion, "aparecer-menu");
+        añadirClase(body, "noscroll"); 
+        iconSubmenu.forEach(
+          function(item) {
+              item.className="fas fa-long-arrow-alt-right icon-item-submenu";
+          }
+        );
+        salir = false;
+      });
+}
+if (exists(btnSalir)){
+    btnSalir.addEventListener("click", function(){
+        eliminarClase(menuNavegacion, "aparecer-menu");
+        eliminarClase(body, "noscroll");
+        eliminarClase(submenu,"visible");
+        eliminarClase(iconoDesplegable,"rotate-180");
+        iconSubmenu.forEach(
+          function(item) {
+              item.className="icon-item-submenu";
+          }
+        );  
+        salir = true;
+        
+      });
+}
+
+if (exists(itemCabildoResponde)){
+    itemCabildoResponde.addEventListener("click", function(){
+        if(responsive){
             submenu.classList.toggle("visible");
             iconoDesplegable.classList.toggle("rotate-180");
-            cabildoClick = false;            
+            cabildoClick = true;
+        }    
+    });
+}
+if (exists(itemSubmenu)){
+    itemSubmenu.forEach(
+        function(item) {
+            item.addEventListener("click", function(){
+                añadirClase(lastItem, "shadow");
+            });
         }
-    }    
-});
-menuResponsive.addEventListener("click", function(){
-  añadirClase(btnSalir, "visible");
-  añadirClase(menuNavegacion, "aparecer-menu");
-  añadirClase(body, "noscroll"); 
-  iconSubmenu.forEach(
-    function(item) {
-        item.className="fas fa-long-arrow-alt-right icon-item-submenu";
-    }
-  );
-  salir = false;
-});
-btnSalir.addEventListener("click", function(){
-  eliminarClase(menuNavegacion, "aparecer-menu");
-  eliminarClase(body, "noscroll");
-  eliminarClase(submenu,"visible");
-  eliminarClase(iconoDesplegable,"rotate-180");
-  iconSubmenu.forEach(
-    function(item) {
-        item.className="icon-item-submenu";
-    }
-  );  
-  salir = true;
-  
-});
-itemCabildoResponde.addEventListener("click", function(){
-    if(responsive){
-        submenu.classList.toggle("visible");
-        iconoDesplegable.classList.toggle("rotate-180");
-        cabildoClick = true;
-    }    
-});
-
-itemSubmenu.forEach(
-    function(item) {
-        item.addEventListener("click", function(){
-            añadirClase(lastItem, "shadow");
-        });
-    }
-);
+    );
+}
 
 //Al hacer clic en el avatar ir al panel de administración
-avatar.forEach(
-    function(item) {
-        item.addEventListener("click",function(){
-            window.location.href = '/administacion.html';
-        });        
-    }
-);
-
+if (exists(avatar)){
+    avatar.forEach(
+        function(item) {
+            item.addEventListener("click",function(){
+                window.location.href = '/administacion.html';
+            });        
+        }
+    );
+}
 
 //Subida de imagen
 if (exists(imageUpload)){
@@ -225,52 +257,58 @@ if (exists(imageUpload)){
 }
 
 //Búsqueda
-menuBusqueda.forEach(
-    function(item) {
-        item.addEventListener("click", function(event){
-            event.preventDefault();
-            añadirClase(paginaBusqueda, "aparecer-busqueda");
-            añadirClase(body, "noscroll"); 
-            añadirClase(labelSearch, "desaparecer");
-        });
-    }
-);
-btnSalirSearch.addEventListener("click", function(){
-    eliminarClase(paginaBusqueda, "aparecer-busqueda");
-    eliminarClase(body, "noscroll"); 
-    eliminarClase(labelSearch, "desaparecer");
-    eliminarClase(labelSearch, "active");
-    eliminarClase(inputSearch, "colorear-borde");
-    document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
-    document.querySelector("#busqueda-general").value = '';
-    contadorBusqueda = 0;
-});
-inputSearch.addEventListener("keyup", function(event){
-    if( (event.keyCode === 8) && (!validarInput(inputSearch)) ){
-        eliminarClase(labelSearch, "active");  
-        contadorBusqueda = 0;
-    }else if (contadorBusqueda === 0){        
-        añadirClase(labelSearch, "active");
-        contadorBusqueda += 1;     
-    }
-});
-inputSearch.addEventListener("click", function(){
-    eliminarClase(labelSearch, "desaparecer");    
-    añadirClase(inputSearch, "colorear-borde");
-    document.querySelector("#busqueda-general").placeholder = '';
-});
-
-//Si hacemos clic fuera del input
-document.addEventListener("click", function(event){
-    let caracteresInput = String(inputSearch.value).length;
-    if((event.target !== inputSearch) && (caracteresInput === 0)) {
-        añadirClase(labelSearch, "desaparecer");
+if (exists(menuBusqueda)){
+    menuBusqueda.forEach(
+        function(item) {
+            item.addEventListener("click", function(event){
+                event.preventDefault();
+                añadirClase(paginaBusqueda, "aparecer-busqueda");
+                añadirClase(body, "noscroll"); 
+                añadirClase(labelSearch, "desaparecer");
+            });
+        }
+    );
+}
+if (exists(btnSalirSearch)){
+    btnSalirSearch.addEventListener("click", function(){
+        eliminarClase(paginaBusqueda, "aparecer-busqueda");
+        eliminarClase(body, "noscroll"); 
+        eliminarClase(labelSearch, "desaparecer");
         eliminarClase(labelSearch, "active");
         eliminarClase(inputSearch, "colorear-borde");
         document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
+        document.querySelector("#busqueda-general").value = '';
         contadorBusqueda = 0;
-    }
-}, false);
+    });
+}
+if (exists(inputSearch)){
+    inputSearch.addEventListener("keyup", function(event){
+        if( (event.keyCode === 8) && (!validarInput(inputSearch)) ){
+            eliminarClase(labelSearch, "active");  
+            contadorBusqueda = 0;
+        }else if (contadorBusqueda === 0){        
+            añadirClase(labelSearch, "active");
+            contadorBusqueda += 1;     
+        }
+    });
+    inputSearch.addEventListener("click", function(){
+        eliminarClase(labelSearch, "desaparecer");    
+        añadirClase(inputSearch, "colorear-borde");
+        document.querySelector("#busqueda-general").placeholder = '';
+    });
+    //Si hacemos clic fuera del input
+    document.addEventListener("click", function(event){
+        let caracteresInput = String(inputSearch.value).length;
+        if((event.target !== inputSearch) && (caracteresInput === 0)) {
+            añadirClase(labelSearch, "desaparecer");
+            eliminarClase(labelSearch, "active");
+            eliminarClase(inputSearch, "colorear-borde");
+            document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
+            contadorBusqueda = 0;
+        }
+    }, false);
+}
+
 
 //Login
 if (exists(menuLogin)){
@@ -350,34 +388,33 @@ if (exists(inputLogin)){
             });
         }
     );
-}
-
-//Si hacemos clic fuera del input
-document.addEventListener("click", function(event){
-    if (exists(inputLogin)){
-        inputLogin.forEach(
-            function(input) {
-                let idInput = input.getAttribute('id');
-                let placeholderInput = input.getAttribute('aria-label');
-                let caracteresInput = String(input.value).length;
-                if((event.target !== input) && (caracteresInput === 0)) {
-                    labelLogin.forEach(
-                        function(etiqueta) {
-                            let forLabel = etiqueta.getAttribute('for');
-                            if (forLabel=== idInput){
-                                añadirClase(etiqueta, "desaparecer");
-                                eliminarClase(etiqueta, "active");
-                            }                    
-                        }
-                    );                 
-                    eliminarClase(input, "colorear-borde");
-                    input.placeholder = placeholderInput;
-                    contadorLogin = 0;
+    //Si hacemos clic fuera del input
+    document.addEventListener("click", function(event){
+        if (exists(inputLogin)){
+            inputLogin.forEach(
+                function(input) {
+                    let idInput = input.getAttribute('id');
+                    let placeholderInput = input.getAttribute('aria-label');
+                    let caracteresInput = String(input.value).length;
+                    if((event.target !== input) && (caracteresInput === 0)) {
+                        labelLogin.forEach(
+                            function(etiqueta) {
+                                let forLabel = etiqueta.getAttribute('for');
+                                if (forLabel=== idInput){
+                                    añadirClase(etiqueta, "desaparecer");
+                                    eliminarClase(etiqueta, "active");
+                                }                    
+                            }
+                        );                 
+                        eliminarClase(input, "colorear-borde");
+                        input.placeholder = placeholderInput;
+                        contadorLogin = 0;
+                    }
                 }
-            }
-        );
-    }        
-}, false);
+            );
+        }        
+    }, false);
+}
 
 //Forgot Password
 if (exists(forgotPassword) && exists(volverInicioSesion)){
@@ -391,4 +428,25 @@ if (exists(forgotPassword) && exists(volverInicioSesion)){
         eliminarClase(mainLogin, "hide");
         añadirClase(forgotLogin, "hide");   
     });
+}
+
+//Panel administración
+if (exists(menu)){
+    if (!responsiveAdmin){
+        sidebar.classList.toggle("visible"); 
+        iconoMenu.classList.toggle("fa-bars"); 
+        iconoMenu.classList.toggle("fa-times");
+    }else{
+        escritorio.classList.toggle("margin-left-0"); 
+    }
+    menu.addEventListener("click", function(event){
+        event.preventDefault();
+        sidebar.classList.toggle("visible");
+        iconoMenu.classList.toggle("fa-bars"); 
+        iconoMenu.classList.toggle("fa-times");         
+        escritorio.classList.toggle("margin-left-0");         
+    });
+}
+if (exists(year)){
+    year.innerHTML = yearText;
 }
