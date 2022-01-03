@@ -41,14 +41,20 @@ const iconoMenu = document.querySelector(".menu-principal i");
 const sidebar = document.querySelector(".sidebar");
 const escritorio = document.querySelector(".escritorio");
 const year = document.querySelector(".year");
+const fecha = document.querySelector(".fecha");
 const today = new Date();
 const yearText = today.getFullYear();
+const longitudCifra = 2;    
+let monthNames = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ];
+const getDia = rellenarCeros(today.getDate(), longitudCifra);
+const day = ( 'Hoy estamos a ' + getDia + ' de ' +  monthNames[today.getMonth()] + ' de ' + yearText);
 let cabildoClick = false;
 let responsive = false;
 let responsiveAdmin = false;
 let salir = false;
 let contadorBusqueda = 0;
 let contadorLogin = 0;
+let sidebarVisible = false;
 
 //--Funciones
 /**
@@ -117,6 +123,22 @@ function posicionarMenu() {
         $('.wrapper-menu').addClass('hide', 5000, 'swing');
     }
 }
+/**
+  * Devuelve el día con ceros si es necesario
+  * @param  {numero, longitudCifra}
+  * @return  {numero con o sin ceros}
+  */
+ function rellenarCeros(numero, longitudCifra) {
+    let valorNumero = Math.abs(numero).toString();
+    let longitudNumero = numero.toString().length;
+    let cero = "0"; 
+    
+    if(Number(longitudNumero) < longitudCifra){
+        return (cero + valorNumero);
+    }else{
+        return numero;
+    }
+}
 
 //--Código
 //Controlar Responsive
@@ -148,10 +170,23 @@ mediaQuery991.addEventListener('change', function() {
 }); 
 mediaQuery596.addEventListener('change', function() {
     let cambioPantalla = this.matches;  
+    let clasesSidebar;
+    let encontrado = false;
     if(cambioPantalla){
       responsiveAdmin = true;
+      clasesSidebar = sidebar.className.split(" ");
+      for (let i=0; i<clasesSidebar.length; i++)
+      {
+          if (clasesSidebar[i]=== "visible"){
+            encontrado = true;
+          }
+      }
+      if(encontrado){
+        añadirClase(escritorio, "hide");
+      }      
     }else{
-      responsiveAdmin = false;        
+      responsiveAdmin = false; 
+      eliminarClase(escritorio, "hide");     
     }
 }); 
 
@@ -436,17 +471,36 @@ if (exists(menu)){
         sidebar.classList.toggle("visible"); 
         iconoMenu.classList.toggle("fa-bars"); 
         iconoMenu.classList.toggle("fa-times");
+        sidebarVisible = true;
     }else{
-        escritorio.classList.toggle("margin-left-0"); 
+        escritorio.classList.toggle("margin-left-0");
+        sidebarVisible = false;
     }
     menu.addEventListener("click", function(event){
         event.preventDefault();
+        let clasesSidebar;
+        let encontrado = false;
         sidebar.classList.toggle("visible");
         iconoMenu.classList.toggle("fa-bars"); 
         iconoMenu.classList.toggle("fa-times");         
-        escritorio.classList.toggle("margin-left-0");         
+        escritorio.classList.toggle("margin-left-0");
+        if (responsiveAdmin){
+            clasesSidebar = sidebar.className.split(" ");
+            for (let i=0; i<clasesSidebar.length; i++)
+            {
+                if (clasesSidebar[i]=== "visible"){
+                    encontrado = true;
+                }
+            }
+            if(encontrado){
+                añadirClase(escritorio, "hide");
+            }else{
+                eliminarClase(escritorio, "hide"); 
+            }
+        }        
     });
 }
-if (exists(year)){
+if (exists(year) && exists(fecha)){
     year.innerHTML = yearText;
+    fecha.innerHTML = day;
 }

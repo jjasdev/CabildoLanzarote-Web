@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" lang="es" content="Web que facilita la comunicación entre los ciudadanos y el Cabildo de Lanzarote mediante la notificación e información de incidencias en la vía urbana." />
     <meta name="keywords" content="lanzarote, cabildo, incidencias, ciudadanos">
-    <title>Cabildo de Lanzarote | Mi perfil</title>
+    <title>Cabildo de Lanzarote | Administración</title>
     <link rel="stylesheet" href="css/admin.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -93,20 +93,73 @@
                 <div class="migas">
                     <a aria-label="Ir a Panel de administracion" title="Ir a Panel de administracion" href="administracion.html"><span>Panel de administración </span></a>
                     <i class="fas fa-chevron-right icon-migas"></i>
-                    <span> Mi perfil</span>
+                    <span> Escritorio</span>
                 </div>     
             </section>
             <section class="title-wrapper">
-                <h2>Perfil de usuario</h2>
+                <h2>Panel de administración</h2>
             </section>
             <div class="main-wrapper">
-                <p>fsdf</p>
-                <p>fsdf</p>
-                <p>fsdf</p>
+                <section class="cards-panel">
+                    <h3>Resumen</h3>
+                    <ul class="cards-container">
+                        <li class="cards">
+                            <i class="fas fa-exclamation-circle icon-cards color-incidencias color-fondo-incidencias cards-area-icono"></i>
+                            <p class="num-notifications cards-area-numero">7</p>
+                            <span class="cards-area-texto">Incidencias</span>
+                        </li>
+                        <li class="cards">
+                            <i class="fas fa-envelope icon-cards color-mensajes color-fondo-mensajes cards-area-icono"></i>
+                            <p class="num-notifications cards-area-numero">15</p>
+                            <span class="cards-area-texto">Mensajes</span>
+                        </li>
+                        <li class="cards">
+                            <i class="fas fa-phone icon-cards color-llamadas color-fondo-llamadas cards-area-icono"></i>
+                            <p class="num-notifications cards-area-numero">3</p>
+                            <span class="cards-area-texto">Llamadas</span>
+                        </li>
+                    </ul>
+                </section>
+                <section class="actividad-reciente">
+                    <h3>Actividad reciente</h3>
+                    <ul class="actividad-container">
+                        <li class="actividad-item">
+                            <i class="fas fa-phone icon-cards color-llamadas color-fondo-llamadas cards-area-icono"></i>
+                            <div class="actividad-informacion">
+                                <span>El <strong>Cabildo Insular de Lanzarote</strong> ha respondido a tu llamada</span>
+                                <span class="marcador-hora">14-03-2022 <strong>11:15 AM</strong></span>
+                            </div> 
+                        </li>
+                        <li class="actividad-item">
+                            <i class="fas fa-exclamation-circle icon-cards color-incidencias color-fondo-incidencias cards-area-icono"></i>
+                            <div class="actividad-informacion">
+                                <span>Actualización del estado de tu incidencia</span>
+                                <span class="marcador-hora">21-02-2022 <strong>17:00 PM</strong></span>
+                            </div> 
+                        </li>
+                        <li class="actividad-item">
+                            <i class="fas fa-envelope icon-cards color-mensajes color-fondo-mensajes cards-area-icono"></i>
+                            <div class="actividad-informacion">
+                                <span>El <strong>Cabildo Insular de Lanzarote</strong> ha contestado a tu mensaje</span>
+                                <span class="marcador-hora">12-02-2022 <strong>10:30 AM</strong></span>
+                            </div>                            
+                        </li>
+                        <li class="actividad-item">
+                            <i class="fas fa-exclamation-circle icon-cards color-incidencias color-fondo-incidencias cards-area-icono"></i>
+                            <div class="actividad-informacion">
+                                <span>Actualización del estado de tu incidencia</span>
+                                <span class="marcador-hora">11-01-2022 <strong>09:30 AM</strong></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mostrar-actividad">
+                        <a aria-label="Mostrar toda la actividad del usuario" title="Mostrar toda la actividad del usuario" href="#"><i class="fas fa-plus icon-motrar-mas"></i><span>Mostrar toda la actividad</span></a>
+                    </div>
+                </section>
             </div>
             <!-- FOOTER -->
             <footer>
-                <p>&copy; Cabildo Insular de Lanzarote <span class="year"></span></p>
+                <p>&copy; <strong>Cabildo Insular de Lanzarote</strong> <span class="year"></span></p>
             </footer>            
         </div>
         

@@ -12,6 +12,12 @@
     --sidebar-color-text: #FFF;
     --sidebar-color-secondary: #ccd1e0;
     --color-cabildo: #ca0928;
+    --messages-color: #079be2;
+    --messages-background-color: rgba(7,155,226,0.1);
+    --calls-color: #1ee0ac;
+    --calls-background-color: rgba(30,224,172,0.1);
+    --alerts-color: #ca0928;
+    --alerts-background-color: rgba(202,9,40,0.1);
   }
   /* GENERAL */
   *{
@@ -56,7 +62,7 @@
     max-height: 4rem;
     position: fixed;
     transition: max-height .5s;
-    width: 100%;
+    width: 100%
   }
   header span{
     color: var(--text-color);
@@ -67,7 +73,7 @@
   }
   .admin-logo{
     display: flex;
-    justify-content: center;
+    justify-content: center
   }
   .admin-logo img{
     height: 4rem;  
@@ -75,11 +81,11 @@
     transition: max-height .5s
   } 
   .settings-links{
-    display: flex;
     align-items: center;
-    height: 4rem;
-    border-right: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    height: 4rem
   }
   .settings-links li:first-child{
     padding-left: 1rem
@@ -91,18 +97,18 @@
     background-color: var(--background-secondary-color);
     border-radius: 5px
   }   
-  .fa-bell{
+  .circle{
     position: relative
   }
-  .fa-bell::after{    
-    width: .5rem;
-    height: .5rem;
-    border-radius: 50%;
+  .circle::after{    
     background: var(--color-cabildo);
-    position:absolute;
+    border-radius: 50%;
     content:"";
-    top: .55rem;
+    height: .5rem;
     left: 1.25rem;
+    position:absolute;
+    top: .55rem;
+    width: .5rem
   }
   form:focus-within {
     border-color: #1579B7;
@@ -190,7 +196,7 @@
   }
   .submenu-desplegable li:hover .desplegable-item {
     color: var(--primary-color);
-    transition: all .5s ease;
+    transition: all .5s ease
   }  
   @media screen and (max-width: 992px) {
     .detalles-usuario{
@@ -220,67 +226,66 @@
   .wrapper{    
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 100%
   }
   .sidebar{
-    position: fixed;
+    align-items: center;
+    background-color: var(--background-sidebar-color);
     display: flex;
     flex-direction: column;
-    align-items: center;
     height: 100vh;    
-    width: 16rem;
-    left: 0%;
-    background-color: var(--background-sidebar-color);
+    left: -100%; 
+    position: fixed;
     transition: all 0.3s ease;
-    left: -100%;      
+    width: 16rem
   }
   .sidebar p,
   .main-nav a{
     color: var(--sidebar-color-secondary);
-    font-size: .875rem;
+    font-size: .875rem
   }
   .sidebar .text-secondary{
-    font-size: .75rem;
+    font-size: .75rem
   }
   .sidebar .text-white{
     color: var(--sidebar-color-text)
   }
   .info-user{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center
   }
   .avatar-sidebar{
     height: 5rem;
     margin: 1.5rem 0;
-    width: 5rem;
+    width: 5rem
   }
   .options-user{
     align-self: flex-start;
     padding: 1.5rem;
     margin-top: 1.5rem;
-    width: 100%;
+    width: 100%
   }
   .sidebar h2{
-    text-transform: uppercase;
     color: var(--primary-color);
-    font-size: .825rem;
+    font-size: 1rem;
+    text-transform: uppercase
   }
   .sidebar h3{
     color: var(--sidebar-color-secondary);
-    font-weight: 700;
-    font-size: .625rem;
+    font-size: .75rem;
+    font-weight: 700
   }
   nav{
     padding: 1rem 0
   }
   .main-nav li{
-    padding: .625rem;
+    padding: .625rem
   }
   .main-nav li:hover{
     background: rgba(255,255,255,.1);
-    border-radius: 5px;
+    border-radius: 5px
   }
   .main-nav li:hover .icon-sidebar-item,
   .main-nav li:hover span{
@@ -289,46 +294,181 @@
   .main-nav a{
     display: grid;
     grid-template-columns: 15% auto;
-    grid-template-rows: auto;
+    grid-template-rows: auto
   }
   .main-nav span{
-    text-transform: uppercase;
-    font-size: .75rem;
+    font-size: .825rem;
     font-weight: 500;
+    text-transform: uppercase
   }
   .escritorio{
     background-color: var(--background-secondary-color);
     display: flex;
     flex-direction: column;
-    width: 100%;
     margin: 4rem 0 0 16rem;
-    transition: all 0.3s ease;
+    padding: 1.5rem; 
+    width: 100%
+  }
+  .top-wrapper,
+  .title-wrapper{
+    background-color: var(--background-primary-color)
+  }
+  .top-wrapper{
+    display: grid;
+    grid-template-areas: "tw-titulo ."
+                         "tw-fecha tw-migas";
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    padding: 1.5rem    
+  }
+  .top-wrapper h1{
+    font-size: 2rem;
+    font-weight: 700;
+    grid-area: tw-titulo
+  }
+  .top-wrapper p,
+  .top-wrapper span,
+  .main-wrapper span{
+    color: var(--text-color);
+    font-size: 1rem
+  }
+  .top-wrapper p{    
+    grid-area: tw-fecha
+  }
+  .fecha{
+    font-weight: 600;
+    padding: .125rem
+  }
+  .migas{
+    display: flex;
+    grid-area: tw-migas;
+    justify-content: flex-end
+  }
+  .migas a,
+  .migas span{
+    color: var(--title-color);
+    font-size: .875rem
+  }
+  .migas a{
+    font-weight: 700
+  }
+  .migas a span:hover{
+    color: var(--text-secondary-color)
+  }
+  .title-wrapper{
+    padding: 0 1.5rem
+  }
+  .title-wrapper h2{
+    background-color: var(--background-secondary-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 1.125rem;
+    padding: 1rem;
+    width: max-content
   }
   .main-wrapper{
-    padding: 1.5rem;
+    padding: 1.5rem
+  } 
+  .main-wrapper h3{
+    font-size: 1rem;
+    padding-bottom: 1.5rem
+  } 
+  .cards-container{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr))
   }
-  .main-wrapper h2{
-    margin-bottom: 8rem;
+  .cards-panel,
+  .actividad-reciente{
+    padding: 1.5rem 0
+  }
+  .cards{
+    align-items: center;
+    background-color: var(--background-primary-color);
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-areas: "icono numero"
+                         ". texto";
+    height: auto;
+    justify-items: center;
+    padding: 1rem 1.5rem 1.5rem;
+    width:100%  
+  }
+  .num-notifications{
+    font-weight: 700;
+    font-size: 3rem
+  }
+  .cards-area-icono{
+    grid-area: icono
+  }
+  .cards-area-numero{
+    grid-area: numero
+  }
+  .cards-area-texto{
+    grid-area: texto
+  }
+  .actividad-container{
+    background-color: var(--background-primary-color);
+    height: auto;
+    padding: 1.5rem;
+    width: 100%
+  }
+  .actividad-item{
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    padding: 1rem 0
+  }
+  .actividad-item:first-child{
+    padding-top: 0
+  }
+  .actividad-item:last-child{
+    border-bottom: none;
+    padding-bottom: 0
+  }
+  .actividad-informacion{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.5rem
+  }
+  .marcador-hora{
+    font-size: .75rem!important
+  }
+  .mostrar-actividad{
+    padding: 1.5rem 0
+  }
+  .mostrar-actividad i,
+  .mostrar-actividad span{
+    color: var(--text-secondary-color)
+  }
+  .mostrar-actividad a:hover i,
+  .mostrar-actividad a:hover span{
+    color: var(--title-color)
+  }
+  @media screen and (max-width: 992px){
+    .migas{
+      display: none
+    }
   }
   @media screen and (max-width: 596px) {
     .sidebar{
+      height: calc(100vh - 4rem);
       margin-top: 4rem;
       overflow-y: auto;
-      width: 100%;
-      height: calc(100vh - 4rem);
+      width: 100%
     }
     .sidebar .admin-logo{
       display: none
     }
     .avatar-sidebar{
       height: 6.25rem;
-      width: 6.25rem;
+      width: 6.25rem
     }
     .sidebar p{
-      font-size: 1.25rem;
+      font-size: 1.25rem
     }
     .sidebar .text-secondary {
-      font-size: 1rem;
+      font-size: 1rem
   }
     .info-user{
       margin-top: 1rem
@@ -337,51 +477,68 @@
       padding: 1.5rem 4rem
     }
     .sidebar h2{      
-      font-size: 1.325rem;
+      font-size: 1.325rem
     }
     .sidebar h3{
-      font-size: .825rem;
+      font-size: .825rem
     }
     .icon-sidebar-item{
       font-size: 1.325rem!important
     }
     .main-nav span{
-      font-size: 1.25rem;
-    }
+      font-size: 1.25rem
+    }    
   }
   /* FOOTER */
   footer{    
     border-top: 1px solid var(--border-color);
     color: var(--text-color);
-    font-size: .8rem;
+    font-size: 1rem;
     height: auto;
-    padding: 1rem 0 2rem 1.5rem
+    padding: 1rem 0 2rem 0
   }
-  
+  footer p{
+    padding: 0 1.5rem
+  }  
   /* ESPECÍFICO */
   .icon-item{
     color: var(--primary-color);
-    font-family: 'Font Awesome 5 Free';
     font-size: 1rem;
     font-weight: 900
   }
   .admin-icon-item{
-    color: var(--text-color);
     background-color: var(--background-secondary-color);
-    padding: .75rem;
     border-radius: 5px;
-    font-family: 'Font Awesome 5 Free';
+    color: var(--text-color);
     font-size: 1rem;
-    font-weight: 900
+    font-weight: 900;
+    padding: .75rem
   }
   .admin-icon-item:hover{
-    background-color: var(--background-terciary-color);
+    background-color: var(--background-terciary-color)
   }
   .icon-sidebar-item{
     color: var(--sidebar-color-secondary);
-    font-family: 'Font Awesome 5 Free';
     font-size: .875rem;
-    font-weight: 900;
+    font-weight: 900
+  }
+  .icon-notificaciones{
+    color: var(--sidebar-color-secondary);
+    font-size: .875rem;
+    padding-right: .5rem
+  }
+  .icon-cards{
+    border-radius:50%;
+    font-size: 1.25rem;
+    height: max-content;
+    padding: .75rem;
+    width: max-content
+  }
+  .icon-migas{
+    padding: 0 .5rem
+  }
+  .icon-motrar-mas{
+    padding-right: .5rem
   }
   .break-word{
     word-break: break-all
@@ -401,4 +558,22 @@
   }
   .hide{
     display: none
+  }
+  .color-llamadas{
+    color: var(--calls-color)
+  }
+  .color-mensajes{
+    color: var(--messages-color)
+  }
+  .color-incidencias{
+    color: var(--alerts-color)
+  }
+  .color-fondo-llamadas{
+    background-color: var(--calls-background-color)
+  }
+  .color-fondo-mensajes{
+    background-color: var(--messages-background-color)
+  }
+  .color-fondo-incidencias{
+    background-color: var(--alerts-background-color)
   }
