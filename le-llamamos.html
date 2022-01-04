@@ -89,7 +89,7 @@
                 <span>Iniciar sesión</span>
                 <a class="close-btn-login" aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a>
             </div>
-            <div class="main-login">
+            <form id="frmLogin" action="/perform_login" method="post" class="main-login">
                 <div class="input-form">                    
                     <label for="username" class="etiqueta-login">Nombre de usuario</label>                 
                     <input aria-label="Nombre de usuario" placeholder="Nombre de usuario" title="Nombre de usuario" class="input-login" type="text" name="username" id="username" autofocus required />
@@ -102,8 +102,8 @@
                     <input class="btn-login" name="submit-login" type="submit" value="Acceder">
                     <label><a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a></label>
                 </div>                
-            </div>
-            <div class="forgot-login hide">
+            </form>
+            <form id="frmRecuperarContrasenia" action="/recuperarContrasenia/enviarMail" method="post" class="forgot-login hide">
                 <p>Introduce tu dirección de correo electrónico. Te enviaremos un enlace para restablecer tu contraseña.</p>
                 <div class="input-form">                    
                     <label for="email-restablecer" class="etiqueta-login">Correo electrónico</label>
@@ -113,7 +113,7 @@
                     <input class="btn-forgot" name="submit-password" type="submit" value="Restablecer contraseña">
                     <label><a href="#" class="volver-inicio-sesion">Volver al inicio de sesión</a></label>
                 </div>                
-            </div>
+            </form>
         </div>         
     </header>
     <!-- CONTENIDO -->

@@ -5,12 +5,14 @@
     --text-color: #5e6a71;
     --text-secondary-color: #b5b5b5;
     --border-color: #d6d6d6;
-    --background-primary-color: #FFF;
-    --background-secondary-color: #F6F6F6;
-    --background-terciary-color: #F1F1F1;
+    --background-primary-color: #fff;
+    --background-secondary-color: #f6f6f6;
+    --background-terciary-color: #f1f1f1;
     --background-sidebar-color: #0f172a;
     --sidebar-color-text: #FFF;
     --sidebar-color-secondary: #ccd1e0;
+    --form-border-color: #ccc;
+    --form-background: #f2f2f2;
     --color-cabildo: #ca0928;
     --messages-color: #079be2;
     --messages-background-color: rgba(7,155,226,0.1);
@@ -110,7 +112,7 @@
     top: .55rem;
     width: .5rem
   }
-  form:focus-within {
+  .admin-search:focus-within {
     border-color: #1579B7;
     box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(20, 118, 180, 0.6);
     outline: 0 none
@@ -367,11 +369,11 @@
     width: max-content
   }
   .main-wrapper{
-    padding: 1.5rem
+    padding: 1.5rem 0
   } 
   .main-wrapper h3{
     font-size: 1rem;
-    padding-bottom: 1.5rem
+    padding: 0 0 1.5rem 1.5rem
   } 
   .cards-container{
     display: grid;
@@ -445,8 +447,263 @@
   .mostrar-actividad a:hover span{
     color: var(--title-color)
   }
+  .header-profile{
+    align-items: center;
+    background-color: var(--background-primary-color);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 7rem repeat(3, auto);
+    justify-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem
+  }
+  .avatar-profile{
+    cursor: default;
+    height: 7rem;
+    width: 7rem
+  }
+  .avatar-nombre-completo{
+    display: flex;
+    flex-direction: column
+  }
+  .avatar-nombre,
+  .avatar-apellidos{
+    font-weight: 700;
+    font-size: 1.375rem;
+  }
+  .contactos-usuario{
+    display: flex;
+    flex-direction: column;
+  }  
+  .item-contacto-usuario{
+    padding: .25rem 0
+  }
+  .ilustracion-perfil{
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin-top: 4.5rem;
+    width: 100%
+  }
+  .ilustracion-perfil img{
+    height: 100%;
+    object-fit: cover;    
+  }
+  .notificaciones-usuario{
+    display: flex
+  }
+  .notificaciones-llamadas{
+    border-right: 1px solid var(--border-color);
+    padding-right: 1rem;
+    text-align: right
+  }
+  .notificaciones-mensajes{
+    padding-left: 1rem
+  }
+  .texto-notificaciones{
+    font-weight: 700;
+    padding-top: .5rem
+  }
+  .numero-notificaciones{
+    color: var(--title-color)!important;
+    font-size: 1.5rem!important;
+    font-weight: 700
+  }
+   /* PÁGINAS FORMULARIOS  */
+   .main-profile{
+     display: flex;
+     width: 100%;
+     height: max-content;     
+     margin-bottom: 2rem;
+     gap: 1.5rem;
+   }
+   .info-profile,
+   .password-profile{
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+   }
+  .formulario-perfil,
+  .formulario-password{
+    background-color: var(--background-primary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem 1.5rem 1rem
+  } 
+  fieldset{
+    border: none
+  }
+  .campo-formulario{
+    display: flex;    
+    flex-direction: column
+  }
+  fieldset input,
+  fieldset textarea,
+  fieldset select,
+  .subir-foto{
+    background-color: var(--form-background);
+    border-radius: 3px;    
+    border: 1px solid var(--form-border-color);
+    display: block;
+    line-height: 1.5;
+    margin-bottom: .625rem;
+    padding: 0rem .625rem;
+    width: 100%
+  }
+  fieldset input,
+  fieldset select{    
+    height: 1.75rem
+  }
+  fieldset textarea{
+    font-family: 'Open Sans',sans-serif;
+    height: 5rem
+  }
+  fieldset select{    
+    cursor: pointer
+  }
+  fieldset input:focus,
+  fieldset textarea:focus,
+  fieldset select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(7, 155, 226, 0.6);
+    outline: 0 none
+  }
+  fieldset input:focus:required:invalid,
+  fieldset textarea:focus:required:invalid{
+    border-color: var(--error-color);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(202, 9, 40, 0.6);;
+    outline: 0 none
+  }
+  fieldset input::placeholder{
+    color: var(--text-secondary-color)
+  } 
+  fieldset span {
+    color: var(--title-color);
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1rem;
+    font-weight: 400
+  }
+  fieldset label{
+    display: flex;
+    align-content: center;
+    padding: .5rem 0;
+  }
+  .boton-formulario{
+    align-self: center;    
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.2);    
+    cursor: pointer;
+    height: max-content;
+    padding: .8em 1.3em;
+    text-align: center
+  }
+  .boton-enviar{
+    background-color: var(--background-primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  .boton-enviar:hover{
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--sidebar-color-text);
+  }
+  .boton-cancelar{
+    background-color: var(--background-primary-color);
+    border: 1px solid var(--alerts-color);
+    color: var(--alerts-color);
+  }
+  .boton-cancelar:hover{
+    background-color: var(--alerts-color);
+    border: 1px solid var(--alerts-color);
+    color: var(--sidebar-color-text);
+  }
+  .boton-enviar-formulario:hover{
+    opacity: .8
+  }
+  .prefijo{
+    margin-right: 1em;
+    width: max-content
+  }
+  .marker{
+    cursor:pointer;
+    font-size: 1.5em;
+    padding-left: .5em
+  }   
+  .imageup input[type='file']{
+    display: none;
+  }  
+  .imageup-selector{
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 5px solid var(--background-primary-color);
+    color:white;
+    cursor: pointer;
+    float: right;
+    font-size: .875rem;
+    padding: .75em;
+    margin-top: -2rem
+  }
+  .imageup-selector:hover{
+    transform: scale(1.1);
+    transition: transform .5s
+  }
+  .imageup{
+    height: 100%;
+    width: 100%
+  }
+  .informacion-personal{
+    display: flex;
+    flex-direction: column
+  }
+  .campos-telefono{
+    display: flex;
+    width: 100%
+  }
+  .guardar-cambios{
+    align-content: flex-start;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0 1rem
+  }
+  .label-restablecer-password {
+    margin: -.5rem 0 .5rem
+  }
+  .label-restablecer-password span{
+    color: var(--primary-color)!important;
+    font-size: .75rem!important
+  }
+  .label-restablecer-password span:hover{
+    opacity: .8
+  }
+  @media screen and (max-width: 1200px){    
+    .notificaciones-usuario{
+      display: none
+    }
+  }
   @media screen and (max-width: 992px){
     .migas{
+      display: none
+    }
+    .ilustracion-perfil{
+      display: none
+    }
+    .header-profile{
+      display: flex;
+      flex-direction: column;
+      gap: .125rem;
+      text-align: center
+    }
+    .avatar-nombre-completo{
+      flex-direction: row;
+      gap: .5rem;
+      white-space:nowrap
+    }
+    .imageup{
+      width: max-content
+    }
+    .contactos-usuario{
       display: none
     }
   }
@@ -534,11 +791,15 @@
     padding: .75rem;
     width: max-content
   }
+  .icon-header-profile{
+    color: var(--text-secondary-color);
+    padding: .25rem .5rem .25rem 0;
+  }
   .icon-migas{
     padding: 0 .5rem
   }
   .icon-motrar-mas{
-    padding-right: .5rem
+    padding: 0 .5rem 0 1.5rem
   }
   .break-word{
     word-break: break-all
@@ -576,4 +837,13 @@
   }
   .color-fondo-incidencias{
     background-color: var(--alerts-background-color)
+  }
+  .obligatorio{
+    color: var(--alerts-color)!important;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-left: .25rem
+  }
+  .column{
+    flex-direction: column;
   }

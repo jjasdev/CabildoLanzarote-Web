@@ -18,6 +18,7 @@ const itemCabildoResponde = document.querySelector(".last-link");
 const navMenu = document.querySelector(".nav-menu");
 const submenu = document.querySelector(".submenu");
 const avatar = document.querySelectorAll(".avatar-usuario");
+const avatarPerfil = document.querySelector(".avatar-profile");
 const iconSubmenu = document.querySelectorAll(".submenu .icon-item-submenu");
 const itemSubmenu = document.querySelectorAll(".submenu li");
 const iconoDesplegable = document.querySelector(".responsive-desplegable-icon");
@@ -41,10 +42,11 @@ const iconoMenu = document.querySelector(".menu-principal i");
 const sidebar = document.querySelector(".sidebar");
 const escritorio = document.querySelector(".escritorio");
 const year = document.querySelector(".year");
-const fecha = document.querySelector(".fecha");
+const fecha = document.querySelector(".fecha"); 
+const menuPerfil = document.querySelector(".main-profile");
 const today = new Date();
 const yearText = today.getFullYear();
-const longitudCifra = 2;    
+const longitudCifra = 2;   
 let monthNames = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ];
 const getDia = rellenarCeros(today.getDate(), longitudCifra);
 const day = ( 'Hoy estamos a ' + getDia + ' de ' +  monthNames[today.getMonth()] + ' de ' + yearText);
@@ -159,13 +161,19 @@ mediaQuery991.addEventListener('change', function() {
         }
       );
       añadirClase(wrapperMenu,"hide");
+      if (exists(menuPerfil)){
+        añadirClase(menuPerfil,"column");
+      }   
     }else{
       responsive = false;
       iconSubmenu.forEach(
         function(item) {
             item.className="icon-item-submenu";
         }
-      );        
+      ); 
+      if (exists(menuPerfil)){
+        eliminarClase(menuPerfil,"column");
+    }       
     }
 }); 
 mediaQuery596.addEventListener('change', function() {
@@ -183,10 +191,13 @@ mediaQuery596.addEventListener('change', function() {
       }
       if(encontrado){
         añadirClase(escritorio, "hide");
-      }      
+      }   
+      if (exists(menuPerfil)){
+        añadirClase(menuPerfil,"column");
+      }   
     }else{
       responsiveAdmin = false; 
-      eliminarClase(escritorio, "hide");     
+      eliminarClase(escritorio, "hide");         
     }
 }); 
 
@@ -262,7 +273,9 @@ if (exists(avatar)){
     avatar.forEach(
         function(item) {
             item.addEventListener("click",function(){
-                window.location.href = '/administacion.html';
+                if (item.parentElement.className.split(" ")[0] !== "imageup"){
+                    window.location.href = '/administracion.html';                    
+                }                
             });        
         }
     );
@@ -471,10 +484,15 @@ if (exists(menu)){
         sidebar.classList.toggle("visible"); 
         iconoMenu.classList.toggle("fa-bars"); 
         iconoMenu.classList.toggle("fa-times");
-        sidebarVisible = true;
+        sidebarVisible = true;        
     }else{
         escritorio.classList.toggle("margin-left-0");
-        sidebarVisible = false;
+        sidebarVisible = false;                
+    }
+    if (responsive){
+        if (exists(menuPerfil)){
+            añadirClase(menuPerfil,"column");
+        }
     }
     menu.addEventListener("click", function(event){
         event.preventDefault();
@@ -496,6 +514,10 @@ if (exists(menu)){
                 añadirClase(escritorio, "hide");
             }else{
                 eliminarClase(escritorio, "hide"); 
+            }
+        }else if (responsive){
+            if (exists(menuPerfil)){
+                añadirClase(menuPerfil,"column");
             }
         }        
     });

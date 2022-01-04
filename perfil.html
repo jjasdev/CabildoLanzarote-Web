@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" lang="es" content="Web que facilita la comunicación entre los ciudadanos y el Cabildo de Lanzarote mediante la notificación e información de incidencias en la vía urbana." />
     <meta name="keywords" content="lanzarote, cabildo, incidencias, ciudadanos">
-    <title>Cabildo de Lanzarote | Mi perfil</title>
+    <title>Cabildo de Lanzarote | Perfil</title>
     <link rel="stylesheet" href="css/admin.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -46,7 +46,7 @@
             <div class="desplegable-usuario">
                 <a aria-label="Desplegar el menú del usuario" title="Desplegar el menú del usuario" href="#"><i class="fas fa-chevron-down icon-item"></i></a>
                 <ul class="submenu-desplegable">
-                    <li><a aria-label="Ir a  Perfil" title="Ir a Perfil" href="perfil.html"><span class="desplegable-item">Mi perfil</span><i class="fas fa-user icon-item"></i></a></li>
+                    <li><a aria-label="Ir a  Perfil" title="Ir a Perfil" href="#"><span class="desplegable-item">Mi perfil</span><i class="fas fa-user icon-item"></i></a></li>
                     <li><a aria-label="Ir a Escritorio" title="Ir a Escritorio" href="administracion.html"><span class="desplegable-item">Panel de administación</span><i class="fas fa-cog icon-item"></i></i></a></li>
                     <li><a aria-label="Cerrar sesión" title="Cerrar sesión" href="#"><span class="desplegable-item">Cerrar sesión</span><i class="fas fa-power-off icon-item"></i></a></li>
                 </ul>
@@ -97,20 +97,144 @@
                 </div>     
             </section>
             <section class="title-wrapper">
-                <h2>Perfil de usuario</h2>
+                <h2>Mi perfil</h2>
             </section>
             <div class="main-wrapper">
-                <p>fsdf</p>
-                <p>fsdf</p>
-                <p>fsdf</p>
+                <div class="header-profile">
+                    <div class="imageup">                            
+                        <input type="file" id="file-uploader">
+                        <div class="avatar-usuario avatar-profile preview-image"></div>
+                        <label for="file-uploader" class="imageup-selector" aria-label="Subir imagen de perfil" title="Subir imagen de perfil">
+                            <i class="fa fa-camera"></i>
+                        </label>
+                    </div> 
+                    <div class="nombre-usuario">
+                        <div class="avatar-nombre-completo">
+                            <p class="avatar-nombre">Juan José</p>
+                            <p class="avatar-apellidos">Alonso Sánchez</p>
+                        </div>                        
+                        <p ><span>Arrecife</span><span>, Lanzarote</span></p>
+                    </div>
+                    <div class="contactos-usuario">
+                        <div class="item-contacto-usuario">
+                            <i class="fas fa-phone icon-header-profile"></i><strong>Fijo: </strong><span>923 232323</span>
+                        </div>
+                        <div class="item-contacto-usuario">
+                            <i class="fas fa-phone-alt icon-header-profile"></i><strong>Móvil: </strong><span>666 666666</span>
+                        </div>
+                        <div class="item-contacto-usuario">
+                            <i class="far fa-envelope icon-header-profile"></i><strong>Email: </strong><span>juanjoalonso@hotmail.com</span>
+                        </div>                     
+                    </div>
+                    <div class="notificaciones-usuario">
+                        <div class="notificaciones-llamadas">
+                            <i class="fas fa-phone icon-cards color-llamadas color-fondo-llamadas cards-area-icono"></i>
+                            <p class="texto-notificaciones">Llamadas</p>
+                            <p><span class="numero-notificaciones">15 </span><span>totales</span></p>                            
+                        </div>
+                        <div class="notificaciones-mensajes">
+                            <i class="fas fa-envelope icon-cards color-mensajes color-fondo-mensajes cards-area-icono"></i>
+                            <p class="texto-notificaciones">Mensajes</p>
+                            <p><span class="numero-notificaciones">3 </span><span>totales</span></p>                            
+                        </div>
+                    </div>
+                </div> 
+                <div class="main-profile">
+                    <section class="info-profile">
+                        <h3>Información personal</h3>
+                        <form  method="post" action="perfil.php" class="formulario-perfil">        
+                            <fieldset class="informacion-personal">   
+                                <div class="campo-formulario">
+                                    <label for="nif"><span>NIF/DNI </span></label>
+                                    <input aria-label="Introducir NIF" title="Introducir NIF" class="text" type="text" id="nif" name="nif" maxlength="9" required>
+                                </div> 
+                                <div class="campo-formulario">
+                                    <label for="nombre"><span>Nombre </span></label>
+                                    <input aria-label="Introducir nombre" title="Introducir nombre" class="text" type="text" id="nombre" name="nombre" required>
+                                </div>   
+                                <div class="campo-formulario">
+                                    <label for="apellido1"><span>Apellido1 </span></label>
+                                    <input aria-label="Introducir Apellido" title="Introducir Apellido" class="text" type="text" id="apellido1" name="apellido1" maxlength="9" required>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="apellido2"><span>Apellido2 </span></label>
+                                    <input aria-label="Introducir Apellido" title="Introducir Apellido" class="text" type="text" id="apellido2" name="apellido2" maxlength="9" required>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="email"><span>Email </span></label>
+                                    <input aria-label="Introducir Email" title="Introducir Email" class="text" type="email" id="email" name="email" maxlength="30" required>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="tel-fijo"><span>Teléfono fijo </span></label>
+                                    <div class="campos-telefono">
+                                        <input aria-label="Introducir Prefijo del Teléfono fijo" title="Introducir Prefijo del teléfono fijo" class="prefijo" size="3" type="text" name="prefijo-tel-fijo" autocomplete="off" id="prefijo-tel-fijo" maxlength="3" value="+34"/>
+                                        <input aria-label="Introducir Teléfono fijo" title="Introducir Teléfono fijo" type="text" pattern="^[0-9,$]*$" name="tel-fijo" autocomplete="off" id="tel-fijo" maxlength="9" placeholder="9XXXXXXXX" class="telefono" value=""/>
+                                    </div>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="tel-movil"><span>Teléfono móvil </span></label>
+                                    <div class="campos-telefono">
+                                        <input aria-label="Introducir Prefijo del Teléfono móvil" title="Introducir Prefijo del teléfono móvil" class="prefijo" size="3" type="text" name="prefijo-tel-movil" autocomplete="off" id="prefijo-tel-movil" maxlength="3" value="+34"/>
+                                        <input aria-label="Introducir Teléfono móvil" title="Introducir Teléfono móvil" type="text" pattern="^[0-9,$]*$" autocomplete="off" id="tel-movil" maxlength="9" placeholder="6XXXXXXXX" class="telefono" value=""/>    
+                                    </div>
+                                </div> 
+                                <div class="campo-formulario">
+                                    <label for="municipio"><span>Municipio </span></label>
+                                    <select id="municipio" name="municipio" aria-label="Seleccionar municipio" title="Seleccionar el tipo de incidencia">
+                                        <optgroup label="Lanzarote"></optgroup>
+                                        <option value="15">Haría</option>
+                                        <option value="22">Teguise</option>
+                                        <option value="23">Arrecife</option>
+                                        <option value="26">Tinajo</option>
+                                        <option value="28">San Bartolomé</option>
+                                        <option value="30">Tías</option>
+                                        <option value="25">Yaiza</option>
+                                        <optgroup label="La Graciosa"></optgroup>
+                                        <option value="27">Caleta de Sebo</option>
+                                        <option value="29">Pedro Barba</option>
+                                    </select>
+                                </div> 
+                                <div class="guardar-cambios">
+                                    <input class="boton-formulario boton-enviar" id="submit" name="submit" type="submit" value="Guardar" aria-label="Guardar cambios" title="Guardar cambios">
+                                    <input class="boton-formulario boton-cancelar" id="cancel" name="cancel" type="cancel" value="Cancelar" aria-label="Cancelar cambios" title="Cancelar cambios">
+                                </div>                  
+                            </fieldset>
+                        </form>
+                    </section>
+                    <section class="password-profile">
+                        <h3>Contraseña</h3>
+                        <form  method="post" action="password.php" class="formulario-password">        
+                            <fieldset class="change-password">   
+                                <div class="campo-formulario">
+                                    <label for="current-password"><span>Contraseña actual </span></label>
+                                    <input aria-label="Introducir contraseña actual" title="Introducir contraseña actual" class="text" type="password" id="current-password" name="current-password" required>
+                                    <a class="label-restablecer-password" aria-label="Ir a Restablecer contraseña" title="Ir a Restablecer contraseña" href="#"><span>¿Olvidaste tu contraseña?</span></a>
+                                </div>   
+                                <div class="campo-formulario">
+                                    <label for="new-password"><span>Nueva contraseña </span></label>
+                                    <input aria-label="Introducir nueva contraseña" title="Introducir nueva contraseña" class="text" type="password" id="new-password" name="new-password" required>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="confirm-password"><span>Confirmar contraseña </span></label>
+                                    <input aria-label="Confirmar contraseña" title="Confirmar contraseña" class="text" type="password" id="confirm-password" name="confirm-password" required>
+                                </div>
+                                <div class="guardar-cambios">
+                                    <input class="boton-formulario boton-enviar" id="submit-pwd" name="submit-pwd" type="submit" value="Guardar" aria-label="Guardar cambios" title="Guardar cambios">
+                                    <input class="boton-formulario boton-cancelar" id="cancel-pwd" name="cancel-pwd" type="cancel" value="Cancelar" aria-label="Cancelar cambios" title="Cancelar cambios">
+                                </div>                     
+                            </fieldset>
+                            <div class="ilustracion-perfil">
+                                <img  src="images/ilustracion-perfil.png" alt="Ilustración Editar perfil" title="Ilustración Editar perfil" loading="lazy" width="100" height="100">
+                            </div>
+                        </form>
+                    </section>
+                </div>               
             </div>
             <!-- FOOTER -->
             <footer>
-                <p>&copy; Cabildo Insular de Lanzarote <span class="year"></span></p>
+                <p>&copy; <strong>Cabildo Insular de Lanzarote</strong> <span class="year"></span></p>
             </footer>            
-        </div>
-        
-
+        </div>      
     </div>    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
