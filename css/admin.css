@@ -16,7 +16,7 @@
     --color-cabildo: #ca0928;
     --messages-color: #079be2;
     --messages-background-color: rgba(7,155,226,0.1);
-    --calls-color: #1ee0ac;
+    --calls-color: #28825d;
     --calls-background-color: rgba(30,224,172,0.1);
     --alerts-color: #ca0928;
     --alerts-background-color: rgba(202,9,40,0.1);
@@ -677,6 +677,138 @@
   .label-restablecer-password span:hover{
     opacity: .8
   }
+   /* RESTO PÁGINAS  */
+   .incidencias-container{
+     background-color: var(--background-primary-color);
+     display: flex;
+     flex-direction: column;
+     padding: .5rem 1.5rem
+   }
+   .item-incidencia{
+    align-items: center;
+    border-bottom: 1px solid var(--form-border-color);
+    color: var(--text-color);
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-flow: column dense;
+    grid-template-columns: 10% 1fr 1fr 20%;
+    justify-items: center;
+    padding: 1rem;
+    text-align: center
+   }
+   .item-incidencia p {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  }
+  .cabecera-incidencia{
+    font-weight: 700
+  }
+  .hora-incidencia{
+    font-size: .75rem!important;
+    font-weight: 700!important
+  }
+  .estado-incidencia{
+    border-radius: 9999px;
+    font-size: .625rem;
+    font-weight: 800;
+    padding: .25rem .5rem;
+    text-transform: uppercase
+  }
+  .pendiente{
+    color: var(--alerts-color);
+    background-color: var(--alerts-background-color)
+  }
+  .resuelta{
+    color: var(--calls-color);
+    background-color: var(--calls-background-color)
+  }
+  .row-incidencia{
+    cursor: pointer
+  }
+  .row-incidencia:hover,
+  .row-incidencia:active{
+    background-color: var(--background-secondary-color)
+  }
+  .controles-incidencias{
+    background-color: var(--background-primary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1.5rem
+  }
+  .texto-mostrar-registros,
+  .paginacion-incidencias a{
+    color: var(--text-color);
+    font-size: .875rem;
+    font-weight: 700
+  }
+  .paginacion-incidencias{
+    display: flex
+  }
+  .paginacion-incidencias a:hover{
+    opacity: .8
+  }
+  .numero-paginacion-incidencias{
+    background-color: var(--background-secondary-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin: 0 .75rem;
+    padding: .5rem .75rem
+  }
+  .add-incidencias{
+    background-color: var(--background-primary-color);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem 2.25rem
+  }
+  .add-incidencias p{
+    background-color: var(--background-secondary-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: .75rem 0
+  }
+  .add-incidencias i{
+    font-weight: 900;
+    margin-right: .5rem
+  }
+  .add-incidencias a{
+    color: var(--text-color);    
+    padding: .75rem
+  }
+  .add-incidencias:hover a{
+    opacity: .8
+  }
+  .detalles-cabecera-incidencia{
+    align-items: center;
+    background-color: var(--background-primary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem 1rem
+  }
+  .contenedor-incidencia{
+    background-color: var(--background-primary-color);
+    padding: 0 1.5rem .5rem
+  }  
+  .contenedor-fotos{
+    background-color: var(--background-primary-color);
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    padding: 0 1.5rem 2.5rem
+  }
+  .images-incidencias{
+    background-color: var(--background-secondary-color);    
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    height: 15rem;
+    justify-self: center;
+    object-fit: cover;
+    width: 100%
+  }
   @media screen and (max-width: 1200px){    
     .notificaciones-usuario{
       display: none
@@ -704,6 +836,23 @@
       width: max-content
     }
     .contactos-usuario{
+      display: none
+    }
+    .controles-incidencias{
+      padding-bottom: 1.5rem
+    }
+  }
+  @media screen and (max-width: 767px){    
+    .controles-incidencias{
+      align-items: center;
+      flex-direction: column;
+      justify-content: center
+    }
+    .paginacion-incidencias{
+      padding-top: .75rem;
+      text-align: center
+    }
+    .texto-mostrar-registros{
       display: none
     }
   }
@@ -745,6 +894,12 @@
     .main-nav span{
       font-size: 1.25rem
     }    
+    .detalles-cabecera-incidencia{
+      flex-direction: column
+    }
+    .icon-incidencia-detalles{
+      display: none
+    }
   }
   /* FOOTER */
   footer{    
@@ -800,6 +955,10 @@
   }
   .icon-motrar-mas{
     padding: 0 .5rem 0 1.5rem
+  }
+  .icon-incidencia-detalles{
+    color: var(--alerts-color);
+    font-size: 1.5rem
   }
   .break-word{
     word-break: break-all

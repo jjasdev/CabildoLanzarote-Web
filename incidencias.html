@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" lang="es" content="Web que facilita la comunicación entre los ciudadanos y el Cabildo de Lanzarote mediante la notificación e información de incidencias en la vía urbana." />
+    <meta name="keywords" content="lanzarote, cabildo, incidencias, ciudadanos">
+    <title>Cabildo de Lanzarote | Incidencias</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body >
+    <!-- CABECERA -->
+    <header>
+        <div class="admin-logo">
+            <a href="https://www.cabildodelanzarote.com/" target="_blank" rel="noreferrer">
+                <picture>
+                    <source srcset="images/favicon.png" media="(max-width: 596px)" loading="lazy" >
+                    <img src="images/logo-cabildo-lanzarote.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100"> 
+                </picture>
+            </a>
+        </div>  
+        <div class="settings-nav">
+            <ul class="settings-links">
+                <li><a aria-label="Desplegar menú lateral" title="Desplegar menú lateral" href="#" class="menu-principal"><i class="fas fa-bars admin-icon-item"></i></a></li>
+                <li><a aria-label="Ver notificaciones" title="Ver notificaciones" href="#"><i class="far fa-bell admin-icon-item circle"></i></a></li>
+                <li>
+                    <form class="admin-search">                    
+                        <button type="submit"><i class="fas fa-search admin-icon-item"></i></button>
+                        <input type="search" class="search" placeholder="Escriba aquí..." name="search">
+                    </form>
+                </li>
+            </ul>
+        </div>      
+        <div class="user-nav">
+            <div class="detalles-usuario">
+                <p>Usuario</p>
+                <p><strong>Juan José Alonso Sánchez</strong></p>
+            </div>
+            <div class="avatar-usuario">
+            </div>
+            <div class="desplegable-usuario">
+                <a aria-label="Desplegar el menú del usuario" title="Desplegar el menú del usuario" href="#"><i class="fas fa-chevron-down icon-item"></i></a>
+                <ul class="submenu-desplegable">
+                    <li><a aria-label="Ir a  Perfil" title="Ir a Perfil" href="perfil.html"><span class="desplegable-item">Mi perfil</span><i class="fas fa-user icon-item"></i></a></li>
+                    <li><a aria-label="Ir a Escritorio" title="Ir a Escritorio" href="#"><span class="desplegable-item">Panel de administación</span><i class="fas fa-cog icon-item"></i></i></a></li>
+                    <li><a aria-label="Cerrar sesión" title="Cerrar sesión" href="#"><span class="desplegable-item">Cerrar sesión</span><i class="fas fa-power-off icon-item"></i></a></li>
+                </ul>
+            </div>
+        </div>               
+    </header>
+    <!-- CONTENIDO -->
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="admin-logo">
+                <a href="https://www.cabildodelanzarote.com/" target="_blank" rel="noreferrer"><img src="images/logo-cabildo-lanzarote-sidebar.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100"></a>
+            </div> 
+            <div class="info-user">
+                <div class="avatar-usuario avatar-sidebar">
+                </div>
+                <p class="text-white break-word">Juan José Alonso Sánchez</p>
+                <p class="text-secondary break-word">juanjoalonso@hotmail.com</p>
+            </div>
+            <div class="options-user">
+                <h2>Información</h2>
+                <h3>Comunicaciones con el Cabildo</h3> 
+                <nav>
+                    <ul class="main-nav">
+                        <li><a aria-label="Ir a Incidencias" title="Ir a Incidencias" href="incidencias.html"><i class="fas fa-exclamation-triangle icon-sidebar-item"></i><span>Incidencias</span></a></li>
+                        <li><a aria-label="Ir a Mensajes" title="Ir a Mensajes" href="mensajes.html"><i class="fas fa-envelope icon-sidebar-item"></i><span>Mensajes</span></a></li>
+                        <li><a aria-label="Ir a Llamadas" title="Ir a Llamadas" href="llamadas.html"><i class="fas fa-phone icon-sidebar-item"></i><span>Llamadas</span></a></li>
+                    </ul>
+                </nav> 
+                <h2>Soporte</h2>
+                <h3>Enlaces y formas de contacto</h3>  
+                <nav>
+                    <ul class="main-nav">
+                        <li><a aria-label="Ir a Contactos" title="Ir a Contactos" href="contactos.html"><i class="fas fa-paper-plane icon-sidebar-item"></i><span>Contactos</span></a></li>
+                        <li><a aria-label="Ir a Condiciones de uso" title="Ir a Condiciones de uso" href="condiciones-uso.html"><i class="fas fa-signature icon-sidebar-item"></i><span>Condiciones de uso</span></a></li>
+                        <li><a aria-label="Ir a Acerca de" title="Ir a Acerca de" href="acerca-de.html"><i class="fas fa-info-circle icon-sidebar-item"></i><span>Acerca de</span></a></li>
+                    </ul>
+                </nav>
+            </div>               
+        </div>
+        <div class="escritorio">
+            <section class="top-wrapper">
+                <h1>Hola, Juan José</h1>  
+                <p><span class="fecha"></span></p>  
+                <div class="migas">
+                    <a aria-label="Ir a Panel de administracion" title="Ir a Panel de administracion" href="administracion.html"><span>Panel de administración </span></a>
+                    <i class="fas fa-chevron-right icon-migas"></i>
+                    <span> Escritorio</span>
+                </div>     
+            </section>
+            <section class="title-wrapper">
+                <h2>Panel de administración</h2>
+            </section>
+            <div class="main-wrapper">
+                <section class="incidencias">
+                    <h3>Incidencias</h3>
+                    <ul class="incidencias-container">
+                        <li class="item-incidencia cabecera-incidencia">
+                            <p>ID</p>
+                            <p>Fecha</p>
+                            <p>Tipo</p>
+                            <p>Estado</p>
+                        </li>
+                        <li class="item-incidencia row-incidencia">
+                            <p>235</p>
+                            <p><span>04/01/2022 </span><span class="hora-incidencia">9:27AM</span></p>
+                            <p>Alcantarillado</p>
+                            <p class="estado-incidencia pendiente">Pendiente</p>
+                        </li>
+                        <li class="item-incidencia row-incidencia">
+                            <p>234</p>
+                            <p><span>03/01/2022 </span><span class="hora-incidencia">8:12AM</span></p>
+                            <p>Limpiezas</p>
+                            <p class="estado-incidencia pendiente">Pendiente</p>
+                        </li>
+                        <li class="item-incidencia row-incidencia">
+                            <p>233</p>
+                            <p><span>18/12/2021 </span><span class="hora-incidencia">19:17PM</span></p>
+                            <p>Alumbrado</p>
+                            <p class="estado-incidencia resuelta">Resuelta</p>
+                        </li>
+                        <li class="item-incidencia row-incidencia">
+                            <p>232</p>
+                            <p><span>04/01/2021 </span><span class="hora-incidencia">17:28PM</span></p>
+                            <p>Urbanismo</p>
+                            <p class="estado-incidencia pendiente">Pendiente</p>
+                        </li>
+                        <li class="item-incidencia row-incidencia">
+                            <p>231</p>
+                            <p><span>15/11/2021 </span><span class="hora-incidencia">10:27AM</span></p>
+                            <p>Agua potable</p>
+                            <p class="estado-incidencia resuelta">Resuelta</p>
+                        </li>
+                    </ul>
+                    <div class="controles-incidencias">
+                        <p class="texto-mostrar-registros">Mostrando 1 - 5 de 5</p>
+                        <div class="paginacion-incidencias">
+                            <p><a aria-label="Mostrar incidencias anteriores" title="Mostrar incidencias anteriores" href="#">Anterior</a></p>
+                            <p><a aria-label="Mostrar incidencias" title="Mostrar incidencias" href="#"><span class="numero-paginacion-incidencias">1</span></a></p>
+                            <p><a aria-label="Mostrar incidencias posteriores" title="Mostrar incidencias posteriores" href="#">Posterior</a></p>
+                        </div>
+                    </div>
+                    <div class="add-incidencias">
+                        <p><a aria-label="Ir a alta de incidencias" title="Ir a alta de incidencias" href="alta-incidencia.html"><i class="fas fa-plus"></i>Añadir incidencia</a></p>
+                    </div>
+                </section>
+                <section class="detalles-incidencia">
+                    <h3>Detalles incidencia</h3>
+                    <div class="detalles-cabecera-incidencia">
+                        <p><span>03/01/2022 </span><span class="hora-incidencia">8:12AM</span></p>
+                        <p class="icon-incidencia-detalles"><i class="fas fa-map-pin"></i></p>
+                        <p class="estado-incidencia pendiente">Pendiente</p>
+                    </div>
+                    <fieldset class="contenedor-incidencia">   
+                        <div class="campo-formulario">
+                            <label for="tipo"><span>Tipo </span></label>
+                            <input aria-label="Tipo de incidencia introducida" title="Tipo de incidencia introducida" class="text" type="text" id="tipo" name="tipo" required>
+                        </div>   
+                        <div class="campo-formulario">
+                            <label for="direccion"><span>Dirección </span></label>
+                            <input aria-label="Dirección introducida" title="Dirección introducida" class="text" type="text" id="direccion" name="direccion" required>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="observaciones"><span>Observaciones </span></label>
+                            <textarea aria-label="Observaciones introducidas" title="Observaciones introducidas" id="observaciones" name="observaciones" maxlength="255" required></textarea>
+                        </div>       
+                        <label><span>Fotos </span></label>           
+                    </fieldset>
+                    <div class="contenedor-fotos">
+                        <img class="images-incidencias" src="images/incidencias/ejemplo-incidencia01.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
+                        <img class="images-incidencias" src="images/incidencias/ejemplo-incidencia02.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
+                        <img class="images-incidencias" src="images/incidencias/ejemplo-incidencia03.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">                                        
+                        <img class="images-incidencias" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
+                        <img class="images-incidencias" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
+                    </div>
+                </section>
+            </div>
+            <!-- FOOTER -->
+            <footer>
+                <p>&copy; <strong>Cabildo Insular de Lanzarote</strong> <span class="year"></span></p>
+            </footer>            
+        </div>
+        
+
+    </div>    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
