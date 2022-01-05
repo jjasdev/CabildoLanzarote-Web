@@ -130,6 +130,12 @@
     font-size: .7rem;
     text-transform: uppercase
   }
+  .container-avatar-usuario{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%
+  }
   .avatar-usuario{
     background-color: var(--background-secondary-color);
     background-image:url('../images/avatar_default.png');
@@ -145,7 +151,8 @@
   .detalles-usuario{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    height: 100%;
+    justify-content: center;
     text-align: right
   }
   .desplegable-usuario i{
@@ -171,7 +178,7 @@
     text-align: right;
     text-transform: uppercase;
     top: 4rem;
-  }  
+  }
   .submenu-desplegable li{
     border-right: 3px solid var(--border-color); 
     justify-content: flex-start!important;    
@@ -189,7 +196,9 @@
     font-size: .8rem;
     padding: 0 0 0 .75em
   }
-  .desplegable-usuario:hover > .submenu-desplegable {
+  .desplegable-usuario:hover > .submenu-desplegable,
+  .detalles-usuario:hover ~ .desplegable-usuario > .submenu-desplegable,
+  .container-avatar-usuario:hover ~ .desplegable-usuario > .submenu-desplegable{
     display: block;
     transition: all 1s ease
   }
@@ -199,7 +208,44 @@
   .submenu-desplegable li:hover .desplegable-item {
     color: var(--primary-color);
     transition: all .5s ease
-  }  
+  }    
+  .submenu-notificaciones{
+    background-color: var(--background-primary-color);
+    box-shadow:0 8px 20px 0 rgba(0,0,0,0.125);
+    flex-direction: column;
+    font-size: 0.8em;
+    height: auto!important;
+    padding: 0!important;
+    position: absolute;
+    left: 19.75rem;
+    text-align: left;
+    top: 4rem
+  } 
+  .submenu-notificaciones li{
+    border-bottom: 1px solid var(--border-color); 
+    justify-content: flex-start!important;    
+    padding: 1rem!important 
+  }
+  .submenu-notificaciones li:last-child{
+    border-bottom: none
+  }
+  .submenu-notificaciones li:hover{ 
+    background-color: var(--background-secondary-color)
+  }
+  .submenu-notificaciones li:hover .desplegable-item {
+    color: var(--primary-color);
+    transition: all .5s ease
+  }
+  .container-notificaciones{
+    display: flex;
+  }
+  .info-notificaciones{
+    display: flex;
+    flex-direction: column;
+  }
+  .hora-notificaciones{
+    padding: 0
+  }
   @media screen and (max-width: 992px) {
     .detalles-usuario{
       display: none
@@ -311,6 +357,66 @@
     padding: 1.5rem; 
     width: 100%
   }
+  .aviso{
+    display: grid;
+    grid-template-columns: 3.5rem 1fr 3.5rem;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    font-size: .875rem;  
+    width: auto;
+    height: auto;
+    margin-bottom: 1.5rem;  
+    border-radius: 3px;   
+  }
+  .aviso i{    
+    font-weight: 700;
+    width: 100%;
+    text-align: center;  
+  }
+  .aviso .fa-info{
+    color: var(--sidebar-color-text);
+    align-self: center;
+    padding: 1rem;
+  }
+  .aviso .fa-times{
+    cursor: pointer;
+  }
+  .aviso .fa-times:hover{
+    transform: scale(1.2);
+  }
+  .texto-aviso {
+    max-width: 100%;
+    overflow: hidden;
+    justify-self: start;
+    padding-left: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  }
+  .aviso-info{
+    border: 1px solid var(--messages-color);
+    background-color: var(--messages-background-color);
+    color: var(--messages-color); 
+  }
+  .aviso-info .fa-info{    
+    background-color: var(--messages-color)
+  }
+  .aviso-success{
+    border: 1px solid var(--calls-color);
+    background-color: var(--calls-background-color);
+    color: var(--calls-color); 
+  }
+  .aviso-success .fa-info{    
+    background-color: var(--calls-color)
+  }
+  .aviso-alert{
+    border: 1px solid var(--alerts-color);
+    background-color: var(--alerts-background-color);
+    color: var(--alerts-color); 
+  }
+  .aviso-alert .fa-info{    
+    background-color: var(--alerts-color)
+  }
   .top-wrapper,
   .title-wrapper{
     background-color: var(--background-primary-color)
@@ -412,21 +518,19 @@
   .actividad-container{
     background-color: var(--background-primary-color);
     height: auto;
-    padding: 1.5rem;
     width: 100%
   }
   .actividad-item{
     align-items: center;
     border-bottom: 1px solid var(--border-color);
     display: flex;
-    padding: 1rem 0
+    padding: 1rem 0 1rem 1.5rem
   }
-  .actividad-item:first-child{
-    padding-top: 0
+  .actividad-item:hover{
+    background-color: var(--background-secondary-color)
   }
   .actividad-item:last-child{
-    border-bottom: none;
-    padding-bottom: 0
+    border-bottom: none
   }
   .actividad-informacion{
     display: flex;
@@ -481,9 +585,11 @@
   .ilustracion-perfil{
     align-items: center;
     display: flex;
+    flex-grow: 1;
     height: auto;
     justify-content: center;
-    margin-top: 4.5rem;
+    margin: 4.5rem 0;
+    opacity: .1;
     width: 100%
   }
   .ilustracion-perfil img{
@@ -678,38 +784,49 @@
     opacity: .8
   }
    /* RESTO PÁGINAS  */
-   .incidencias-container{
+   .notificaciones-container{
      background-color: var(--background-primary-color);
      display: flex;
      flex-direction: column;
      padding: .5rem 1.5rem
    }
-   .item-incidencia{
+   .item-notificacion{
     align-items: center;
     border-bottom: 1px solid var(--form-border-color);
     color: var(--text-color);
     display: grid;
     gap: 1.5rem;
     grid-auto-flow: column dense;
-    grid-template-columns: 10% 1fr 1fr 20%;
     justify-items: center;
     padding: 1rem;
     text-align: center
    }
-   .item-incidencia p {
+   .item-incidencia{
+    grid-template-columns: 5% 1fr 1fr 15%
+   }
+   .item-mensaje{
+    grid-template-columns: 15% 1fr 15%
+   }
+   .item-notificacion p,
+   .detalles-cabecera-notificacion p{
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap
   }
-  .cabecera-incidencia{
+  .cabecera-notificacion{
     font-weight: 700
   }
-  .hora-incidencia{
+  .fecha-notificacion,
+  .id-notificacion{
+    justify-self: flex-start
+  }
+  .hora-notificacion{
     font-size: .75rem!important;
     font-weight: 700!important
   }
-  .estado-incidencia{
+  .estado-notificacion{
+    align-self: center;
     border-radius: 9999px;
     font-size: .625rem;
     font-weight: 800;
@@ -724,32 +841,35 @@
     color: var(--calls-color);
     background-color: var(--calls-background-color)
   }
-  .row-incidencia{
+  .en-curso{
+    color: var(--messages-color);
+    background-color: var(--messages-background-color)
+  }
+  .row-notificacion{
     cursor: pointer
   }
-  .row-incidencia:hover,
-  .row-incidencia:active{
+  .row-notificacion:hover{
     background-color: var(--background-secondary-color)
   }
-  .controles-incidencias{
+  .controles-notificaciones{
     background-color: var(--background-primary-color);
     display: flex;
     justify-content: space-between;
     padding: .5rem 1.5rem
   }
   .texto-mostrar-registros,
-  .paginacion-incidencias a{
+  .paginacion-notificaciones a{
     color: var(--text-color);
     font-size: .875rem;
     font-weight: 700
   }
-  .paginacion-incidencias{
+  .paginacion-notificaciones{
     display: flex
   }
-  .paginacion-incidencias a:hover{
+  .paginacion-notificaciones a:hover{
     opacity: .8
   }
-  .numero-paginacion-incidencias{
+  .numero-paginacion-notificaciones{
     background-color: var(--background-secondary-color);
     border-radius: 5px;
     color: var(--text-color);
@@ -757,42 +877,78 @@
     margin: 0 .75rem;
     padding: .5rem .75rem
   }
-  .add-incidencias{
+  .add-notificaciones{
     background-color: var(--background-primary-color);
     display: flex;
     justify-content: center;
     margin-bottom: 1.5rem;
     padding: 0 1.5rem 2.25rem
   }
-  .add-incidencias p{
-    background-color: var(--background-secondary-color);
+  .mostrar-fotos{
+    display: flex;
+    justify-content: flex-start;
+    padding: .5rem 0
+  }
+  .add-notificaciones p,
+  .mostrar-fotos p{    
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;
     padding: .75rem 0
   }
-  .add-incidencias i{
+  .add-notificaciones i,
+  .mostrar-fotos i{
+    background-color: var(--background-secondary-color);
     font-weight: 900;
+    padding: .75rem;
+    border-radius: 3px;
     margin-right: .5rem
   }
-  .add-incidencias a{
-    color: var(--text-color);    
-    padding: .75rem
+  .add-notificaciones a,
+  .mostrar-fotos a{
+    color: var(--text-color)
   }
-  .add-incidencias:hover a{
+  .add-notificaciones p:hover a,
+  .mostrar-fotos p:hover a{
     opacity: .8
   }
-  .detalles-cabecera-incidencia{
+  .detalles-cabecera-notificacion{
     align-items: center;
     background-color: var(--background-primary-color);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
     padding: 1.5rem 1.5rem 1rem
   }
-  .contenedor-incidencia{
+  .info-usuario-notificacion{
+    align-self: start;
+    padding-left: 1rem;
+  }
+  .info-usuario-notificacion p{
+    font-size: .875rem;
+    margin-bottom: -.25rem;
+    margin-top: .25rem;
+  }
+  .info-usuario-notificacion span{
+    font-size: .875rem
+  }
+  .contenedor-notificacion{
     background-color: var(--background-primary-color);
-    padding: 0 1.5rem .5rem
-  }  
+    padding: 0 1.5rem .5rem;
+    position: relative;
+  }    
+  .contenedor-notificacion::before{    
+    color: var(--alerts-color);
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-size: 15rem;
+    font-weight: 900;
+    height: 15rem;
+    left: 50%;
+    opacity: .1;
+    position: absolute;
+    top: 2rem;
+    width: auto;
+  }
   .contenedor-fotos{
     background-color: var(--background-primary-color);
     display: grid;
@@ -800,7 +956,7 @@
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     padding: 0 1.5rem 2.5rem
   }
-  .images-incidencias{
+  .images-notificacion{
     background-color: var(--background-secondary-color);    
     border-radius: 3px;
     border: 1px solid var(--border-color);
@@ -838,22 +994,40 @@
     .contactos-usuario{
       display: none
     }
-    .controles-incidencias{
+    .controles-notificaciones{
       padding-bottom: 1.5rem
     }
   }
   @media screen and (max-width: 767px){    
-    .controles-incidencias{
+    .controles-notificaciones{
       align-items: center;
       flex-direction: column;
       justify-content: center
     }
-    .paginacion-incidencias{
+    .paginacion-notificaciones{
       padding-top: .75rem;
       text-align: center
     }
     .texto-mostrar-registros{
       display: none
+    }
+    .detalles-cabecera-notificacion {
+      grid-template-areas: ". estado-notif"
+                           "avatar detalles-avatar";
+      grid-template-columns: max-content 1fr;
+      grid-template-rows: auto auto      
+    }
+    .detalles-cabecera-notificacion .avatar-usuario{
+      grid-area: avatar
+    }
+    .detalles-cabecera-notificacion .info-usuario-notificacion{
+      grid-area: detalles-avatar
+    }
+    .detalles-cabecera-notificacion .estado-notificacion{
+      grid-area: estado-notif;
+      justify-self: center;
+      margin: 1rem 0 2rem;
+      width: max-content
     }
   }
   @media screen and (max-width: 596px) {
@@ -894,10 +1068,10 @@
     .main-nav span{
       font-size: 1.25rem
     }    
-    .detalles-cabecera-incidencia{
+    .detalles-cabecera-notificacion{
       flex-direction: column
     }
-    .icon-incidencia-detalles{
+    .icon-notificacion-detalles{
       display: none
     }
   }
@@ -946,6 +1120,14 @@
     padding: .75rem;
     width: max-content
   }
+  .icon-notificaciones{
+    border-radius:50%;
+    font-size: .75rem;
+    height: max-content;
+    padding: .5rem;
+    margin-right: 1rem;
+    width: max-content
+  }
   .icon-header-profile{
     color: var(--text-secondary-color);
     padding: .25rem .5rem .25rem 0;
@@ -956,7 +1138,7 @@
   .icon-motrar-mas{
     padding: 0 .5rem 0 1.5rem
   }
-  .icon-incidencia-detalles{
+  .icon-notificacion-detalles{
     color: var(--alerts-color);
     font-size: 1.5rem
   }

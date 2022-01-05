@@ -44,6 +44,12 @@ const escritorio = document.querySelector(".escritorio");
 const year = document.querySelector(".year");
 const fecha = document.querySelector(".fecha"); 
 const menuPerfil = document.querySelector(".main-profile");
+const verNotificaciones = document.querySelector(".ver-notificaciones");
+const submenuNotificaciones = document.querySelector(".submenu-notificaciones");
+const aviso = document.querySelectorAll(".aviso");
+const mostrarFotos = document.querySelector(".mostrar-fotos a");
+const contenedorFotos = document.querySelector(".contenedor-fotos");
+const textoFotosAdjuntas = document.querySelector(".texto-fotos-adjuntas");
 const today = new Date();
 const yearText = today.getFullYear();
 const longitudCifra = 2;   
@@ -521,8 +527,46 @@ if (exists(menu)){
             }
         }        
     });
+    verNotificaciones.addEventListener("click", function(event){
+        event.preventDefault(); 
+        eliminarClase(submenuNotificaciones,"hide");  
+    });
 }
+//Si hacemos clic fuera de las notificaciones nos salimos de ellas
+document.addEventListener("click", function(event){
+    if (exists(menu)){
+        let focoClic = event.target.className;
+        if(focoClic !== "far fa-bell admin-icon-item circle" && submenuNotificaciones.className === "submenu-notificaciones") {
+            añadirClase(submenuNotificaciones,"hide");
+        } 
+    }       
+}, false);
+//Establecemos el año
 if (exists(year) && exists(fecha)){
     year.innerHTML = yearText;
     fecha.innerHTML = day;
+}
+//Ocultamos mensaje notificaciones
+if (exists(aviso)){
+    aviso.forEach(
+        function(item) {
+            item.lastElementChild.addEventListener("click", function(event){
+                event.preventDefault(); 
+                añadirClase(item,"hide");  
+            });
+        }
+      );    
+}
+
+//Mostramos las fotos adjuntas
+if (exists(contenedorFotos)){
+    mostrarFotos.addEventListener("click", function(event){
+        event.preventDefault(); 
+        contenedorFotos.classList.toggle("hide");
+        if (contenedorFotos.className === "contenedor-fotos"){
+            textoFotosAdjuntas.innerHTML = "Ocultar fotos adjuntas";
+        }else{
+            textoFotosAdjuntas.innerHTML = "Ver fotos adjuntas";
+        }
+     });  
 }

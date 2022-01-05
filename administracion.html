@@ -27,7 +27,32 @@
         <div class="settings-nav">
             <ul class="settings-links">
                 <li><a aria-label="Desplegar menú lateral" title="Desplegar menú lateral" href="#" class="menu-principal"><i class="fas fa-bars admin-icon-item"></i></a></li>
-                <li><a aria-label="Ver notificaciones" title="Ver notificaciones" href="#"><i class="far fa-bell admin-icon-item circle"></i></a></li>
+                <li>
+                    <a aria-label="Ver notificaciones" title="Ver notificaciones" href="#" class="ver-notificaciones"><i class="far fa-bell admin-icon-item circle"></i></a>
+                    <ul class="submenu-notificaciones hide">
+                        <li class="container-notificaciones">
+                            <i class="fas fa-exclamation-circle color-incidencias color-fondo-incidencias icon-notificaciones"></i>
+                            <div class="info-notificaciones">
+                                <p>El estado de la incidencia #235 ha sido actualizado</p>
+                                <span class="hora-notificaciones">12-02-2022 <strong>10:30 AM</strong></span>
+                            </div>                            
+                        </li>
+                        <li class="container-notificaciones">
+                            <i class="fas fa-envelope color-mensajes color-fondo-mensajes icon-notificaciones"></i>
+                            <div class="info-notificaciones">
+                                <p>El <strong>Cabildo de Lanzarote</strong> te ha escrito un mensaje</p>
+                                <span class="hora-notificaciones">23-01-2022 <strong>20:23 PM</strong></span>
+                            </div>
+                        </li>
+                        <li class="container-notificaciones">
+                            <i class="fas fa-phone color-llamadas color-fondo-llamadas icon-notificaciones"></i>
+                            <div class="info-notificaciones">
+                                <p>El <strong>Cabildo de Lanzarote</strong> ha contestado a tu llamada</p>
+                                <span class="hora-notificaciones">04-01-2022 <strong>08:10 AM</strong></span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <form class="admin-search">                    
                         <button type="submit"><i class="fas fa-search admin-icon-item"></i></button>
@@ -41,7 +66,8 @@
                 <p>Usuario</p>
                 <p><strong>Juan José Alonso Sánchez</strong></p>
             </div>
-            <div class="avatar-usuario">
+            <div class="container-avatar-usuario">
+                <div class="avatar-usuario"></div>
             </div>
             <div class="desplegable-usuario">
                 <a aria-label="Desplegar el menú del usuario" title="Desplegar el menú del usuario" href="#"><i class="fas fa-chevron-down icon-item"></i></a>
@@ -87,6 +113,11 @@
             </div>               
         </div>
         <div class="escritorio">
+            <div class="aviso aviso-info">
+                <i class="fas fa-info"></i>
+                <span class="texto-aviso">¡El <strong>estado</strong> de alguna de tus comunicaciones ha cambiado! Revísalas y si es necesario escríbenos.</span>
+                <i class="fas fa-times"></i>
+            </div>
             <section class="top-wrapper">
                 <h1>Hola, Juan José</h1>  
                 <p><span class="fecha"></span></p>  

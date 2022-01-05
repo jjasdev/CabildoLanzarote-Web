@@ -161,11 +161,11 @@
                         <input aria-label="Introducir nombre" title="Introducir nombre" class="text" type="text" id="nombre" name="nombre" required>
                     </div>   
                     <div class="campo-formulario cf-apellido1">
-                        <label for="apellido1"><span>Apellido1 </span><span class="obligatorio">*</span></label>
+                        <label for="apellido1"><span>Primer apellido </span><span class="obligatorio">*</span></label>
                         <input aria-label="Introducir Apellido" title="Introducir Apellido" class="text" type="text" id="apellido1" name="apellido1" maxlength="9" required>
                     </div>
                     <div class="campo-formulario cf-apellido2">
-                        <label for="apellido2"><span>Apellido2 </span><span class="obligatorio">*</span></label>
+                        <label for="apellido2"><span>Segundo apellido </span><span class="obligatorio">*</span></label>
                         <input aria-label="Introducir Apellido" title="Introducir Apellido" class="text" type="text" id="apellido2" name="apellido2" maxlength="9" required>
                     </div>
                     <div class="campo-formulario cf-email">
@@ -234,7 +234,17 @@
                     </div>
                 </fieldset>
                 <input class="boton-enviar-formulario" id="submit" name="submit" type="submit" value="Enviar" aria-label="Enviar incidencia" title="Enviar incidencia">
-            </form>
+            </form>            
+            <div class="aviso aviso-success">
+                <i class="fas fa-check-circle"></i>
+                <span class="texto-aviso color-success">¡La <strong>incidencia</strong> se ha registrado correctamente! En la mayor brevedad nos pondremos en contacto.</span>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="aviso aviso-error">
+                <i class="fas fa-times-circle"></i>
+                <span class="texto-aviso color-error"><strong>¡Error!</strong> La <strong>incidencia</strong> no se ha procesado correctamente. Inténtelo de nuevo.</span>
+                <i class="fas fa-times"></i>
+            </div>
         </section>
     </div>
     <!-- FOOTER -->

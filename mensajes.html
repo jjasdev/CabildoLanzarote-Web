@@ -96,8 +96,8 @@
                 <h3>Comunicaciones con el Cabildo</h3> 
                 <nav>
                     <ul class="main-nav">
-                        <li><a aria-label="Ir a Incidencias" title="Ir a Incidencias" href="#"><i class="fas fa-exclamation-triangle icon-sidebar-item"></i><span>Incidencias</span></a></li>
-                        <li><a aria-label="Ir a Mensajes" title="Ir a Mensajes" href="mensajes.html"><i class="fas fa-envelope icon-sidebar-item"></i><span>Mensajes</span></a></li>
+                        <li><a aria-label="Ir a Incidencias" title="Ir a Incidencias" href="incidencias.html"><i class="fas fa-exclamation-triangle icon-sidebar-item"></i><span>Incidencias</span></a></li>
+                        <li><a aria-label="Ir a Mensajes" title="Ir a Mensajes" href="#"><i class="fas fa-envelope icon-sidebar-item"></i><span>Mensajes</span></a></li>
                         <li><a aria-label="Ir a Llamadas" title="Ir a Llamadas" href="llamadas.html"><i class="fas fa-phone icon-sidebar-item"></i><span>Llamadas</span></a></li>
                     </ul>
                 </nav> 
@@ -115,7 +115,7 @@
         <div class="escritorio">
             <div class="aviso aviso-info">
                 <i class="fas fa-info"></i>
-                <span class="texto-aviso">¡El <strong>estado</strong> de alguna de tus incidencias ha cambiado! Revísalas y si es necesario escríbenos.</span>
+                <span class="texto-aviso">¡El <strong>Cabildo de Lanzarote</strong> ha respondido a alguno de tus mensajes!</span>
                 <i class="fas fa-times"></i>
             </div>
             <section class="top-wrapper">
@@ -124,98 +124,83 @@
                 <div class="migas">
                     <a aria-label="Ir a Panel de administracion" title="Ir a Panel de administracion" href="administracion.html"><span>Panel de administración </span></a>
                     <i class="fas fa-chevron-right icon-migas"></i>
-                    <span> Incidencias</span>
+                    <span> Mensajes</span>
                 </div>     
             </section>
             <section class="title-wrapper">
-                <h2>Incidencias</h2>
+                <h2>Mensajes</h2>
             </section>
             <div class="main-wrapper">
                 <section class="notificaciones">
-                    <h3>Listado de incidencias</h3>
+                    <h3>Listado de mensajes</h3>
                     <ul class="notificaciones-container">
-                        <li class="item-notificacion item-incidencia cabecera-notificacion">
-                            <p class="id-notificacion">ID</p>
-                            <p>Fecha</p>
-                            <p>Tipo</p>
+                        <li class="item-notificacion item-mensaje cabecera-notificacion">
+                            <p class="fecha-notificacion">Fecha</p>
+                            <p>Asunto</p>
                             <p>Estado</p>
                         </li>
-                        <li class="item-notificacion item-incidencia row-notificacion">
-                            <p class="id-notificacion">235</p>
-                            <p><span>04/01/2022 </span><span class="hora-notificacion">9:27AM</span></p>
-                            <p>Alcantarillado</p>
-                            <p class="estado-notificacion en-curso">En curso</p>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>04/01/2022 </span><span class="hora-notificacion">9:27AM</span></p>
+                            <p>Problemas con el alcantarillado</p>
+                            <p class="estado-notificacion pendiente">Pendiente</p>
                         </li>
-                        <li class="item-notificacion item-incidencia row-notificacion">
-                            <p class="id-notificacion">234</p>
-                            <p><span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span></p>
-                            <p>Limpiezas</p>
-                            <p class="estado-notificacion en-curso">En curso</p>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span></p>
+                            <p>Realización de limpieza en Avenida España</p>
+                            <p class="estado-notificacion pendiente">Pendiente</p>
                         </li>
-                        <li class="item-notificacion item-incidencia row-notificacion">
-                            <p class="id-notificacion">233</p>
-                            <p><span>18/12/2021 </span><span class="hora-notificacion">19:17PM</span></p>
-                            <p>Alumbrado</p>
-                            <p class="estado-notificacion resuelta">Resuelta</p>                            
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>18/12/2021 </span><span class="hora-notificacion">19:17PM</span></p>
+                            <p>Alumbrado defectuoso en vía urbana</p>
+                            <p class="estado-notificacion resuelta">Contestado</p>
                         </li>
-                        <li class="item-notificacion item-incidencia row-notificacion">
-                            <p class="id-notificacion">232</p>
-                            <p><span>04/01/2021 </span><span class="hora-notificacion">17:28PM</span></p>
-                            <p>Urbanismo</p>
-                            <p class="estado-notificacion pendiente">Rechazada</p>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>04/01/2021 </span><span class="hora-notificacion">17:28PM</span></p>
+                            <p>Problemas con las obras de la Calle Portugal</p>
+                            <p class="estado-notificacion pendiente">Pendiente</p>
                         </li>
-                        <li class="item-notificacion item-incidencia row-notificacion">
-                            <p class="id-notificacion">231</p>
-                            <p><span>15/11/2021 </span><span class="hora-notificacion">10:27AM</span></p>
-                            <p>Agua potable</p>
-                            <p class="estado-notificacion resuelta">Resuelta</p>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>15/11/2021 </span><span class="hora-notificacion">10:27AM</span></p>
+                            <p>Rotura de cañería en la toma principal del bloque</p>
+                            <p class="estado-notificacion resuelta">Contestado</p>
                         </li>
                     </ul>
                     <div class="controles-notificaciones">
                         <p class="texto-mostrar-registros">Mostrando 1 - 5 de 5</p>
                         <div class="paginacion-notificaciones">
-                            <p><a aria-label="Mostrar incidencias anteriores" title="Mostrar incidencias anteriores" href="#">Anterior</a></p>
-                            <p><a aria-label="Mostrar incidencias" title="Mostrar incidencias" href="#"><span class="numero-paginacion-notificaciones">1</span></a></p>
-                            <p><a aria-label="Mostrar incidencias posteriores" title="Mostrar incidencias posteriores" href="#">Posterior</a></p>
+                            <p><a aria-label="Mostrar notificaciones anteriores" title="Mostrar notificaciones anteriores" href="#">Anterior</a></p>
+                            <p><a aria-label="Mostrar notificaciones" title="Mostrar notificaciones" href="#"><span class="numero-paginacion-notificaciones">1</span></a></p>
+                            <p><a aria-label="Mostrar notificaciones posteriores" title="Mostrar notificaciones posteriores" href="#">Posterior</a></p>
                         </div>
                     </div>
                     <div class="add-notificaciones">
-                        <p><a aria-label="Ir a alta de incidencias" title="Ir a alta de incidencias" href="alta-incidencia.html"><i class="fas fa-plus"></i><span>Añadir incidencia</span></a></p>
+                        <p><a aria-label="Ir a alta de mensajes" title="Ir a alta de mensajes" href="buzon-ciudadano.html"><i class="fas fa-plus"></i>Enviar mensaje</a></p>
                     </div>
                 </section>
                 <section class="detalles-notificacion">
-                    <h3>Detalles incidencia</h3>
+                    <h3>Detalles mensaje</h3>
                     <div class="detalles-cabecera-notificacion">
-                        <div class="avatar-usuario"></div>
-                        <div class="info-usuario-notificacion">
-                            <p><strong>Juan José Alonso Sánchez</strong></p>
-                            <span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span>
-                        </div>                       
-                        <p class="estado-notificacion en-curso">En curso</p>
+                        <p><span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span></p>
+                        <p class="icon-notificacion-detalles"><i class="fas fa-map-pin"></i></p>
+                        <p class="estado-notificacion pendiente">Pendiente</p>
                     </div>
-                    <fieldset class="contenedor-notificacion">   
+                    <fieldset class="contenedor-notificacion">  
                         <div class="campo-formulario">
-                            <label for="tipo"><span>Tipo </span></label>
-                            <input aria-label="Tipo de incidencia introducida" title="Tipo de incidencia introducida" class="text" type="text" id="tipo" name="tipo" required>
-                        </div>   
-                        <div class="campo-formulario">
-                            <label for="direccion"><span>Dirección </span></label>
-                            <input aria-label="Dirección introducida" title="Dirección introducida" class="text" type="text" id="direccion" name="direccion" required>
+                            <label for="asunto"><span>Asunto </span></label>
+                            <input aria-label="Asunto introducido" title="Asunto introducido" class="text" type="text" id="asunto" name="asunto" required>
                         </div>
                         <div class="campo-formulario">
-                            <label for="observaciones"><span>Observaciones </span></label>
-                            <textarea aria-label="Observaciones introducidas" title="Observaciones introducidas" id="observaciones" name="observaciones" maxlength="255" required></textarea>
-                        </div>  
-                        <div class="mostrar-fotos">
-                            <p><a aria-label="Ver fotos adjuntas" title="Ver fotos adjuntas" href="#"><i class="fa fa-camera"></i><span class="texto-fotos-adjuntas">Ver fotos adjuntas</span></a></p>
-                        </div>                                
-                    </fieldset>                    
-                    <div class="contenedor-fotos hide">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia01.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia02.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia03.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">                                        
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                            <label for="comentario"><span>Comentario </span></label>
+                            <textarea aria-label="Comentario introducido" title="Comentario introducido" id="comentario" name="comentario" maxlength="255" required></textarea>
+                        </div>       
+                        <label><span>Fotos </span></label>           
+                    </fieldset>
+                    <div class="contenedor-fotos">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia01.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia02.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia03.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">                                        
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
                     </div>
                 </section>
             </div>
