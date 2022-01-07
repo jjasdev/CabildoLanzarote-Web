@@ -1086,6 +1086,53 @@
     color: var(--sidebar-color-text);
     font-size: .875rem
   }
+  .condiciones-uso{
+    background-color: var(--background-primary-color);
+    padding: 1.5rem;
+  }
+  .condiciones-uso h3{
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 130%;
+    padding: 1.5rem 0 1rem 0
+  }
+  .condiciones-uso p{
+    color: var(--text-color);
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+    padding-bottom: .75rem;
+    text-align: justify
+  }
+  .condiciones-uso span{
+    color: var(--text-color);
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400
+  }
+  .condiciones-uso a{
+    color: var(--primary-color)
+  }
+  .condiciones-uso a:hover{    
+    color: var(--title-color)
+  }
+  .condiciones-uso > .wrapper-lista{
+    margin-left: 1.875rem
+  }
+  .condiciones-uso .wrapper-lista > li{
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    padding-bottom: .75rem;
+    text-align: justify;
+  }
+  .condiciones-uso .wrapper-lista li > .fas{
+    color: var(--text-color);
+    font-size: .75em;
+    margin-right: .625rem
+  }
+  .lista-anidada{
+    margin-left: 5rem
+  }
   @media screen and (max-width: 1200px){    
     .notificaciones-usuario{
       display: none
