@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" lang="es" content="Web que facilita la comunicación entre los ciudadanos y el Cabildo de Lanzarote mediante la notificación e información de incidencias en la vía urbana." />
     <meta name="keywords" content="lanzarote, cabildo, incidencias, ciudadanos">
-    <title>Cabildo de Lanzarote | Administración</title>
+    <title>Cabildo de Lanzarote | Llamadas</title>
     <link rel="stylesheet" href="css/admin.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -73,7 +73,7 @@
                 <a aria-label="Desplegar el menú del usuario" title="Desplegar el menú del usuario" href="#"><i class="fas fa-chevron-down icon-item"></i></a>
                 <ul class="submenu-desplegable">
                     <li><a aria-label="Ir a  Perfil" title="Ir a Perfil" href="perfil.html"><span class="desplegable-item">Mi perfil</span><i class="fas fa-user icon-item"></i></a></li>
-                    <li><a aria-label="Ir a Escritorio" title="Ir a Escritorio" href="#"><span class="desplegable-item">Panel de administación</span><i class="fas fa-cog icon-item"></i></i></a></li>
+                    <li><a aria-label="Ir a Escritorio" title="Ir a Escritorio" href="administracion.html"><span class="desplegable-item">Panel de administación</span><i class="fas fa-cog icon-item"></i></i></a></li>
                     <li><a aria-label="Cerrar sesión" title="Cerrar sesión" href="#"><span class="desplegable-item">Cerrar sesión</span><i class="fas fa-power-off icon-item"></i></a></li>
                 </ul>
             </div>
@@ -98,7 +98,7 @@
                     <ul class="main-nav">
                         <li><a aria-label="Ir a Incidencias" title="Ir a Incidencias" href="incidencias.html"><i class="fas fa-exclamation-triangle icon-sidebar-item"></i><span>Incidencias</span></a></li>
                         <li><a aria-label="Ir a Mensajes" title="Ir a Mensajes" href="mensajes.html"><i class="fas fa-envelope icon-sidebar-item"></i><span>Mensajes</span></a></li>
-                        <li><a aria-label="Ir a Llamadas" title="Ir a Llamadas" href="llamadas.html"><i class="fas fa-phone icon-sidebar-item"></i><span>Llamadas</span></a></li>
+                        <li><a aria-label="Ir a Llamadas" title="Ir a Llamadas" href="#"><i class="fas fa-phone icon-sidebar-item"></i><span>Llamadas</span></a></li>
                     </ul>
                 </nav> 
                 <h2>Soporte</h2>
@@ -115,7 +115,7 @@
         <div class="escritorio">
             <div class="aviso aviso-info">
                 <i class="fas fa-info-circle"></i>
-                <span class="texto-aviso">¡El <strong>estado</strong> de alguna de tus comunicaciones ha cambiado! Revísalas y si es necesario escríbenos.</span>
+                <span class="texto-aviso">¡El <strong>Cabildo de Lanzarote</strong> ha contactado con usted vía telefónica!</span>
                 <i class="fas fa-times"></i>
             </div>
             <section class="top-wrapper">
@@ -124,67 +124,88 @@
                 <div class="migas">
                     <a aria-label="Ir a Panel de administracion" title="Ir a Panel de administracion" href="administracion.html"><span>Panel de administración </span></a>
                     <i class="fas fa-chevron-right icon-migas"></i>
-                    <span> Escritorio</span>
+                    <span> Llamadas</span>
                 </div>     
             </section>
             <section class="title-wrapper">
-                <h2>Panel de administración</h2>
+                <h2>Llamadas</h2>
             </section>
             <div class="main-wrapper">
-                <section class="cards-panel">
-                    <h3>Resumen</h3>
-                    <ul class="cards-container">
-                        <li class="cards">
-                            <i class="fas fa-exclamation-circle icon-cards color-incidencias color-fondo-incidencias cards-area-icono"></i>
-                            <p class="num-notifications cards-area-numero">7</p>
-                            <span class="cards-area-texto">Incidencias</span>
+                <section class="notificaciones">
+                    <h3>Listado de llamadas</h3>
+                    <ul class="notificaciones-container">
+                        <li class="item-notificacion item-mensaje cabecera-notificacion">
+                            <p class="fecha-notificacion">Fecha</p>
+                            <p>Asunto</p>
+                            <p>Estado</p>
                         </li>
-                        <li class="cards">
-                            <i class="fas fa-envelope icon-cards color-mensajes color-fondo-mensajes cards-area-icono"></i>
-                            <p class="num-notifications cards-area-numero">15</p>
-                            <span class="cards-area-texto">Mensajes</span>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>04/01/2022 </span><span class="hora-notificacion">9:27AM</span></p>
+                            <p>Problemas con el alcantarillado</p>
+                            <p class="estado-notificacion pendiente">Pendiente</p>
                         </li>
-                        <li class="cards">
-                            <i class="fas fa-phone icon-cards color-llamadas color-fondo-llamadas cards-area-icono"></i>
-                            <p class="num-notifications cards-area-numero">3</p>
-                            <span class="cards-area-texto">Llamadas</span>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span></p>
+                            <p>Realización de limpieza en Avenida España</p>
+                            <p class="estado-notificacion pendiente">Pendiente</p>
+                        </li>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>18/12/2021 </span><span class="hora-notificacion">19:17PM</span></p>
+                            <p>Alumbrado defectuoso en vía urbana</p>
+                            <p class="estado-notificacion resuelta">Atendida</p>
+                        </li>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>04/01/2021 </span><span class="hora-notificacion">17:28PM</span></p>
+                            <p>Problemas con las obras de la Calle Portugal</p>
+                            <p class="estado-notificacion pendiente">Pendiente</p>
+                        </li>
+                        <li class="item-notificacion item-mensaje row-notificacion">
+                            <p class="fecha-notificacion"><span>15/11/2021 </span><span class="hora-notificacion">10:27AM</span></p>
+                            <p>Rotura de cañería en la toma principal del bloque</p>
+                            <p class="estado-notificacion resuelta">Atendida</p>
                         </li>
                     </ul>
+                    <div class="controles-notificaciones">
+                        <p class="texto-mostrar-registros">Mostrando 1 - 5 de 5</p>
+                        <div class="paginacion-notificaciones">
+                            <p><a aria-label="Mostrar notificaciones anteriores" title="Mostrar notificaciones anteriores" href="#">Anterior</a></p>
+                            <p><a aria-label="Mostrar notificaciones" title="Mostrar notificaciones" href="#"><span class="numero-paginacion-notificaciones">1</span></a></p>
+                            <p><a aria-label="Mostrar notificaciones posteriores" title="Mostrar notificaciones posteriores" href="#">Posterior</a></p>
+                        </div>
+                    </div>
+                    <div class="add-notificaciones">
+                        <p><a aria-label="Ir a alta de mensajes" title="Ir a alta de mensajes" href="le-llamamos.html"><i class="fas fa-plus"></i>Solicitar llamada</a></p>
+                    </div>
                 </section>
-                <section class="actividad-reciente">
-                    <h3>Actividad reciente</h3>
-                    <ul class="actividad-container">
-                        <li class="actividad-item">
-                            <i class="fas fa-phone icon-cards color-llamadas color-fondo-llamadas cards-area-icono"></i>
-                            <div class="actividad-informacion">
-                                <span>El <strong>Cabildo Insular de Lanzarote</strong> ha respondido a tu llamada</span>
-                                <span class="marcador-hora">14-03-2022 <strong>11:15 AM</strong></span>
-                            </div> 
-                        </li>
-                        <li class="actividad-item">
-                            <i class="fas fa-exclamation-circle icon-cards color-incidencias color-fondo-incidencias cards-area-icono"></i>
-                            <div class="actividad-informacion">
-                                <span>Actualización del estado de tu incidencia</span>
-                                <span class="marcador-hora">21-02-2022 <strong>17:00 PM</strong></span>
-                            </div> 
-                        </li>
-                        <li class="actividad-item">
-                            <i class="fas fa-envelope icon-cards color-mensajes color-fondo-mensajes cards-area-icono"></i>
-                            <div class="actividad-informacion">
-                                <span>El <strong>Cabildo Insular de Lanzarote</strong> ha contestado a tu mensaje</span>
-                                <span class="marcador-hora">12-02-2022 <strong>10:30 AM</strong></span>
-                            </div>                            
-                        </li>
-                        <li class="actividad-item">
-                            <i class="fas fa-exclamation-circle icon-cards color-incidencias color-fondo-incidencias cards-area-icono"></i>
-                            <div class="actividad-informacion">
-                                <span>Actualización del estado de tu incidencia</span>
-                                <span class="marcador-hora">11-01-2022 <strong>09:30 AM</strong></span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="mostrar-actividad">
-                        <a aria-label="Mostrar toda la actividad del usuario" title="Mostrar toda la actividad del usuario" href="#"><i class="fas fa-plus icon-motrar-mas"></i><span>Mostrar toda la actividad</span></a>
+                <section class="detalles-notificacion">
+                    <h3>Detalles llamada</h3>
+                    <div class="detalles-cabecera-notificacion">
+                        <div class="avatar-usuario"></div>
+                        <div class="info-usuario-notificacion">
+                            <p><strong>Juan José Alonso Sánchez</strong></p>
+                            <span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span>
+                        </div>                       
+                        <p class="estado-notificacion pendiente">Pendiente</p>
+                    </div>
+                    <fieldset class="contenedor-notificacion">   
+                        <div class="campo-formulario">
+                            <label for="asunto"><span>Asunto </span></label>
+                            <input aria-label="Asunto introducido" title="Asunto introducido" class="text" type="text" id="asunto" name="asunto" required>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="comentario"><span>Comentario </span></label>
+                            <textarea aria-label="Comentario introducido" title="Comentario introducido" id="comentario" name="comentario" maxlength="255" required></textarea>
+                        </div>  
+                        <div class="mostrar-fotos cargar">
+                            <p><a aria-label="Ver fotos adjuntas" title="Ver fotos adjuntas" href="#"><i class="fa fa-camera"></i><span class="texto-fotos-adjuntas">Ver fotos adjuntas</span></a></p>
+                        </div>                                
+                    </fieldset>                    
+                    <div class="contenedor-fotos hide">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia01.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia02.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia03.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">                                        
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
                     </div>
                 </section>
             </div>

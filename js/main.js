@@ -47,9 +47,11 @@ const menuPerfil = document.querySelector(".main-profile");
 const verNotificaciones = document.querySelector(".ver-notificaciones");
 const submenuNotificaciones = document.querySelector(".submenu-notificaciones");
 const aviso = document.querySelectorAll(".aviso");
-const mostrarFotos = document.querySelector(".mostrar-fotos a");
+const mostrarFotos = document.querySelector(".cargar a");
 const contenedorFotos = document.querySelector(".contenedor-fotos");
 const textoFotosAdjuntas = document.querySelector(".texto-fotos-adjuntas");
+const contenedorChat = document.querySelector(".container-chat");
+const enviarContestacionChat = document.querySelector(".type-chat > button");
 const today = new Date();
 const yearText = today.getFullYear();
 const longitudCifra = 2;   
@@ -146,6 +148,27 @@ function posicionarMenu() {
     }else{
         return numero;
     }
+}
+/**
+  * Devuelve el día con ceros si es necesario
+  * @param  {}
+  * @return  {nombre navegador}
+  */
+ function detectarNavegador() {
+    let sBrowser, sUsrAg = navigator.userAgent;
+
+    if(sUsrAg.indexOf("Chrome") > -1) {
+        sBrowser = "Google Chrome";
+    } else if (sUsrAg.indexOf("Safari") > -1) {
+        sBrowser = "Apple Safari";
+    } else if (sUsrAg.indexOf("Opera") > -1) {
+        sBrowser = "Opera";
+    } else if (sUsrAg.indexOf("Firefox") > -1) {
+        sBrowser = "Mozilla Firefox";
+    } else if (sUsrAg.indexOf("MSIE") > -1) {
+        sBrowser = "Microsoft Internet Explorer";
+    }
+    return sBrowser;
 }
 
 //--Código
@@ -280,7 +303,7 @@ if (exists(avatar)){
         function(item) {
             item.addEventListener("click",function(){
                 if (item.parentElement.className.split(" ")[0] !== "imageup"){
-                    window.location.href = '/administracion.html';                    
+                    window.location.href = '/perfil.html';                    
                 }                
             });        
         }
@@ -529,7 +552,14 @@ if (exists(menu)){
     });
     verNotificaciones.addEventListener("click", function(event){
         event.preventDefault(); 
-        eliminarClase(submenuNotificaciones,"hide");  
+        eliminarClase(submenuNotificaciones,"hide"); 
+        if (responsiveAdmin){
+            eliminarClase(sidebar,"visible");
+            añadirClase(escritorio,"margin-left-0");
+            añadirClase(iconoMenu,"fa-bars");
+            eliminarClase(iconoMenu,"fa-times");        
+            eliminarClase(escritorio,"hide");
+        }
     });
 }
 //Si hacemos clic fuera de las notificaciones nos salimos de ellas
@@ -563,10 +593,35 @@ if (exists(contenedorFotos)){
     mostrarFotos.addEventListener("click", function(event){
         event.preventDefault(); 
         contenedorFotos.classList.toggle("hide");
-        if (contenedorFotos.className === "contenedor-fotos"){
-            textoFotosAdjuntas.innerHTML = "Ocultar fotos adjuntas";
-        }else{
-            textoFotosAdjuntas.innerHTML = "Ver fotos adjuntas";
-        }
+        if (exists(textoFotosAdjuntas)){
+            if (contenedorFotos.className === "contenedor-fotos"){
+                textoFotosAdjuntas.innerHTML = "Ocultar fotos adjuntas";
+            }else{
+                textoFotosAdjuntas.innerHTML = "Ver fotos adjuntas";
+            }
+        }        
      });  
+}
+
+//Mostramos scroll convesacióon chat al pasar ratón por encima y establecemos el foco al final cuando escribimos
+if (exists(contenedorChat)){
+    let x = navigator.userAgent;
+    contenedorChat.addEventListener("mouseover", function(){
+        if (detectarNavegador() === "Google Chrome"){
+            añadirClase(contenedorChat,"overflow-y-overlay");
+        }else{
+            añadirClase(contenedorChat,"overflow-y-scroll");
+        } 
+     });  
+     contenedorChat.addEventListener("mouseout", function(){
+        if (detectarNavegador() === "Google Chrome"){
+            eliminarClase(contenedorChat,"overflow-y-overlay");
+        }else{
+            eliminarClase(contenedorChat,"overflow-y-scroll");
+        }
+     }); 
+     enviarContestacionChat.addEventListener("click", function(event){
+        event.preventDefault(); 
+        contenedorChat.scrollTop = contenedorChat.scrollHeight;     
+     }); 
 }

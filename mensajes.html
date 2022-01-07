@@ -114,7 +114,7 @@
         </div>
         <div class="escritorio">
             <div class="aviso aviso-info">
-                <i class="fas fa-info"></i>
+                <i class="fas fa-info-circle"></i>
                 <span class="texto-aviso">¡El <strong>Cabildo de Lanzarote</strong> ha respondido a alguno de tus mensajes!</span>
                 <i class="fas fa-times"></i>
             </div>
@@ -142,12 +142,12 @@
                         <li class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>04/01/2022 </span><span class="hora-notificacion">9:27AM</span></p>
                             <p>Problemas con el alcantarillado</p>
-                            <p class="estado-notificacion pendiente">Pendiente</p>
+                            <p class="estado-notificacion pendiente">Finalizado</p>
                         </li>
                         <li class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span></p>
                             <p>Realización de limpieza en Avenida España</p>
-                            <p class="estado-notificacion pendiente">Pendiente</p>
+                            <p class="estado-notificacion en-curso">En curso</p>
                         </li>
                         <li class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>18/12/2021 </span><span class="hora-notificacion">19:17PM</span></p>
@@ -157,7 +157,7 @@
                         <li class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>04/01/2021 </span><span class="hora-notificacion">17:28PM</span></p>
                             <p>Problemas con las obras de la Calle Portugal</p>
-                            <p class="estado-notificacion pendiente">Pendiente</p>
+                            <p class="estado-notificacion en-curso">En curso</p>
                         </li>
                         <li class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>15/11/2021 </span><span class="hora-notificacion">10:27AM</span></p>
@@ -178,30 +178,78 @@
                     </div>
                 </section>
                 <section class="detalles-notificacion">
-                    <h3>Detalles mensaje</h3>
+                    <h3>Historial mensaje</h3>
                     <div class="detalles-cabecera-notificacion">
-                        <p><span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span></p>
-                        <p class="icon-notificacion-detalles"><i class="fas fa-map-pin"></i></p>
-                        <p class="estado-notificacion pendiente">Pendiente</p>
+                        <div class="avatar-usuario"></div>
+                        <div class="info-usuario-notificacion">
+                            <p><strong>Juan José Alonso Sánchez</strong></p>
+                            <span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span>
+                        </div>                       
+                        <p class="estado-notificacion en-curso">En curso</p>
                     </div>
-                    <fieldset class="contenedor-notificacion">  
+                    <fieldset class="contenedor-notificacion padding-b1">   
                         <div class="campo-formulario">
                             <label for="asunto"><span>Asunto </span></label>
                             <input aria-label="Asunto introducido" title="Asunto introducido" class="text" type="text" id="asunto" name="asunto" required>
                         </div>
-                        <div class="campo-formulario">
-                            <label for="comentario"><span>Comentario </span></label>
-                            <textarea aria-label="Comentario introducido" title="Comentario introducido" id="comentario" name="comentario" maxlength="255" required></textarea>
-                        </div>       
-                        <label><span>Fotos </span></label>           
                     </fieldset>
-                    <div class="contenedor-fotos">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia01.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia02.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia03.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">                                        
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" loading="lazy" width="100" height="100">
+                    <div class="container-chat">
+                        <div class="comentario-usuario">
+                            <div class="avatar-usuario"></div>
+                            <div class="info-chat">
+                                <div class="burbuja-chat color-fondo-chat">
+                                    <p class="nombre-chat">Juan José Alonso Sánchez</p>
+                                    <p class="comentario-chat">Comentario extraído cuando el usuario envío el formulario del buzón del ciudadano.</p>
+                                </div>
+                                <p><span class="fecha-chat">04/01/2021 </span><span class="hora-chat">17:28PM</span></p>
+                            </div>
+                        </div>
+                        <div class="comentario-receptor">
+                            <div class="avatar-usuario avatar-cabildo"></div>
+                            <div class="info-chat">
+                                <div class="burbuja-chat color-mensajes color-fondo-mensajes">
+                                    <p class="nombre-chat">Cabildo de Lanzarote</p>
+                                    <p class="comentario-chat">Lorem ipsum dolor sit amet aaaaaaaaaaaaaaaaaaaaaaconsectetur adipisicing elit. Quas magni quis obcaecati cumque debitis quod doloribus dolore. Perspiciatis, consectetur dolorem.</p>
+                                </div>
+                                <p><span class="fecha-chat">05/01/2021 </span><span class="hora-chat">10:12AM</span></p>
+                            </div>
+                        </div> 
+                        <div class="comentario-usuario">
+                            <div class="avatar-usuario"></div>
+                            <div class="info-chat">
+                                <div class="burbuja-chat color-fondo-chat">
+                                    <p class="nombre-chat">Juan José Alonso Sánchez</p>
+                                    <p class="comentario-chat">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, fuga!</p>
+                                </div>
+                                <p><span class="fecha-chat">05/01/2021 </span><span class="hora-chat">18:11PM</span></p>
+                            </div>
+                        </div> 
+                        <div class="comentario-receptor">
+                            <div class="avatar-usuario avatar-cabildo"></div>
+                            <div class="info-chat">
+                                <div class="burbuja-chat color-mensajes color-fondo-mensajes">
+                                    <p class="nombre-chat">Cabildo de Lanzarote</p>
+                                    <p class="comentario-chat">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <p><span class="fecha-chat">05/01/2021 </span><span class="hora-chat">18:19AM</span></p>
+                            </div>
+                        </div>                           
                     </div>
+                    <div class="opciones-chat">
+                        <p class="chat-fotos cargar"><a aria-label="Ver fotos adjuntas" title="Ver fotos adjuntas" href="#"><i class="fa fa-camera admin-icon-item"></i></a></p>
+                        <p class="chat-cerrar"><a aria-label="Finalizar conversación" title="Finalizar conversación" href="#"><i class="fa fa-power-off admin-icon-item"></i></a></p>
+                        <form class="type-chat">                    
+                            <input type="text" placeholder="Escriba mensaje..." name="text-chat">
+                            <button type="submit"><span>Enviar</span> <i class="fas fa-paper-plane"></i></button>
+                        </form>                                             
+                    </div> 
+                    <div class="contenedor-fotos hide">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia01.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia02.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia03.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">                                        
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                    </div>  
                 </section>
             </div>
             <!-- FOOTER -->

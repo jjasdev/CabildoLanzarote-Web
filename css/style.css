@@ -142,7 +142,7 @@
     border-radius: 50%;
     border: 1px solid var(--border-color); 
     height: 30px;
-    width: 30px
+    min-width: 30px
   }
   .detalles-usuario{
     display: flex;
@@ -1319,20 +1319,15 @@
     grid-template-columns: 3.5rem 1fr 3.5rem;
     grid-template-rows: 1fr;
     height: auto;
-    justify-items: center;    
+    justify-items: center;   
+    min-height: 3rem; 
     width: auto
   }
   .aviso i{    
-    font-weight: 700;
+    font-size: 1.125rem;
+    font-weight: 900;
     text-align: center;  
     width: 100%
-  }
-  .aviso .fa-info-circle,
-  .aviso .fa-times-circle,
-  .aviso .fa-check-circle{
-    align-self: center;
-    color: var(--background-color);
-    padding: 1rem
   }
   .aviso .fa-times{
     cursor: pointer
@@ -1341,36 +1336,24 @@
     transform: scale(1.2)
   }
   .texto-aviso {
-    max-width: 100%;
-    overflow: hidden;
     justify-self: start;
-    padding-left: 1rem;
-    text-overflow: ellipsis;
-    white-space: nowrap
+    max-width: 100%;
+    padding: 1rem 0
   }
   .aviso-info{
     background-color: var(--info-background-color);
     border: 1px solid var(--info-color);
     color: var(--info-color)
   }
-  .aviso-info .fa-info-circle{    
-    background-color: var(--info-color)
-  }
   .aviso-success{
     background-color: var(--success-background-color);
     border: 1px solid var(--success-color);
     color: var(--success-color)
   }
-  .aviso-success .fa-check-circle{    
-    background-color: var(--success-color)
-  }
   .aviso-error{
     background-color: var(--error-background-color);
     border: 1px solid var(--error-color);
     color: var(--error-color)
-  }
-  .aviso-error .fa-times-circle{    
-    background-color: var(--error-color)
   }
   .color-info{
     color: var(--info-color)!important
