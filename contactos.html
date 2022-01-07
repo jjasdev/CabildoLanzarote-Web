@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" lang="es" content="Web que facilita la comunicación entre los ciudadanos y el Cabildo de Lanzarote mediante la notificación e información de incidencias en la vía urbana." />
     <meta name="keywords" content="lanzarote, cabildo, incidencias, ciudadanos">
-    <title>Cabildo de Lanzarote | Manual de usuario</title>
+    <title>Cabildo de Lanzarote | Contactos</title>
     <link rel="stylesheet" href="css/admin.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -105,9 +105,9 @@
                 <h3>Enlaces y formas de contacto</h3>  
                 <nav>
                     <ul class="main-nav">
-                        <li><a aria-label="Ir a Contactos" title="Ir a Contactos" href="contactos.html"><i class="fas fa-paper-plane icon-sidebar-item"></i><span>Contactos</span></a></li>
+                        <li><a aria-label="Ir a Contactos" title="Ir a Contactos" href="#"><i class="fas fa-paper-plane icon-sidebar-item"></i><span>Contactos</span></a></li>
                         <li><a aria-label="Ir a Condiciones de uso" title="Ir a Condiciones de uso" href="condiciones-uso.html"><i class="fas fa-signature icon-sidebar-item"></i><span>Condiciones de uso</span></a></li>
-                        <li><a aria-label="Ir al Manual de usuario" title="Ir al Manual de usuario" href="#"><i class="fas fa-info-circle icon-sidebar-item"></i><span>Manual de usuario</span></a></li>
+                        <li><a aria-label="Ir al Manual de usuario" title="Ir al Manual de usuario" href="acerca-de.html"><i class="fas fa-info-circle icon-sidebar-item"></i><span>Manual de usuario</span></a></li>
                     </ul>
                 </nav>
             </div>               
@@ -119,28 +119,49 @@
                 <div class="migas">
                     <a aria-label="Ir a Panel de administracion" title="Ir a Panel de administracion" href="administracion.html"><span>Panel de administración </span></a>
                     <i class="fas fa-chevron-right icon-migas"></i>
-                    <span> Manual de usuario</span>
+                    <span> Contactos</span>
                 </div>     
             </section>
             <section class="title-wrapper">
-                <h2>Manual de usuario</h2>
+                <h2>Contactos</h2>
             </section>
             <div class="main-wrapper">
-                <section class="manual-usuario">
-                    <p>Esta herramienta facilita la comunicación entre los ciudadanos y el <strong>Cabildo Insular de Lanzarote</strong>. Los usuarios podrán informar de una incidencia localizada en el término municipal a través de la sección <a aria-label="Ir a Nueva incidencia" title="Ir a Nueva incidencia" href="alta-incidencia.html">Nueva incidencia</a>, al tiempo que podrán consultarlas para saber el estado en el que se encuentran.</p> 
-                    <p>Por otra parte, la herramienta facilita dos vías de comunicación con el <strong>Cabildo Insular de Lanzarote</strong> a través de las secciones <a aria-label="Ir a El buzón del ciudadano" title="Ir a El buzón del ciudadano" href="buzon-ciudadano.html">Buzón del ciudadano</a> y <a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="le-llamamos.html">Le llamamos</a>. </p>
-                    <h3>1.- Incidencias.</h3>
-                    <p>La herramienta dispone de un localizador automático a tiempo real que mejorará la experiencia de usuario.</p>
-                    <p>Para publicar una nueva incidencia, tendrá que ir a la sección <a aria-label="Ir a Nueva incidencia" title="Ir a Nueva incidencia" href="alta-incidencia.html">Nueva incidencia</a> e introducir los datos que se le solicitan, prestando especial atención a los campos obligatorios que se le marcan en el formulario. En primer lugar deberá seleccionar el tipo de incidencia del desplegable. La localización de la incidencia puede realizarse automáticamente si ha activado la geolocalización y está en el lugar de dicha incidencia o puede seleccionar el sitio concreto pulsando en el mapa. Posteriormente deberá introducir el motivo por el que refleja dicha incidencia y si es preciso acompañarlo subiendo alguna fotografía. Para finalizar el proceso deberá hacer clic en el botón 'Enviar'.</p>
-                    <p>A través de su cuenta de usuario, en la sección <strong>Incidencias</strong>, podrá consultar la fecha, el estado y un listado de las mismas.</p>
-                    <h3>2.- Buzón del ciudadano (Mensajes).</h3>
-                    <p>El usuario puede comunicarse con el <strong>Cabildo Insular de Lanzarote</strong> de la aplicación vía chat, manteniendo un diálogo fluido a tiempo real.</p>
-                    <p>Para establecer la comunicación, tendrá que ir a la sección <a aria-label="Ir a Buzón del ciudadano" title="Ir a Buzón del ciudadano" href="buzon-ciudadano.html">Buzón del ciudadano</a> e introducir el asunto y el motivo por el que desea realizar dicha comunicación. Si es preciso puede subir alguna fotografía para complementar la petición. Para finalizar el proceso deberá hacer clic en el botón 'Enviar'.</p>
-                    <p>A través de su cuenta de usuario, en la sección <strong>Mensajes</strong>, podrá consultar un listado con los mensajes que ha recibido detallando su fecha y estado, además de un chat para que se pueda comunicar al instante.</p>
-                    <h3>3.- Le llamamos (Llamadas).</h3>
-                    <p>Si desea que el <strong>Cabildo Insular de Lanzarote</strong> se ponga en contacto con usted vía telefónica, tendrá que ir a la sección <a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="le-llamamos.html">Le llamamos</a> e introducir el asunto y el motivo por el que deseas realizar dicha comunicación. Si es preciso puede subir alguna fotografía para complementar la petición. Para finalizar el proceso deberá hacer clic en el botón 'Enviar'.</p>
-                    <p>A través de su cuenta de usuario, en la sección <strong>Llamadas</strong>, podrá consultar estado de su petición.</p>
-                </section>                
+                <section class="soporte-tecnico">
+                    <h3>Soporte técnico</h3>
+                    <form  method="post" action="contactos.php" class="formulario-soporte">        
+                        <fieldset class="soporte-contactos">   
+                            <div class="campo-formulario">
+                                <label for="departamento"><span>Departamento </span></label>
+                                <select id="departamento" name="departamento" aria-label="Seleccionar departamento" title="Seleccionar el departamento">
+                                    <optgroup label="Cabildo de Lanzarote"></optgroup>
+                                    <option value="15" data-email="informacionatencionciudadana@cabildodelanzarote.com">Información ciudadana</option>
+                                    <option value="22" data-email="entretodos@cabildodelanzarote.com">Genérico</option>
+                                    <optgroup label="CGB Informática"></optgroup>
+                                    <option value="27" data-email="cgb@esla.com">Soporte técnico</option>
+                                </select>
+                            </div> 
+                            <div class="campo-formulario">
+                                <label for="email"><span>Email destino </span></label>
+                                <input aria-label="Introducir Email" title="Introducir Email" class="text" type="email" id="email" name="email" maxlength="30" required disabled>
+                            </div>
+                            <div class="campo-formulario">
+                                <label for="asunto"><span>Asunto </span></label>
+                                <div class="asunto-soporte">
+                                    <input aria-label="Asunto por defecto" title="Asunto por defecto" class="text" type="text" id="pre-asunto" name="pre-asunto" value="Avisa Cabildo - " required disabled>
+                                    <input aria-label="Introducir asunto" title="Introducir asunto" class="text" type="text" id="asunto" name="asunto" required>    
+                                </div>
+                            </div>
+                            <div class="campo-formulario">
+                                <label for="comentario"><span>Comentario </span></label>
+                                <textarea aria-label="Introducir comentario" title="Introducir comentario" id="comentario" name="comentario" maxlength="255" required></textarea>
+                            </div> 
+                            <div class="guardar-cambios">
+                                <input class="boton-formulario boton-enviar" id="submit" name="submit" type="submit" value="Enviar" aria-label="Enviar formulario contacto" title="Enviar formulario contacto">
+                                <input class="boton-formulario boton-cancelar" id="cancel" name="cancel" type="cancel" value="Cancelar" aria-label="Cancelar envío formulario contacto" title="Cancelar envío formulario contacto">
+                            </div>                  
+                        </fieldset>
+                    </form>
+                               
             </div>
             <!-- FOOTER -->
             <footer>

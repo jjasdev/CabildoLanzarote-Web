@@ -52,6 +52,9 @@ const contenedorFotos = document.querySelector(".contenedor-fotos");
 const textoFotosAdjuntas = document.querySelector(".texto-fotos-adjuntas");
 const contenedorChat = document.querySelector(".container-chat");
 const enviarContestacionChat = document.querySelector(".type-chat > button");
+const formularioSoporte = document.querySelector(".soporte-contactos");
+const campoEmailSoporte = document.querySelector(".soporte-contactos #email");
+const campoSelectSoporte = document.querySelector(".soporte-contactos #departamento");
 const today = new Date();
 const yearText = today.getFullYear();
 const longitudCifra = 2;   
@@ -624,4 +627,14 @@ if (exists(contenedorChat)){
         event.preventDefault(); 
         contenedorChat.scrollTop = contenedorChat.scrollHeight;     
      }); 
+}
+
+//Marcar email sección contactos
+if (exists(formularioSoporte)){
+    let emailOpcionSeleccionada = campoSelectSoporte.options[campoSelectSoporte.selectedIndex].getAttribute('data-email');
+    campoEmailSoporte.value = emailOpcionSeleccionada; 
+    campoSelectSoporte.addEventListener("change", function(){
+        emailOpcionSeleccionada = campoSelectSoporte.options[campoSelectSoporte.selectedIndex].getAttribute('data-email');
+        campoEmailSoporte.value = emailOpcionSeleccionada;      
+     });    
 }

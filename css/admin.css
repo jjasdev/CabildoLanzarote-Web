@@ -660,6 +660,10 @@
     font-family: 'Open Sans',sans-serif;
     height: 5rem
   }
+  fieldset textarea:focus-within {
+    border: 0;
+    outline: 0 none
+  }
   fieldset select{    
     cursor: pointer
   }
@@ -1138,6 +1142,26 @@
   }
   .lista-anidada{
     margin-left: 5rem
+  }
+  .soporte-contactos{
+    background-color: var(--background-primary-color);
+    padding: 1.5rem;
+  }
+  .soporte-contactos input:disabled{
+    background-color: var(--background-primary-color);
+  }
+  .asunto-soporte{
+    display: flex;
+  }
+  .asunto-soporte #pre-asunto{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    width: 7rem;
+  }
+  .asunto-soporte #asunto{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
   @media screen and (max-width: 1200px){    
     .notificaciones-usuario{
