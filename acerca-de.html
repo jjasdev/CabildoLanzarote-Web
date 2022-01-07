@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" lang="es" content="Web que facilita la comunicación entre los ciudadanos y el Cabildo de Lanzarote mediante la notificación e información de incidencias en la vía urbana." />
+    <meta name="keywords" content="lanzarote, cabildo, incidencias, ciudadanos">
+    <title>Cabildo de Lanzarote | Manual de usuario</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body >
+    <!-- CABECERA -->
+    <header>
+        <div class="admin-logo">
+            <a href="https://www.cabildodelanzarote.com/" target="_blank" rel="noreferrer">
+                <picture>
+                    <source srcset="images/favicon.png" media="(max-width: 596px)" loading="lazy" >
+                    <img src="images/logo-cabildo-lanzarote.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100"> 
+                </picture>
+            </a>
+        </div>  
+        <div class="settings-nav">
+            <ul class="settings-links">
+                <li><a aria-label="Desplegar menú lateral" title="Desplegar menú lateral" href="#" class="menu-principal"><i class="fas fa-bars admin-icon-item"></i></a></li>
+                <li>
+                    <a aria-label="Ver notificaciones" title="Ver notificaciones" href="#" class="ver-notificaciones"><i class="far fa-bell admin-icon-item circle"></i></a>
+                    <ul class="submenu-notificaciones hide">
+                        <li class="container-notificaciones">
+                            <i class="fas fa-exclamation-circle color-incidencias color-fondo-incidencias icon-notificaciones"></i>
+                            <div class="info-notificaciones">
+                                <p>El estado de la incidencia #235 ha sido actualizado</p>
+                                <span class="hora-notificaciones">12-02-2022 <strong>10:30 AM</strong></span>
+                            </div>                            
+                        </li>
+                        <li class="container-notificaciones">
+                            <i class="fas fa-envelope color-mensajes color-fondo-mensajes icon-notificaciones"></i>
+                            <div class="info-notificaciones">
+                                <p>El <strong>Cabildo de Lanzarote</strong> te ha escrito un mensaje</p>
+                                <span class="hora-notificaciones">23-01-2022 <strong>20:23 PM</strong></span>
+                            </div>
+                        </li>
+                        <li class="container-notificaciones">
+                            <i class="fas fa-phone color-llamadas color-fondo-llamadas icon-notificaciones"></i>
+                            <div class="info-notificaciones">
+                                <p>El <strong>Cabildo de Lanzarote</strong> ha contestado a tu llamada</p>
+                                <span class="hora-notificaciones">04-01-2022 <strong>08:10 AM</strong></span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <form class="admin-search">                    
+                        <button type="submit"><i class="fas fa-search admin-icon-item"></i></button>
+                        <input type="search" class="search" placeholder="Escriba aquí..." name="search">
+                    </form>
+                </li>
+            </ul>
+        </div>      
+        <div class="user-nav">
+            <div class="detalles-usuario">
+                <p>Usuario</p>
+                <p><strong>Juan José Alonso Sánchez</strong></p>
+            </div>
+            <div class="container-avatar-usuario">
+                <div class="avatar-usuario"></div>
+            </div>
+            <div class="desplegable-usuario">
+                <a aria-label="Desplegar el menú del usuario" title="Desplegar el menú del usuario" href="#"><i class="fas fa-chevron-down icon-item"></i></a>
+                <ul class="submenu-desplegable">
+                    <li><a aria-label="Ir a  Perfil" title="Ir a Perfil" href="perfil.html"><span class="desplegable-item">Mi perfil</span><i class="fas fa-user icon-item"></i></a></li>
+                    <li><a aria-label="Ir a Escritorio" title="Ir a Escritorio" href="administracion.html"><span class="desplegable-item">Panel de administación</span><i class="fas fa-cog icon-item"></i></i></a></li>
+                    <li><a aria-label="Cerrar sesión" title="Cerrar sesión" href="#"><span class="desplegable-item">Cerrar sesión</span><i class="fas fa-power-off icon-item"></i></a></li>
+                </ul>
+            </div>
+        </div>               
+    </header>
+    <!-- CONTENIDO -->
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="admin-logo">
+                <a href="https://www.cabildodelanzarote.com/" target="_blank" rel="noreferrer"><img src="images/logo-cabildo-lanzarote-sidebar.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100"></a>
+            </div> 
+            <div class="info-user">
+                <div class="avatar-usuario avatar-sidebar">
+                </div>
+                <p class="text-white break-word">Juan José Alonso Sánchez</p>
+                <p class="text-secondary break-word">juanjoalonso@hotmail.com</p>
+            </div>
+            <div class="options-user">
+                <h2>Información</h2>
+                <h3>Comunicaciones con el Cabildo</h3> 
+                <nav>
+                    <ul class="main-nav">
+                        <li><a aria-label="Ir a Incidencias" title="Ir a Incidencias" href="incidencias.html"><i class="fas fa-exclamation-triangle icon-sidebar-item"></i><span>Incidencias</span></a></li>
+                        <li><a aria-label="Ir a Mensajes" title="Ir a Mensajes" href="mensajes.html"><i class="fas fa-envelope icon-sidebar-item"></i><span>Mensajes</span></a></li>
+                        <li><a aria-label="Ir a Llamadas" title="Ir a Llamadas" href="llamadas.html"><i class="fas fa-phone icon-sidebar-item"></i><span>Llamadas</span></a></li>
+                    </ul>
+                </nav> 
+                <h2>Soporte</h2>
+                <h3>Enlaces y formas de contacto</h3>  
+                <nav>
+                    <ul class="main-nav">
+                        <li><a aria-label="Ir a Contactos" title="Ir a Contactos" href="contactos.html"><i class="fas fa-paper-plane icon-sidebar-item"></i><span>Contactos</span></a></li>
+                        <li><a aria-label="Ir a Condiciones de uso" title="Ir a Condiciones de uso" href="condiciones-uso.html"><i class="fas fa-signature icon-sidebar-item"></i><span>Condiciones de uso</span></a></li>
+                        <li><a aria-label="Ir a Acerca de" title="Ir a Acerca de" href="#"><i class="fas fa-info-circle icon-sidebar-item"></i><span>Acerca de</span></a></li>
+                    </ul>
+                </nav>
+            </div>               
+        </div>
+        <div class="escritorio">
+            <section class="top-wrapper">
+                <h1>Hola, Juan José</h1>  
+                <p><span class="fecha"></span></p>  
+                <div class="migas">
+                    <a aria-label="Ir a Panel de administracion" title="Ir a Panel de administracion" href="administracion.html"><span>Panel de administración </span></a>
+                    <i class="fas fa-chevron-right icon-migas"></i>
+                    <span> Manual de usuario</span>
+                </div>     
+            </section>
+            <section class="title-wrapper">
+                <h2>Manual de usuario</h2>
+            </section>
+            <div class="main-wrapper">
+                <section class="manual-usuario">
+                    <p>Esta herramienta facilita la comunicación entre los ciudadanos y el <strong>Cabildo Insular de Lanzarote</strong>. Los usuarios podrán informar de una incidencia localizada en el término municipal a través de la sección <a aria-label="Ir a Nueva incidencia" title="Ir a Nueva incidencia" href="alta-incidencia.html">Nueva incidencia</a>, al tiempo que podrán consultarlas para saber el estado en el que se encuentran.</p> 
+                    <p>Por otra parte, la herramienta facilita dos vías de comunicación con el <strong>Cabildo Insular de Lanzarote</strong> a través de las secciones <a aria-label="Ir a El buzón del ciudadano" title="Ir a El buzón del ciudadano" href="buzon-ciudadano.html">Buzón del ciudadano</a> y <a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="le-llamamos.html">Le llamamos</a>. </p>
+                    <h3>1.- Incidencias.</h3>
+                    <p>La herramienta dispone de un localizador automático a tiempo real que mejorará la experiencia de usuario.</p>
+                    <p>Para publicar una nueva incidencia, tendrá que ir a la sección <a aria-label="Ir a Nueva incidencia" title="Ir a Nueva incidencia" href="alta-incidencia.html">Nueva incidencia</a> e introducir los datos que se le solicitan, prestando especial atención a los campos obligatorios que se le marcan en el formulario. En primer lugar deberá seleccionar el tipo de incidencia del desplegable. La localización de la incidencia puede realizarse automáticamente si ha activado la geolocalización y está en el lugar de dicha incidencia o puede seleccionar el sitio concreto pulsando en el mapa. Posteriormente deberá introducir el motivo por el que refleja dicha incidencia y si es preciso acompañarlo subiendo alguna fotografía. Para finalizar el proceso deberá hacer clic en el botón 'Enviar'.</p>
+                    <p>A través de su cuenta de usuario, en la sección <strong>Incidencias</strong>, podrá consultar la fecha, el estado y un listado de las mismas.</p>
+                    <h3>2.- Buzón del ciudadano (Mensajes).</h3>
+                    <p>El usuario puede comunicarse con el <strong>Cabildo Insular de Lanzarote</strong> de la aplicación vía chat, manteniendo un diálogo fluido a tiempo real.</p>
+                    <p>Para establecer la comunicación, tendrá que ir a la sección <a aria-label="Ir a Buzón del ciudadano" title="Ir a Buzón del ciudadano" href="buzon-ciudadano.html">Buzón del ciudadano</a> e introducir el asunto y el motivo por el que desea realizar dicha comunicación. Si es preciso puede subir alguna fotografía para complementar la petición. Para finalizar el proceso deberá hacer clic en el botón 'Enviar'.</p>
+                    <p>A través de su cuenta de usuario, en la sección <strong>Mensajes</strong>, podrá consultar un listado con los mensajes que ha recibido detallando su fecha y estado, además de un chat para que se pueda comunicar al instante.</p>
+                    <h3>3.- Le llamamos (Llamadas).</h3>
+                    <p>Si desea que el <strong>Cabildo Insular de Lanzarote</strong> se ponga en contacto con usted vía telefónica, tendrá que ir a la sección <a aria-label="Ir a Le llamamos" title="Ir a Le llamamos" href="le-llamamos.html">Le llamamos</a> e introducir el asunto y el motivo por el que deseas realizar dicha comunicación. Si es preciso puede subir alguna fotografía para complementar la petición. Para finalizar el proceso deberá hacer clic en el botón 'Enviar'.</p>
+                    <p>A través de su cuenta de usuario, en la sección <strong>Llamadas</strong>, podrá consultar estado de su petición.</p>
+                </section>                
+            </div>
+            <!-- FOOTER -->
+            <footer>
+                <p>&copy; <strong>Cabildo Insular de Lanzarote</strong> <span class="year"></span></p>
+            </footer>            
+        </div>
+        
+
+    </div>    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

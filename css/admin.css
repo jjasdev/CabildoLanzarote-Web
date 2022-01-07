@@ -1086,32 +1086,38 @@
     color: var(--sidebar-color-text);
     font-size: .875rem
   }
-  .condiciones-uso{
+  .condiciones-uso,
+  .manual-usuario{
     background-color: var(--background-primary-color);
     padding: 1.5rem;
   }
-  .condiciones-uso h3{
+  .condiciones-uso h3,
+  .manual-usuario h3{
     font-size: 1.25rem;
     font-weight: bold;
     line-height: 130%;
     padding: 1.5rem 0 1rem 0
   }
-  .condiciones-uso p{
+  .condiciones-uso p,
+  .manual-usuario p{
     color: var(--text-color);
     font-family: 'Open Sans',sans-serif;
     font-weight: 400;
     padding-bottom: .75rem;
     text-align: justify
   }
-  .condiciones-uso span{
+  .condiciones-uso span,
+  .manual-usuario span{
     color: var(--text-color);
     font-family: 'Open Sans',sans-serif;
     font-weight: 400
   }
-  .condiciones-uso a{
+  .condiciones-uso a,
+  .manual-usuario a{
     color: var(--primary-color)
   }
-  .condiciones-uso a:hover{    
+  .condiciones-uso a:hover,
+  .manual-usuario a:hover{    
     color: var(--title-color)
   }
   .condiciones-uso > .wrapper-lista{
