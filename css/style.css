@@ -457,17 +457,20 @@
   }
   .btn-login,
   .btn-forgot{
-    background-color: var(--primary-color);
     border-radius: 3px;
     box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.2);
-    color: var(--text-banner-color)!important;
     cursor: pointer;
     margin-top: 2rem;
-    padding: .5em 1.3em!important
+    padding: .5em 1.3em!important;
+    background: linear-gradient(to left, var(--background-color) 50%, var(--primary-color) 50%) no-repeat right / 200%;
+    border: 1px solid var(--primary-color)!important;;
+    color: var(--primary-color)!important;
+    transition: background-position .3s ease
   }
   .btn-login:hover,
   .btn-forgot:hover{
-    opacity: .8
+    background-position: left;
+    color: var(--text-banner-color)!important
   }
   .campo-enviar{
     align-items: center;
@@ -916,17 +919,21 @@
   }
   .boton-enviar-formulario{
     align-self: center;
-    background-color: var(--primary-color);
+    background: linear-gradient(to left, var(--background-color) 50%, var(--primary-color) 50%) no-repeat right / 200%;
     border-radius: 3px;
+    border: 1px solid;
     box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.2);
-    color: var(--text-banner-color);
+    color: var(--primary-color);
     cursor: pointer;
     margin: 3rem 0;
-    padding: .8em 1.3em;
+    padding: .8em 2.5em;
+    transition: background-position .3s ease;
     width: max-content
   }
   .boton-enviar-formulario:hover{
-    opacity: .8
+    background-position: left;
+    border: 1px solid var(--primary-color);
+    color: var(--text-banner-color)
   }
   .prefijo{
     margin-right: 1em;
@@ -944,7 +951,7 @@
     background-color: var(--primary-color);
     border-radius: 50%;
     box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(69, 69, 72, 0.2);
-    color:white;
+    color: var(--text-banner-color);
     cursor: pointer;
     float: right;
     font-size: 1.2rem;

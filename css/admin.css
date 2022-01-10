@@ -20,6 +20,7 @@
     --calls-background-color: rgba(30,224,172,0.1);
     --alerts-color: #ca0928;
     --alerts-background-color: rgba(202,9,40,0.1);
+    --background-modal: rgba(0,0,0,0.6);
   }
   /* GENERAL */
   *{
@@ -646,7 +647,11 @@
     background-color: var(--form-background);
     border-radius: 3px;    
     border: 1px solid var(--form-border-color);
+    color: var(--text-color);
     display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
     line-height: 1.5;
     margin-bottom: .625rem;
     padding: 0rem .625rem;
@@ -656,8 +661,7 @@
   fieldset select{    
     height: 1.75rem
   }
-  fieldset textarea{
-    font-family: 'Open Sans',sans-serif;
+  fieldset textarea{    
     height: 5rem
   }
   fieldset textarea:focus-within {
@@ -685,7 +689,7 @@
   } 
   fieldset span {
     color: var(--title-color);
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     font-weight: 400
   }
@@ -704,24 +708,27 @@
     text-align: center
   }
   .boton-enviar{
-    background-color: var(--background-primary-color);
-    border: 1px solid var(--primary-color);
+    background: linear-gradient(to left, var(--background-primary-color) 50%, var(--primary-color) 50%) no-repeat right / 200%;
+    border: 1px solid;
     color: var(--primary-color);
+    transition: background-position .3s ease
   }
   .boton-enviar:hover{
-    background-color: var(--primary-color);
+    background-position: left;
     border: 1px solid var(--primary-color);
-    color: var(--sidebar-color-text);
+    color: var(--sidebar-color-text)
+
   }
   .boton-cancelar{
-    background-color: var(--background-primary-color);
-    border: 1px solid var(--alerts-color);
+    background: linear-gradient(to left, var(--background-primary-color) 50%, var(--alerts-color) 50%) no-repeat right / 200%;
+    border: 1px solid;
     color: var(--alerts-color);
+    transition: background-position .3s ease
   }
   .boton-cancelar:hover{
-    background-color: var(--alerts-color);
+    background-position: left;
     border: 1px solid var(--alerts-color);
-    color: var(--sidebar-color-text);
+    color: var(--sidebar-color-text)
   }
   .boton-enviar-formulario:hover{
     opacity: .8
@@ -913,6 +920,9 @@
   .detalles-notificacion{
     margin-bottom: 1.5rem
   }
+  .detalles-notificacion fieldset input::placeholder{
+    color: var(--text-color)
+  }
   .detalles-cabecera-notificacion{
     align-items: center;
     background-color: var(--background-primary-color);
@@ -950,7 +960,78 @@
     height: 15rem;
     justify-self: center;
     object-fit: cover;
+    cursor: zoom-in;
     width: 100%
+  }
+  .contenedor-fotos:hover .images-notificacion{
+    filter: grayscale(100%);
+    opacity:.5;
+    transform: scale(.98);
+    transition: transform .5s ease
+  }
+  .contenedor-fotos:hover .images-notificacion:hover{
+    box-shadow: 0 3px 3px rgba(0,0,0,0.125);
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+    transition: transform .5s ease
+  }
+  .imagenes-modal{
+    align-items: center;
+    background-color: var(--background-modal);
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    padding: 3rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10
+  }
+  .container-imagenes-modal{
+    background-color: var(--background-primary-color);
+    border-radius: 8px; 
+    flex-grow: 1;
+    height: 100%;  
+    min-height: max-content;
+    padding: 1.5rem;
+    width: 50%
+  }
+  .imagen-ampliada{
+    border-radius: 8px;
+    height: calc(100% - 4rem);
+    object-fit: cover;
+    object-position: center;
+    width: 100%
+  }
+  .imagenes-modal-cabecera{
+    align-content: center;
+    display: grid;
+    grid-column-gap: .5rem;
+    grid-template-areas: "img-titulo img-descargar img-cerrar"
+                         "img-nombre img-descargar img-cerrar";
+    grid-template-columns: 1fr repeat(2, max-content);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    padding-bottom: 1.5rem
+  }
+  .imagenes-modal-cabecera h3{
+    grid-area: img-titulo;
+    padding: 0
+  }
+  .imagenes-modal-cabecera p{
+    color: var(--text-color);
+    font-size: .875rem
+  }
+  .imagenes-modal-nombre{
+    grid-area: img-nombre
+  }
+  .imagenes-modal-btndescargar{
+    grid-area: img-descargar
+  }
+  .imagenes-modal-btncerrar{
+    grid-area: img-cerrar
   }
   .container-chat{
     background-color: var(--background-primary-color);
@@ -1021,9 +1102,9 @@
     width: auto
   }  
   .comentario-usuario .burbuja-chat:after {
-    border-left-color: var(--background-secondary-color);
-    border-top-color: var(--background-secondary-color);
-    border-width: 10px;
+    border-left-color: var(--background-secondary-color)!important;
+    border-top-color: var(--background-secondary-color)!important;
+    border-width: 10px!important;
     border: solid transparent;
     content: " ";
     position: absolute;
@@ -1031,9 +1112,9 @@
     top: 0
   }  
   .comentario-receptor .burbuja-chat:after {
-    border-right-color: #e6f5fc;
-    border-top-color: #e6f5fc;
-    border-width: 10px;
+    border-right-color: #e6f5fc!important;
+    border-top-color: #e6f5fc!important;
+    border-width: 10px!important;
     border: solid transparent;
     content: " ";
     left: -.8rem;
@@ -1093,6 +1174,7 @@
   .condiciones-uso,
   .manual-usuario{
     background-color: var(--background-primary-color);
+    font-family: 'Open Sans',sans-serif;
     padding: 1.5rem;
   }
   .condiciones-uso h3,
@@ -1105,7 +1187,6 @@
   .condiciones-uso p,
   .manual-usuario p{
     color: var(--text-color);
-    font-family: 'Open Sans',sans-serif;
     font-weight: 400;
     padding-bottom: .75rem;
     text-align: justify
@@ -1113,7 +1194,6 @@
   .condiciones-uso span,
   .manual-usuario span{
     color: var(--text-color);
-    font-family: 'Open Sans',sans-serif;
     font-weight: 400
   }
   .condiciones-uso a,
@@ -1195,6 +1275,9 @@
     }
     .controles-notificaciones{
       padding-bottom: 1.5rem
+    }
+    .container-imagenes-modal{
+      width: 75%
     }
   }
   @media screen and (max-width: 767px){    
@@ -1293,6 +1376,10 @@
     }
     .icon-notificacion-detalles{
       display: none
+    }
+    .container-imagenes-modal{
+      margin: 1.5rem;
+      width: 100%
     }
   }
   /* FOOTER */

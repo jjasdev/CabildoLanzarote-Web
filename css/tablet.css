@@ -244,6 +244,9 @@ fieldset h3{
 .cf-adjunto .preview-image{
     background-image: url(../images/app-imagen-no-disponible.jpg);
 }
+.boton-enviar-formulario{
+    width: 100%
+}
 /* FOOTER */
 footer{
     display: flex;

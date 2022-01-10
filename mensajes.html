@@ -55,7 +55,7 @@
                 </li>
                 <li>
                     <form class="admin-search">                    
-                        <button type="submit"><i class="fas fa-search admin-icon-item"></i></button>
+                        <button aria-label="Buscar" title="Buscar" type="submit"><i class="fas fa-search admin-icon-item"></i></button>
                         <input type="search" class="search" placeholder="Escriba aquí..." name="search">
                     </form>
                 </li>
@@ -190,7 +190,7 @@
                     <fieldset class="contenedor-notificacion padding-b1">   
                         <div class="campo-formulario">
                             <label for="asunto"><span>Asunto </span></label>
-                            <input aria-label="Asunto introducido" title="Asunto introducido" class="text" type="text" id="asunto" name="asunto" required>
+                            <input aria-label="Asunto introducido" title="Asunto introducido" class="text" type="text" id="asunto" name="asunto" placeholder="Realización de limpieza en Avenida España" disabled>
                         </div>
                     </fieldset>
                     <div class="container-chat">
@@ -240,7 +240,7 @@
                         <p class="chat-cerrar"><a aria-label="Finalizar conversación" title="Finalizar conversación" href="#"><i class="fa fa-power-off admin-icon-item"></i></a></p>
                         <form class="type-chat">                    
                             <input type="text" placeholder="Escriba mensaje..." name="text-chat">
-                            <button type="submit"><span>Enviar</span> <i class="fas fa-paper-plane"></i></button>
+                            <button aria-label="Enviar mensaje" title="Enviar mensaje" type="submit"><span>Enviar</span> <i class="fas fa-paper-plane"></i></button>
                         </form>                                             
                     </div> 
                     <div class="contenedor-fotos hide">
@@ -250,6 +250,17 @@
                         <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
                         <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
                     </div>  
+                </section>
+                <section class="imagenes-modal">
+                    <div class="container-imagenes-modal">
+                        <div class="imagenes-modal-cabecera">
+                            <h3>Imagen adjunta</h3>
+                            <p class="imagenes-modal-nombre">ejemplo-incidencia01.jpg</p>
+                            <a class="imagenes-modal-btndescargar" aria-label="Descargar imagen" title="Descargar imagen" href="#"><i class="fas fa-download admin-icon-item"></i></a>
+                            <a class="imagenes-modal-btncerrar" aria-label="Cerrar ventana" title="Cerrar ventana" href="#"><i class="fas fa-times admin-icon-item"></i></a>
+                        </div>
+                        <img class="imagen-ampliada" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                    </div>                    
                 </section>
             </div>
             <!-- FOOTER -->

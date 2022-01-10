@@ -55,7 +55,7 @@
                 </li>
                 <li>
                     <form class="admin-search">                    
-                        <button type="submit"><i class="fas fa-search admin-icon-item"></i></button>
+                        <button aria-label="Buscar" title="Buscar" type="submit"><i class="fas fa-search admin-icon-item"></i></button>
                         <input type="search" class="search" placeholder="Escriba aquí..." name="search">
                     </form>
                 </li>
@@ -190,11 +190,11 @@
                     <fieldset class="contenedor-notificacion">   
                         <div class="campo-formulario">
                             <label for="asunto"><span>Asunto </span></label>
-                            <input aria-label="Asunto introducido" title="Asunto introducido" class="text" type="text" id="asunto" name="asunto" required>
+                            <input aria-label="Asunto introducido" title="Asunto introducido" class="text" type="text" id="asunto" name="asunto" placeholder="Realización de limpieza en Avenida España" disabled>
                         </div>
                         <div class="campo-formulario">
                             <label for="comentario"><span>Comentario </span></label>
-                            <textarea aria-label="Comentario introducido" title="Comentario introducido" id="comentario" name="comentario" maxlength="255" required></textarea>
+                            <textarea aria-label="Comentario introducido" title="Comentario introducido" id="comentario" name="comentario" maxlength="255" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea harum neque asperiores libero aliquam cumque sapiente ullam laboriosam ipsum quidem!" disabled></textarea>
                         </div>  
                         <div class="mostrar-fotos cargar">
                             <p><a aria-label="Ver fotos adjuntas" title="Ver fotos adjuntas" href="#"><i class="fa fa-camera"></i><span class="texto-fotos-adjuntas">Ver fotos adjuntas</span></a></p>
@@ -207,6 +207,17 @@
                         <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
                         <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
                     </div>
+                </section>
+                <section class="imagenes-modal">
+                    <div class="container-imagenes-modal">
+                        <div class="imagenes-modal-cabecera">
+                            <h3>Imagen adjunta</h3>
+                            <p class="imagenes-modal-nombre">ejemplo-incidencia01.jpg</p>
+                            <a class="imagenes-modal-btndescargar" aria-label="Descargar imagen" title="Descargar imagen" href="#"><i class="fas fa-download admin-icon-item"></i></a>
+                            <a class="imagenes-modal-btncerrar" aria-label="Cerrar ventana" title="Cerrar ventana" href="#"><i class="fas fa-times admin-icon-item"></i></a>
+                        </div>
+                        <img class="imagen-ampliada" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                    </div>                    
                 </section>
             </div>
             <!-- FOOTER -->

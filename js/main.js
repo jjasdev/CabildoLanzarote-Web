@@ -50,6 +50,13 @@ const aviso = document.querySelectorAll(".aviso");
 const mostrarFotos = document.querySelector(".cargar a");
 const contenedorFotos = document.querySelector(".contenedor-fotos");
 const textoFotosAdjuntas = document.querySelector(".texto-fotos-adjuntas");
+const imagenesAdjuntas = document.querySelectorAll(".images-notificacion");
+const imagenesModal = document.querySelector(".imagenes-modal");
+const imagenModal = document.querySelector(".imagen-ampliada");
+const imagenModalNombre = document.querySelector(".imagenes-modal-nombre");
+const imagenModalDescargar = document.querySelector(".imagenes-modal-btndescargar");
+const imagenModalCerrar = document.querySelector(".imagenes-modal-btncerrar");
+const cabeceraImagenModal = document.querySelector(".imagenes-modal-cabecera");
 const contenedorChat = document.querySelector(".container-chat");
 const enviarContestacionChat = document.querySelector(".type-chat > button");
 const formularioSoporte = document.querySelector(".soporte-contactos");
@@ -603,7 +610,34 @@ if (exists(contenedorFotos)){
                 textoFotosAdjuntas.innerHTML = "Ver fotos adjuntas";
             }
         }        
-     });  
+     }); 
+     //Ampliamos las fotos adjuntas 
+     imagenesAdjuntas.forEach(
+        function(imagen) {
+            let srcImagen = imagen.src;
+            let nombreImagen = srcImagen.split("/").pop();
+            imagen.addEventListener("click", function(event){
+                event.preventDefault(); 
+                imagenesModal.style.display = "flex";
+                imagenModal.setAttribute("src", srcImagen);
+                imagenModalNombre.innerHTML = nombreImagen;
+                body.style.overflow = "hidden";
+            });            
+        }
+      );
+      imagenModalCerrar.addEventListener("click", function(event){
+        event.preventDefault(); 
+        imagenesModal.style.display = "none";
+        body.style.overflow = "auto";
+      });
+      imagenModalDescargar.addEventListener("click", function(event){
+        event.preventDefault(); 
+        let a = document.createElement('a');
+        a.download = imagenModalNombre.innerHTML.split(".")[0];
+        a.target = '_blank';
+        a.href= imagenModal.getAttribute("src");
+        a.click();
+      });
 }
 
 //Mostramos scroll convesacióon chat al pasar ratón por encima y establecemos el foco al final cuando escribimos
