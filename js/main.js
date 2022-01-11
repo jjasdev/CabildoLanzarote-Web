@@ -18,7 +18,6 @@ const itemCabildoResponde = document.querySelector(".last-link");
 const navMenu = document.querySelector(".nav-menu");
 const submenu = document.querySelector(".submenu");
 const avatar = document.querySelectorAll(".avatar-usuario");
-const avatarPerfil = document.querySelector(".avatar-profile");
 const iconSubmenu = document.querySelectorAll(".submenu .icon-item-submenu");
 const itemSubmenu = document.querySelectorAll(".submenu li");
 const iconoDesplegable = document.querySelector(".responsive-desplegable-icon");
@@ -56,7 +55,6 @@ const imagenModal = document.querySelector(".imagen-ampliada");
 const imagenModalNombre = document.querySelector(".imagenes-modal-nombre");
 const imagenModalDescargar = document.querySelector(".imagenes-modal-btndescargar");
 const imagenModalCerrar = document.querySelector(".imagenes-modal-btncerrar");
-const cabeceraImagenModal = document.querySelector(".imagenes-modal-cabecera");
 const contenedorChat = document.querySelector(".container-chat");
 const enviarContestacionChat = document.querySelector(".type-chat > button");
 const formularioSoporte = document.querySelector(".soporte-contactos");
@@ -179,6 +177,36 @@ function posicionarMenu() {
         sBrowser = "Microsoft Internet Explorer";
     }
     return sBrowser;
+}
+/**
+  * Devuelve la imagen comprimida
+  * @param  {imagen original, calidad de la imagen, ancho máximo, formato de salida}
+  * @return  {imagen comprimida}
+  */
+function comprimirImagen(objetoImagenEntrada, calidadImagen, maxWidth, formatoSalida){
+    let mime_type = "image/jpeg";
+    if(typeof formatoSalida !== "undefined" && formatoSalida=="png"){
+        mime_type = "image/png";
+    }
+
+    maxWidth = maxWidth || 1000;
+    let natW = objetoImagenEntrada.naturalWidth;
+    let natH = objetoImagenEntrada.naturalHeight;
+    let ratio = natH / natW;
+    if (natW > maxWidth) {
+        natW = maxWidth;
+        natH = ratio * maxWidth;
+    }
+
+    let cvs = document.createElement('canvas');
+    cvs.width = natW;
+    cvs.height = natH;
+
+    let ctx = cvs.getContext("2d").drawImage(objetoImagenEntrada, 0, 0, natW, natH);
+    let newImageData = cvs.toDataURL(mime_type, calidadImagen/100);
+    let objetoImagenSalida = new Image();
+    objetoImagenSalida.src = newImageData;
+    return objetoImagenSalida;
 }
 
 //--Código
@@ -598,8 +626,23 @@ if (exists(aviso)){
       );    
 }
 
-//Mostramos las fotos adjuntas
+//Fotos adjuntas
 if (exists(contenedorFotos)){
+    //Cargamos las fotos adjuntas
+    imagenesAdjuntas.forEach(
+        function(imagen) {
+            let srcImagen = imagen.getAttribute("data-src");  
+            let imagenComprimida;          
+            imagen.setAttribute("src", srcImagen);   
+            window.addEventListener("load", function(){
+                if(responsiveAdmin){
+                    imagenComprimida = comprimirImagen(imagen, 300, 596, 'jpg');
+                    imagen.setAttribute("src", imagenComprimida.src); 
+                }        
+            });                
+        }
+    );    
+    //Mostramos las fotos adjuntas
     mostrarFotos.addEventListener("click", function(event){
         event.preventDefault(); 
         contenedorFotos.classList.toggle("hide");
@@ -642,7 +685,6 @@ if (exists(contenedorFotos)){
 
 //Mostramos scroll convesacióon chat al pasar ratón por encima y establecemos el foco al final cuando escribimos
 if (exists(contenedorChat)){
-    let x = navigator.userAgent;
     contenedorChat.addEventListener("mouseover", function(){
         if (detectarNavegador() === "Google Chrome"){
             añadirClase(contenedorChat,"overflow-y-overlay");
