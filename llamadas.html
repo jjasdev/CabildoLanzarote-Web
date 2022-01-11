@@ -67,34 +67,34 @@
                 <p><strong>Juan José Alonso Sánchez</strong></p>
             </div>
             <div class="container-avatar-usuario">
-                <div class="avatar-usuario"></div>
+                <div tabindex="0" role="button" class="avatar-usuario" aria-label="Ir al perfil de usuario" title="Ir al perfil de usuario"></div>
             </div>
             <div class="desplegable-usuario">
                 <a aria-label="Desplegar el menú del usuario" title="Desplegar el menú del usuario" href="#"><i class="fas fa-chevron-down icon-item"></i></a>
-                <ul class="submenu-desplegable">
-                    <li><a aria-label="Ir a  Perfil" title="Ir a Perfil" href="perfil.html"><span class="desplegable-item">Mi perfil</span><i class="fas fa-user icon-item"></i></a></li>
-                    <li><a aria-label="Ir a Escritorio" title="Ir a Escritorio" href="administracion.html"><span class="desplegable-item">Panel de administación</span><i class="fas fa-cog icon-item"></i></i></a></li>
-                    <li><a aria-label="Cerrar sesión" title="Cerrar sesión" href="#"><span class="desplegable-item">Cerrar sesión</span><i class="fas fa-power-off icon-item"></i></a></li>
+                <ul role="menu" class="submenu-desplegable">
+                    <li><a role="menuitem" aria-label="Ir a  Perfil" title="Ir a Perfil" href="perfil.html"><span class="desplegable-item">Mi perfil</span><i class="fas fa-user icon-item"></i></a></li>
+                    <li><a role="menuitem" aria-label="Ir a Escritorio" title="Ir a Escritorio" href="administracion.html"><span class="desplegable-item">Panel de administación</span><i class="fas fa-cog icon-item"></i></i></a></li>
+                    <li><a role="menuitem" aria-label="Cerrar sesión" title="Cerrar sesión" href="#"><span class="desplegable-item">Cerrar sesión</span><i class="fas fa-power-off icon-item"></i></a></li>
                 </ul>
             </div>
-        </div>               
+        </div>                 
     </header>
     <!-- CONTENIDO -->
-    <div class="wrapper">
-        <div class="sidebar">
+    <section class="wrapper">
+        <aside class="sidebar">
             <div class="admin-logo">
                 <a href="https://www.cabildodelanzarote.com/" target="_blank" rel="noreferrer"><img src="images/logo-cabildo-lanzarote-sidebar.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100"></a>
             </div> 
             <div class="info-user">
-                <div class="avatar-usuario avatar-sidebar">
+                <div tabindex="0" role="button" class="avatar-usuario avatar-sidebar" aria-label="Ir al perfil de usuario" title="Ir al perfil de usuario">
                 </div>
                 <p class="text-white break-word">Juan José Alonso Sánchez</p>
                 <p class="text-secondary break-word">juanjoalonso@hotmail.com</p>
             </div>
-            <div class="options-user">
+            <section class="options-user">
                 <h2>Información</h2>
                 <h3>Comunicaciones con el Cabildo</h3> 
-                <nav>
+                <nav role="navigation" aria-label="Menú comunicaciones">
                     <ul class="main-nav">
                         <li><a aria-label="Ir a Incidencias" title="Ir a Incidencias" href="incidencias.html"><i class="fas fa-exclamation-triangle icon-sidebar-item"></i><span>Incidencias</span></a></li>
                         <li><a aria-label="Ir a Mensajes" title="Ir a Mensajes" href="mensajes.html"><i class="fas fa-envelope icon-sidebar-item"></i><span>Mensajes</span></a></li>
@@ -103,20 +103,20 @@
                 </nav> 
                 <h2>Soporte</h2>
                 <h3>Enlaces y formas de contacto</h3>  
-                <nav>
+                <nav role="navigation" aria-label="Menú soporte">
                     <ul class="main-nav">
                         <li><a aria-label="Ir a Contactos" title="Ir a Contactos" href="contactos.html"><i class="fas fa-paper-plane icon-sidebar-item"></i><span>Contactos</span></a></li>
                         <li><a aria-label="Ir a Condiciones de uso" title="Ir a Condiciones de uso" href="condiciones-uso.html"><i class="fas fa-signature icon-sidebar-item"></i><span>Condiciones de uso</span></a></li>
                         <li><a aria-label="Ir al Manual de usuario" title="Ir al Manual de usuario" href="acerca-de.html"><i class="fas fa-info-circle icon-sidebar-item"></i><span>Manual de usuario</span></a></li>
                     </ul>
                 </nav>
-            </div>               
-        </div>
-        <div class="escritorio">
-            <div class="aviso aviso-info">
+            </section>               
+        </aside>
+        <section class="escritorio">
+            <div class="aviso aviso-info" role="region">
                 <i class="fas fa-info-circle"></i>
                 <span class="texto-aviso">¡El <strong>Cabildo de Lanzarote</strong> ha contactado con usted vía telefónica!</span>
-                <i class="fas fa-times"></i>
+                <i tabindex="0" role="button" aria-label="Cerrar aviso" title="Cerrar aviso" class="fas fa-times"></i>
             </div>
             <section class="top-wrapper">
                 <h1>Hola, Juan José</h1>  
@@ -130,36 +130,36 @@
             <section class="title-wrapper">
                 <h2>Llamadas</h2>
             </section>
-            <div class="main-wrapper">
+            <main class="main-wrapper">
                 <section class="notificaciones">
                     <h3>Listado de llamadas</h3>
-                    <ul class="notificaciones-container">
+                    <ul role="list" class="notificaciones-container">
                         <li class="item-notificacion item-mensaje cabecera-notificacion">
                             <p class="fecha-notificacion">Fecha</p>
                             <p>Asunto</p>
                             <p>Estado</p>
                         </li>
-                        <li class="item-notificacion item-mensaje row-notificacion">
+                        <li tabindex="0" role="listitem" aria-label="Mostrar detalles de la llamada" title="Mostrar detalles de la llamada" class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>04/01/2022 </span><span class="hora-notificacion">9:27AM</span></p>
                             <p>Problemas con el alcantarillado</p>
                             <p class="estado-notificacion pendiente">Pendiente</p>
                         </li>
-                        <li class="item-notificacion item-mensaje row-notificacion">
+                        <li tabindex="0" role="listitem" aria-label="Mostrar detalles de la llamada" title="Mostrar detalles de la llamada" class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span></p>
                             <p>Realización de limpieza en Avenida España</p>
                             <p class="estado-notificacion pendiente">Pendiente</p>
                         </li>
-                        <li class="item-notificacion item-mensaje row-notificacion">
+                        <li tabindex="0" role="listitem" aria-label="Mostrar detalles de la llamada" title="Mostrar detalles de la llamada" class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>18/12/2021 </span><span class="hora-notificacion">19:17PM</span></p>
                             <p>Alumbrado defectuoso en vía urbana</p>
                             <p class="estado-notificacion resuelta">Atendida</p>
                         </li>
-                        <li class="item-notificacion item-mensaje row-notificacion">
+                        <li tabindex="0" role="listitem" aria-label="Mostrar detalles de la llamada" title="Mostrar detalles de la llamada" class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>04/01/2021 </span><span class="hora-notificacion">17:28PM</span></p>
                             <p>Problemas con las obras de la Calle Portugal</p>
                             <p class="estado-notificacion pendiente">Pendiente</p>
                         </li>
-                        <li class="item-notificacion item-mensaje row-notificacion">
+                        <li tabindex="0" role="listitem" aria-label="Mostrar detalles de la llamada" title="Mostrar detalles de la llamada" class="item-notificacion item-mensaje row-notificacion">
                             <p class="fecha-notificacion"><span>15/11/2021 </span><span class="hora-notificacion">10:27AM</span></p>
                             <p>Rotura de cañería en la toma principal del bloque</p>
                             <p class="estado-notificacion resuelta">Atendida</p>
@@ -180,7 +180,7 @@
                 <section class="detalles-notificacion">
                     <h3>Detalles llamada</h3>
                     <div class="detalles-cabecera-notificacion">
-                        <div class="avatar-usuario"></div>
+                        <div tabindex="0" role="button" class="avatar-usuario" aria-label="Ir al perfil de usuario" title="Ir al perfil de usuario"></div>
                         <div class="info-usuario-notificacion">
                             <p><strong>Juan José Alonso Sánchez</strong></p>
                             <span>03/01/2022 </span><span class="hora-notificacion">8:12AM</span>
@@ -201,11 +201,11 @@
                         </div>                                
                     </fieldset>                    
                     <div class="contenedor-fotos hide">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia01.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia02.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia03.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">                                        
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
-                        <img class="images-notificacion" src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" data-src="images/incidencias/ejemplo-incidencia01.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" data-src="images/incidencias/ejemplo-incidencia02.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" data-src="images/incidencias/ejemplo-incidencia03.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">                                        
+                        <img class="images-notificacion" data-src="images/incidencias/ejemplo-incidencia04.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
+                        <img class="images-notificacion" data-src="images/incidencias/ejemplo-incidencia05.jpg" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
                     </div>
                 </section>
                 <section class="imagenes-modal">
@@ -219,15 +219,14 @@
                         <img class="imagen-ampliada" alt="Ilustración Incidencia vía pública" title="Ilustración Incidencia vía pública" width="100" height="100">
                     </div>                    
                 </section>
-            </div>
+            </main>
             <!-- FOOTER -->
             <footer>
                 <p>&copy; <strong>Cabildo Insular de Lanzarote</strong> <span class="year"></span></p>
             </footer>            
-        </div>
-        
+        </section>        
 
-    </div>    
+    </section>    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>

@@ -222,25 +222,25 @@ mediaQuery991.addEventListener('change', function() {
     let cambioPantalla = this.matches;  
     if(cambioPantalla){
       responsive = true;
-      iconSubmenu.forEach(
-        function(item) {
-            item.className="fas fa-long-arrow-alt-right icon-item-submenu";
-        }
-      );
+      if (exists(iconSubmenu)){
+        iconSubmenu.forEach(
+            function(item) {
+                item.className="fas fa-long-arrow-alt-right icon-item-submenu";
+            }
+          );
+      }      
       añadirClase(wrapperMenu,"hide");
-      if (exists(menuPerfil)){
-        añadirClase(menuPerfil,"column");
-      }   
+      añadirClase(menuPerfil,"column");
     }else{
       responsive = false;
-      iconSubmenu.forEach(
-        function(item) {
-            item.className="icon-item-submenu";
-        }
-      ); 
-      if (exists(menuPerfil)){
-        eliminarClase(menuPerfil,"column");
-    }       
+      if (exists(iconSubmenu)){
+        iconSubmenu.forEach(
+            function(item) {
+                item.className="icon-item-submenu";
+            }
+        );
+      }       
+      eliminarClase(menuPerfil,"column");
     }
 }); 
 mediaQuery596.addEventListener('change', function() {
@@ -249,19 +249,19 @@ mediaQuery596.addEventListener('change', function() {
     let encontrado = false;
     if(cambioPantalla){
       responsiveAdmin = true;
-      clasesSidebar = sidebar.className.split(" ");
-      for (let i=0; i<clasesSidebar.length; i++)
-      {
-          if (clasesSidebar[i]=== "visible"){
-            encontrado = true;
-          }
-      }
-      if(encontrado){
-        añadirClase(escritorio, "hide");
-      }   
-      if (exists(menuPerfil)){
-        añadirClase(menuPerfil,"column");
-      }   
+      if (exists(sidebar)){
+        clasesSidebar = sidebar.className.split(" ");
+        for (let i=0; i<clasesSidebar.length; i++)
+        {
+            if (clasesSidebar[i]=== "visible"){
+                encontrado = true;
+            }
+        }
+        if(encontrado){
+            añadirClase(escritorio, "hide");
+        } 
+      }        
+      añadirClase(menuPerfil,"column");
     }else{
       responsiveAdmin = false; 
       eliminarClase(escritorio, "hide");         
