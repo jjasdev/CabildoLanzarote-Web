@@ -7,6 +7,7 @@
 
 //--Variables
 const body = document.querySelector("body");
+const header = document.querySelector("header");
 const mediaQuery991 = window.matchMedia('(max-width: 991px)');
 const mediaQuery596 = window.matchMedia('(max-width: 596px)');
 const menuResponsive = document.querySelector(".menu-responsive");
@@ -133,12 +134,13 @@ function validarInput(nodo) {
   * @return  {}
   */
 function posicionarMenu() {
-    var altura_del_header = $('header').outerHeight(true);
-    if (($(window).scrollTop() >= altura_del_header) && (!responsive)){
-        $('.wrapper-menu').removeClass('hide', 5000, 'swing');
+    let scroll = this.scrollY; 
+    let altura_del_header = header.clientHeight;
+    if ((scroll >= altura_del_header) && (!responsive)){
+        eliminarClase(wrapperMenu, "hide");
     }
     else{
-        $('.wrapper-menu').addClass('hide', 5000, 'swing');
+        añadirClase(wrapperMenu, "hide");
     }
 }
 /**
@@ -270,7 +272,7 @@ mediaQuery596.addEventListener('change', function() {
 
 //Menú Fijo
 posicionarMenu(); 
-$(window).scroll(function() {    
+window.addEventListener("scroll", function () {
     posicionarMenu();
 });
  

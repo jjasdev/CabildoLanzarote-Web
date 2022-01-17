@@ -1380,3 +1380,43 @@
   .color-success{
     color: var(--success-color)!important
   }
+  /* PANTALLAS DESKTOP */
+@media screen and (max-width: 1199px){
+  header{
+    grid-template-columns: 25% 45% 10% auto
+  }
+  .logo img{
+      padding: 1.25rem
+  }
+  .main-nav{
+      border-right: none;
+      grid-area: 2/2/3/5
+  }
+  .main-nav ul > li {
+      padding: 0rem .5rem
+  }
+  .submenu-desplegable{
+      right: 30%
+    }
+  .search{
+      display: none
+  }
+  .contact-links li:nth-last-child(-n+2){
+      display:block
+  }
+  .content-app-descargas span{
+      padding: 0.5em 2em
+  }
+  .en-construccion img{
+      width: 70%
+  }
+  .footer-main-links{
+      flex-direction: column
+  }
+  .footer-logo img{
+      width: 90%
+  }
+  .texto-europa{    
+      margin-top: 2rem
+  }
+}
