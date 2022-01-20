@@ -772,7 +772,7 @@
   }
   .item-indent{
     padding-left: 2.5rem;
-    padding-top: .7em
+    padding-top: .25em
   }
   .app-justificacion{
     padding-right: 2.125rem
@@ -782,12 +782,6 @@
     display: grid;
     grid-template-columns: 65% 35%;
     grid-template-rows: 100%
-  }
-  .aplicaciones-moviles a{
-    color: var(--title-color)
-  }
-  .aplicaciones-moviles a:hover{
-    color: var(--primary-color)
   }
   .aplicaciones-moviles .fas{
     font-size: .8rem;
