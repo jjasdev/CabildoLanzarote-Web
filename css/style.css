@@ -74,7 +74,7 @@
     transition: max-height .5s
   }
   header span,
-  .header-search span,
+  .header-register span,
   .header-login span{
     color: var(--text-color);
     font-size: 1em;    
@@ -161,7 +161,8 @@
     justify-content: center;
     padding-right: 1em
   }
-  .submenu-desplegable{
+  .submenu-desplegable,
+  .submenu-login{
     background-color: var(--background-color);
     box-shadow:0 8px 20px 0 rgba(0,0,0,0.125);
     display: none;
@@ -170,11 +171,29 @@
     height: auto!important;
     padding: 0!important;
     position: absolute;
-    right: 25%;
     text-align: right;
-    text-transform: uppercase;
-    top: 2.65rem
+    text-transform: uppercase
   }  
+  .submenu-desplegable{
+    right: 25%;
+    top: 2.65rem
+  }
+  .submenu-login{
+    right: 0;
+    top: 5rem;
+    width: max-content
+  }
+  .submenu-login-link{
+    padding: 1.07em 1.75em!important
+  }
+  .submenu-login-link a{
+    align-items: center;
+    display: flex;
+    justify-content: flex-end
+  }
+  .submenu-login-link:hover > a span{
+    color: var(--primary-color)
+  }
   .submenu-desplegable li{
     border-right: 3px solid var(--border-color); 
     justify-content: flex-start!important;    
@@ -188,6 +207,7 @@
   .submenu-desplegable li:first-child{    
     border-top: 1px solid var(--border-color);
   }
+  .submenu-login .icon-item,
   .submenu-desplegable .icon-item{
     color: var(--primary-color);
     font-size: .8rem;
@@ -201,7 +221,7 @@
     color: var(--primary-color)
   }
   .main-nav, 
-  .search{
+  .comunicaciones{
     border-top: 1px solid var(--border-color)
   }
   .main-nav{
@@ -308,22 +328,22 @@
   .contact-nav ul{
     display: flex
   }
-  .search{
+  .comunicaciones{
     grid-area: 2/4/3/5;
     height: 100%;
     width: 100%
   }
-  .search-links{
+  .comunicaciones-links{
     align-items: center;
     display: flex;
     grid-area: 2/4/3/5;
     height: 100%
   }
-  .search-links li{
+  .comunicaciones-links li{
     cursor: pointer;
     padding: 0 .75rem
   }
-  .contact-links li:nth-last-child(-n+2){
+  .contact-links .link-comunicaciones{
     display: none
   }
   .aparecer-menu{
@@ -333,7 +353,7 @@
     position: absolute;
     visibility: hidden
   }
-  .search-page,
+  .register-page,
   .login-page{
     background-color: var(--background-color);
     background: #FFF;
@@ -348,18 +368,14 @@
     width: 100%;
     z-index: 100
   }
-  .aparecer-busqueda,
+  .aparecer-registro,
   .aparecer-login{
     top: 0!important
   }
-  .main-search{
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 5rem;
-    width: auto
+  .aparecer-submenu-login{
+    display: flex
   }
+  .main-register,
   .main-login,
   .forgot-login{
     align-items: center;
@@ -369,7 +385,7 @@
     margin: 5rem;
     width: auto
   }
-  .main-search input,
+  .main-register input,
   .main-login input,
   .forgot-login input{
     border-bottom: 2.5px solid var(--border-color);
@@ -380,24 +396,26 @@
     padding-top: .3rem;
     width: 100%
   }
-  .main-search input:focus,
+  .main-register input:focus,
   .main-login input:focus,
   .forgot-login input:focus{
     border: 0;
     outline: 0 none
   }
-  .main-search label,
+  .main-register label,
   .main-login label,
   .forgot-login label{    
     color: var(--text-secondary-color);
     font-size: .75em;
     font-weight: 700
   }
+  .main-register p,
   .forgot-login p{    
     color: var(--text-secondary-color);
     font-size: .85em;
     font-weight: 500;
-    margin-bottom: 2.7rem
+    margin-bottom: 2.7rem;
+    text-align: center
   }
   .main-login label a,
   .forgot-login label a{
@@ -407,7 +425,7 @@
   .forgot-login label a:hover{
     color: var(--primary-color)
   }
-  .main-search input::placeholder,
+  .main-register input::placeholder,
   .main-login input::placeholder,
   .forgot-login input::placeholder{
     color: var(--text-secondary-color);
@@ -415,19 +433,19 @@
     font-size: .8em;
     font-weight: 500
   }
-  input::-webkit-search-cancel-button{
+  input::-webkit-register-cancel-button{
     -webkit-appearance: none
   }
   header .icon-item:hover{
     transform: scale(1.1);
     transition: all 0.5s ease
   }
-  .header-search .icon-item,
+  .header-register .icon-item,
   .header-login .icon-item{
     cursor:pointer;
     font-size: 2rem
   }
-  .header-search,
+  .header-register,
   .header-login{
     align-items: center;
     background-color: var(--background-color);
@@ -439,15 +457,15 @@
     padding: 1rem 2rem;
     width: 100%
   }
-  .header-search img,
+  .header-register img,
   .header-login img{
     max-height: 3.75rem
   }
-  .header-search span,
+  .header-register span,
   .header-login span{
     padding: 0
   }
-  .header-search span:hover,
+  .header-register span:hover,
   .header-login span:hover{
     color: var(--text-color)
   }
@@ -455,6 +473,7 @@
     margin-bottom: .75rem;
     width: 50%
   }
+  .btn-register,
   .btn-login,
   .btn-forgot{
     border-radius: 3px;
@@ -467,6 +486,7 @@
     color: var(--primary-color)!important;
     transition: background-position .3s ease
   }
+  .btn-register:hover,
   .btn-login:hover,
   .btn-forgot:hover{
     background-position: left;
@@ -798,7 +818,6 @@
   .iconos-descarga{
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: center
   }
   .iconos-descarga .fab{
@@ -807,7 +826,7 @@
     padding: .25em .5em
   }
   .fa-android{
-    border-bottom: 1px solid var(--form-border-color);
+    border-right: 1px solid var(--form-border-color);
   }
   .content-app-descargas{
     align-items: center;
@@ -815,8 +834,8 @@
     border-radius: 8px;
     box-shadow: -2px -2px 2px rgba(26, 46, 53, 0.04), 2px 2px 2px #FFFFFF, 4px 4px 16px rgba(255, 255, 255, 0.72), -4px -4px 16px rgba(26, 46, 53, 0.04);
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    height: 6rem;
     justify-content: center;
     padding: 1rem;
     width: 100%
@@ -847,7 +866,9 @@
     color: var(--text-banner-color)
   }
   .boton-descargar{
-    flex-grow: 1
+    flex-grow: 1;
+    margin: 0!important;
+    width: 100%!important
   }
   .boton-descargar span{
     color: var(--primary-color)
@@ -1377,7 +1398,7 @@
   /* PANTALLAS DESKTOP */
 @media screen and (max-width: 1199px){
   header{
-    grid-template-columns: 25% 45% 10% auto
+    grid-template-columns: 25% 1fr auto auto
   }
   .logo img{
       padding: 1.25rem
@@ -1392,10 +1413,10 @@
   .submenu-desplegable{
       right: 30%
     }
-  .search{
+  .comunicaciones{
       display: none
   }
-  .contact-links li:nth-last-child(-n+2){
+  .contact-links .link-comunicaciones{
       display:block
   }
   .content-app-descargas span{

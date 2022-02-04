@@ -63,26 +63,38 @@
                 <li><a aria-label="Ir a Teléfonos" title="Ir a Teléfonos" href="https://www.cabildodelanzarote.com/tel%C3%A9fonos" target="_blank" rel="noreferrer"><i class="fas fa-phone icon-item"></i></a></li>
                 <li><a aria-label="Ir a Localización" title="Ir a Localización" href="https://www.cabildodelanzarote.com/localizaci%C3%B3n" target="_blank" rel="noreferrer"><i class="fas fa-map-marker-alt icon-item"></i></a></li>
                 <li><a aria-label="Ir a Contacto" title="Ir a Contacto" href="https://www.cabildodelanzarote.com/contacto" target="_blank" rel="noreferrer"><i class="far fa-envelope icon-item"></i></a></li>
-                <li><a aria-label="Buscar" title="Buscar" href="#" class="buscar"><i class="fas fa-search icon-item"></i></a></li>
-                <li><a aria-label="Iniciar sesión" title="Iniciar sesión" href="#" class="login"><i class="fas fa-user-circle icon-item"></i></a></li>
+                <li class="link-comunicaciones"><a aria-label="Darse de alta en la plataforma" title="Darse de alta en la plataforma" href="#" class="registro"><i class="fas fa-comments icon-item"></i></a></li>
+                <li class="link-comunicaciones"><a aria-label="Iniciar sesión" title="Iniciar sesión" href="#" class="login"><i class="fas fa-user-circle icon-item"></i></a></li>
             </ul>
         </div>
-        <div class="search">
-            <ul class="search-links">
-                <li><a class="buscar" aria-label="Buscar" title="Buscar" href="#"><i class="fas fa-search icon-item"></i></a></li>               
-                <li><a class="login" aria-label="Iniciar sesión" title="Iniciar sesión" href="#"><i class="fas fa-user-circle icon-item"></i></a></li>              
+        <div class="comunicaciones">
+            <ul class="comunicaciones-links">
+                <li class="comunicaciones-link"><a class="registro" aria-label="Darse de alta en la plataforma" title="Darse de alta en la plataforma" href="#"><i class="fas fa-comments icon-item"></i></a></li>               
+                <li class="comunicaciones-link">
+                    <a class="login" aria-label="Iniciar sesión" title="Iniciar sesión" href="#"><i class="fas fa-user-circle icon-item"></i></a>
+                    <ul class="submenu-login">
+                        <li class="submenu-login-link"><a aria-label="Darse de alta en la plataforma" title="Darse de alta en la plataforma" href="#"><span class="desplegable-item registro">Acceso comunicaciones</span><i class="fas fa-comments icon-item"></i></a></li>
+                        <li class="submenu-login-link"><a aria-label="Iniciar sesión" title="Iniciar sesión" href="#"><span class="desplegable-item login">Iniciar sesión</span><i class="fas fa-user-circle icon-item"></i></i></a></li>
+                    </ul>
+                </li>              
             </ul>
         </div> 
-        <div class="search-page">
-            <div class="header-search">
+        <div class="register-page">
+            <div class="header-register">
                 <img src="images/favicon.png" alt="Logotipo Cabildo de Lanzarote" title="Logotipo Cabildo de Lanzarote" loading="lazy" width="100" height="100">
-                <span>Búsqueda</span>
-                <a class="close-btn-search" aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a>
+                <span>Comunicaciones</span>
+                <a class="close-btn-register" aria-label="Cerrar el menú" title="Cerrar el menú" href="#"><i class="fas fa-times icon-item"></i></a>
             </div>
-            <div class="main-search">
-                <label for="busqueda-general">Buscar en la web</label>
-                <input type="search" aria-label="Buscar" title="Buscar" class="input" placeholder="Buscar en la web" id="busqueda-general" name="busqueda-general">   
-            </div>
+            <form id="frmRegister" action="/perform_register" method="post" class="main-register">
+                <p>Introduce tu correo electrónico. Te enviaremos un enlace para acceder a las comunicaciones.</p>
+                <div class="input-form">                    
+                    <label for="email-registro" class="etiqueta-register">Correo electrónico</label>
+                    <input aria-label="Correo electrónico" placeholder="Email de acceso a las comunicaciones" title="Correo electrónico" class="input-login" type="email" id="email-registro" required autofocus>
+                </div>
+                <div class="input-form campo-enviar">
+                    <input class="btn-register" name="submit-register" type="submit" value="Recibir credenciales">
+                </div>  
+            </form>
         </div>
         <div class="login-page">
             <div class="header-login">
@@ -105,7 +117,7 @@
                 </div>                
             </form>
             <form id="frmRecuperarContrasenia" action="/recuperarContrasenia/enviarMail" method="post" class="forgot-login hide">
-                <p>Introduce tu dirección de correo electrónico. Te enviaremos un enlace para restablecer tu contraseña.</p>
+                <p>Introduce tu correo electrónico. Te enviaremos un enlace para restablecer tu contraseña.</p>
                 <div class="input-form">                    
                     <label for="email-restablecer" class="etiqueta-login">Correo electrónico</label>
                     <input aria-label="Correo electrónico" placeholder="Correo electrónico" title="Correo electrónico" class="input-login" type="email" id="email-restablecer" required autofocus>

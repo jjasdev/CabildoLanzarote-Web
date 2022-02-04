@@ -13,7 +13,7 @@ const mediaQuery596 = window.matchMedia('(max-width: 596px)');
 const menuResponsive = document.querySelector(".menu-responsive");
 const menuNavegacion = document.querySelector(".main-nav");
 const btnSalir = document.querySelector(".close-btn");
-const btnSalirSearch = document.querySelector(".close-btn-search");
+const btnSalirRegistro = document.querySelector(".close-btn-register");
 const btnSalirLogin = document.querySelector(".close-btn-login");
 const itemCabildoResponde = document.querySelector(".last-link");
 const navMenu = document.querySelector(".nav-menu");
@@ -24,11 +24,14 @@ const itemSubmenu = document.querySelectorAll(".submenu li");
 const iconoDesplegable = document.querySelector(".responsive-desplegable-icon");
 const lastItem = document.querySelector(".last-link");
 const wrapperMenu = document.querySelector(".wrapper-menu");
-const menuBusqueda = document.querySelectorAll(".buscar");
-const paginaBusqueda = document.querySelector(".search-page");
-const labelSearch = document.querySelector(".main-search label");
-const inputSearch = document.querySelector("#busqueda-general");
+const menuRegistro = document.querySelectorAll(".registro");
+const paginaRegistro = document.querySelector(".register-page");
+const labelRegistro = document.querySelector(".main-register label");
+const inputRegistro = document.querySelector("#email-registro");
 const imageUpload = document.querySelector("#file-uploader");
+const btnLogin = document.querySelector(".comunicaciones");
+const iconoLogin = document.querySelector(".comunicaciones-link > a .fa-user-circle");
+const submenuLogin = document.querySelector(".submenu-login");
 const menuLogin = document.querySelectorAll(".login");
 const paginaLogin = document.querySelector(".login-page");
 const labelLogin = document.querySelectorAll(".etiqueta-login");
@@ -71,7 +74,7 @@ let cabildoClick = false;
 let responsive = false;
 let responsiveAdmin = false;
 let salir = false;
-let contadorBusqueda = 0;
+let contadorRegistro = 0;
 let contadorLogin = 0;
 let sidebarVisible = false;
 
@@ -121,8 +124,8 @@ function eliminarClase(nodo, clase){
   * @return  {true/false}
   */
 function validarInput(nodo) {
-    const inputSearchValue = nodo.value;
-    let inputLenght = String(inputSearchValue).length;
+    const inputRegistroValue = nodo.value;
+    let inputLenght = String(inputRegistroValue).length;
     if ( inputLenght === 0) {
       return false;
     }
@@ -373,55 +376,69 @@ if (exists(imageUpload)){
   });
 }
 
-//Búsqueda
-if (exists(menuBusqueda)){
-    menuBusqueda.forEach(
+//Botón comunicaciones
+if (exists(btnLogin)){
+    btnLogin.addEventListener("mouseover", function(){
+        if(responsive){
+            submenuLogin.style.display = "flex";
+        }
+    });
+    btnLogin.addEventListener("mouseout", function(){
+        if(responsive){
+            submenuLogin.style.display = "none";
+        }
+    });
+}
+
+//Registro
+if (exists(menuRegistro)){
+    menuRegistro.forEach(
         function(item) {
             item.addEventListener("click", function(event){
                 event.preventDefault();
-                añadirClase(paginaBusqueda, "aparecer-busqueda");
+                añadirClase(paginaRegistro, "aparecer-registro");
                 añadirClase(body, "noscroll"); 
-                añadirClase(labelSearch, "desaparecer");
+                añadirClase(labelRegistro, "desaparecer");
             });
         }
     );
 }
-if (exists(btnSalirSearch)){
-    btnSalirSearch.addEventListener("click", function(){
-        eliminarClase(paginaBusqueda, "aparecer-busqueda");
+if (exists(btnSalirRegistro)){
+    btnSalirRegistro.addEventListener("click", function(){
+        eliminarClase(paginaRegistro, "aparecer-registro");
         eliminarClase(body, "noscroll"); 
-        eliminarClase(labelSearch, "desaparecer");
-        eliminarClase(labelSearch, "active");
-        eliminarClase(inputSearch, "colorear-borde");
-        document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
-        document.querySelector("#busqueda-general").value = '';
-        contadorBusqueda = 0;
+        eliminarClase(labelRegistro, "desaparecer");
+        eliminarClase(labelRegistro, "active");
+        eliminarClase(inputRegistro, "colorear-borde");
+        document.querySelector("#email-registro").placeholder = 'Email de acceso a las comunicaciones';
+        document.querySelector("#email-registro").value = '';
+        contadorRegistro = 0;
     });
 }
-if (exists(inputSearch)){
-    inputSearch.addEventListener("keyup", function(event){
-        if( (event.keyCode === 8) && (!validarInput(inputSearch)) ){
-            eliminarClase(labelSearch, "active");  
-            contadorBusqueda = 0;
-        }else if (contadorBusqueda === 0){        
-            añadirClase(labelSearch, "active");
-            contadorBusqueda += 1;     
+if (exists(inputRegistro)){
+    inputRegistro.addEventListener("keyup", function(event){
+        if( (event.keyCode === 8) && (!validarInput(inputRegistro)) ){
+            eliminarClase(labelRegistro, "active");  
+            contadorRegistro = 0;
+        }else if (contadorRegistro === 0){        
+            añadirClase(labelRegistro, "active");
+            contadorRegistro += 1;     
         }
     });
-    inputSearch.addEventListener("click", function(){
-        eliminarClase(labelSearch, "desaparecer");    
-        añadirClase(inputSearch, "colorear-borde");
-        document.querySelector("#busqueda-general").placeholder = '';
+    inputRegistro.addEventListener("click", function(){
+        eliminarClase(labelRegistro, "desaparecer");    
+        añadirClase(inputRegistro, "colorear-borde");
+        document.querySelector("#email-registro").placeholder = '';
     });
     //Si hacemos clic fuera del input
     document.addEventListener("click", function(event){
-        let caracteresInput = String(inputSearch.value).length;
-        if((event.target !== inputSearch) && (caracteresInput === 0)) {
-            añadirClase(labelSearch, "desaparecer");
-            eliminarClase(labelSearch, "active");
-            eliminarClase(inputSearch, "colorear-borde");
-            document.querySelector("#busqueda-general").placeholder = 'Escriba aquí para buscar en la web';
-            contadorBusqueda = 0;
+        let caracteresInput = String(inputRegistro.value).length;
+        if((event.target !== inputRegistro) && (caracteresInput === 0)) {
+            añadirClase(labelRegistro, "desaparecer");
+            eliminarClase(labelRegistro, "active");
+            eliminarClase(inputRegistro, "colorear-borde");
+            document.querySelector("#email-registro").placeholder = 'Email de acceso a las comunicaciones';
+            contadorRegistro = 0;
         }
     }, false);
 }
@@ -432,14 +449,16 @@ if (exists(menuLogin)){
     menuLogin.forEach(
         function(item) {
             item.addEventListener("click", function(event){
-                event.preventDefault();
-                añadirClase(paginaLogin, "aparecer-login");
-                añadirClase(body, "noscroll"); 
-                labelLogin.forEach(
-                    function(etiqueta) {
-                        añadirClase(etiqueta, "desaparecer");
-                    }
-                );            
+                if((!responsive) || (item.className==="desplegable-item login")){
+                    event.preventDefault();
+                    añadirClase(paginaLogin, "aparecer-login");
+                    añadirClase(body, "noscroll"); 
+                    labelLogin.forEach(
+                        function(etiqueta) {
+                            añadirClase(etiqueta, "desaparecer");
+                        }
+                    );            
+                }
             });
         }
     );
